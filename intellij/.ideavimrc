@@ -1,0 +1,65 @@
+" ========================
+" BASIC SETTINGS
+" ========================
+set clipboard=unnamedplus
+set relativenumber
+set number
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
+set scrolloff=5
+set showmode
+set mouse=a
+
+" ========================
+" BETTER NAVIGATION
+" ========================
+" Use <C-h/j/k/l> to move between splits (just like tmux or nvim)
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" Keep cursor centered when moving up/down or searching
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap J mzJ`z
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+
+" Don't yank on visual paste
+xnoremap p "_dP
+
+" Quick save and quit
+nnoremap <leader>w :w<CR>
+nnoremap <leader>q :q<CR>
+
+" Easy escape from insert mode
+inoremap jk <Esc>
+
+" Clear search highlights
+nnoremap <leader>n :nohlsearch<CR>
+
+" ========================
+" INTELLIJ-INTEGRATED
+" ========================
+" Use :action to run IntelliJ actions
+nnoremap <leader>f :action FindInPath<CR>
+nnoremap <leader>b :action GotoDeclaration<CR>
+nnoremap <leader>r :action RenameElement<CR>
+nnoremap <leader>g :action GotoImplementation<CR>
+nnoremap <leader>t :action FileStructurePopup<CR>
+nnoremap <leader>d :action Debug<CR>
+nnoremap <leader>p :action Run<CR>
+
+" ========================
+" PLUGIN-LIKE MAPPINGS
+" ========================
+" Tab navigation
+nnoremap <Tab> :tabnext<CR>
+nnoremap <S-Tab> :tabprev<CR>
+
+" Move between recent files
+nnoremap <leader><Tab> :action RecentFiles<CR>
+

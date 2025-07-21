@@ -128,6 +128,7 @@ local M = {
                     "bashls",
                     "html",
                     "cssls",
+                    "black",
                     "ts_ls",
                 },
             }
@@ -146,6 +147,17 @@ local M = {
         config = function()
             require "config.tag"
         end,
+        {
+            "mfussenegger/nvim-jdtls",
+            ft = { "java" },
+            dependencies = {
+                "williamboman/mason.nvim",
+                "williamboman/mason-lspconfig.nvim",
+            },
+            config = function()
+                require "config.java"
+            end,
+        },
     },
 }
 

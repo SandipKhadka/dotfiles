@@ -1,0 +1,351 @@
+<application>
+  <component name="VimHistorySettings">
+    <history>
+      <history-cmd>
+        <entry encoding="base64">dw==</entry>
+      </history-cmd>
+      <history-search>
+        <entry encoding="base64">bW92ZQ==</entry>
+        <entry encoding="base64">IA==</entry>
+        <entry encoding="base64">cA==</entry>
+        <entry encoding="base64">bGF5b3V0</entry>
+      </history-search>
+    </history>
+  </component>
+  <component name="VimJumpsSettings">
+    <project id="my-chess-game-21526cdd">
+      <jump line="96" column="53" filename="$USER_HOME$/my-chess-game/src/logic/PieceMovement.java" protocol="file" />
+      <jump line="97" column="56" filename="$USER_HOME$/my-chess-game/src/logic/PieceMovement.java" protocol="file" />
+      <jump line="131" column="27" filename="$USER_HOME$/my-chess-game/src/logic/PieceMovement.java" protocol="file" />
+      <jump line="130" column="21" filename="$USER_HOME$/my-chess-game/src/logic/PieceMovement.java" protocol="file" />
+      <jump line="127" column="8" filename="$USER_HOME$/my-chess-game/src/logic/PieceMovement.java" protocol="file" />
+      <jump line="159" column="0" filename="$USER_HOME$/my-chess-game/src/logic/PieceMovement.java" protocol="file" />
+      <jump line="156" column="4" filename="$USER_HOME$/my-chess-game/src/logic/PieceMovement.java" protocol="file" />
+      <jump line="149" column="37" filename="$USER_HOME$/my-chess-game/src/logic/PieceMovement.java" protocol="file" />
+      <jump line="8" column="68" filename="$USER_HOME$/my-chess-game/src/logic/PieceMovement.java" protocol="file" />
+      <jump line="11" column="38" filename="$USER_HOME$/my-chess-game/src/logic/PieceMovement.java" protocol="file" />
+      <jump line="10" column="4" filename="$USER_HOME$/my-chess-game/src/logic/PieceMovement.java" protocol="file" />
+      <jump line="22" column="0" filename="$USER_HOME$/my-chess-game/src/logic/PieceMovement.java" protocol="file" />
+      <jump line="19" column="43" filename="$USER_HOME$/my-chess-game/src/logic/PieceMovement.java" protocol="file" />
+      <jump line="148" column="82" filename="$USER_HOME$/my-chess-game/src/logic/PieceMovement.java" protocol="file" />
+      <jump line="34" column="68" filename="$USER_HOME$/my-chess-game/src/logic/PieceMovement.java" protocol="file" />
+      <jump line="12" column="52" filename="$USER_HOME$/my-chess-game/src/logic/PieceMovement.java" protocol="file" />
+      <jump line="153" column="0" filename="$USER_HOME$/my-chess-game/src/logic/PieceMovement.java" protocol="file" />
+      <jump line="152" column="66" filename="$USER_HOME$/my-chess-game/src/logic/PieceMovement.java" protocol="file" />
+      <jump line="5" column="20" filename="$USER_HOME$/my-chess-game/src/maingame/ChessGame.java" protocol="file" />
+      <jump line="39" column="66" filename="$USER_HOME$/my-chess-game/src/logic/AIPlayer.java" protocol="file" />
+      <jump line="62" column="12" filename="$USER_HOME$/my-chess-game/src/logic/AIPlayer.java" protocol="file" />
+      <jump line="28" column="39" filename="$USER_HOME$/my-chess-game/src/logic/PieceMovement.java" protocol="file" />
+      <jump line="123" column="0" filename="$USER_HOME$/my-chess-game/src/logic/PieceMovement.java" protocol="file" />
+      <jump line="121" column="8" filename="$USER_HOME$/my-chess-game/src/logic/PieceMovement.java" protocol="file" />
+      <jump line="113" column="42" filename="$USER_HOME$/my-chess-game/src/logic/PieceMovement.java" protocol="file" />
+      <jump line="139" column="16" filename="$USER_HOME$/my-chess-game/src/logic/PieceMovement.java" protocol="file" />
+      <jump line="142" column="37" filename="$USER_HOME$/my-chess-game/src/logic/PieceMovement.java" protocol="file" />
+      <jump line="87" column="79" filename="$USER_HOME$/my-chess-game/src/gui/ChessBoard.java" protocol="file" />
+      <jump line="9" column="0" filename="$USER_HOME$/my-chess-game/src/gui/ChessBoard.java" protocol="file" />
+      <jump line="34" column="18" filename="$USER_HOME$/my-chess-game/src/gui/Square.java" protocol="file" />
+      <jump line="79" column="0" filename="$USER_HOME$/my-chess-game/src/logic/AIPlayer.java" protocol="file" />
+      <jump line="13" column="29" filename="$USER_HOME$/my-chess-game/src/logic/AIPlayer.java" protocol="file" />
+      <jump line="56" column="12" filename="$USER_HOME$/my-chess-game/src/logic/AIPlayer.java" protocol="file" />
+      <jump line="94" column="46" filename="$USER_HOME$/my-chess-game/src/gui/ChessBoard.java" protocol="file" />
+      <jump line="48" column="0" filename="$USER_HOME$/my-chess-game/src/gui/ChessBoard.java" protocol="file" />
+      <jump line="47" column="0" filename="$USER_HOME$/my-chess-game/src/gui/ChessBoard.java" protocol="file" />
+      <jump line="110" column="46" filename="$USER_HOME$/my-chess-game/src/gui/ChessBoard.java" protocol="file" />
+      <jump line="101" column="0" filename="$USER_HOME$/my-chess-game/src/gui/ChessBoard.java" protocol="file" />
+      <jump line="100" column="4" filename="$USER_HOME$/my-chess-game/src/gui/ChessBoard.java" protocol="file" />
+      <jump line="98" column="12" filename="$USER_HOME$/my-chess-game/src/gui/ChessBoard.java" protocol="file" />
+      <jump line="73" column="56" filename="$USER_HOME$/my-chess-game/src/gui/ChessBoard.java" protocol="file" />
+      <jump line="74" column="46" filename="$USER_HOME$/my-chess-game/src/gui/ChessBoard.java" protocol="file" />
+      <jump line="50" column="25" filename="$USER_HOME$/my-chess-game/src/logic/AIPlayer.java" protocol="file" />
+      <jump line="4" column="11" filename="$USER_HOME$/my-chess-game/src/features/ScoringSystem.java" protocol="file" />
+      <jump line="5" column="16" filename="$USER_HOME$/my-chess-game/src/features/ScoringSystem.java" protocol="file" />
+      <jump line="9" column="25" filename="$USER_HOME$/my-chess-game/src/features/ScoringSystem.java" protocol="file" />
+      <jump line="7" column="15" filename="$USER_HOME$/my-chess-game/src/features/ScoringSystem.java" protocol="file" />
+      <jump line="18" column="31" filename="$USER_HOME$/my-chess-game/src/features/ScoringSystem.java" protocol="file" />
+      <jump line="6" column="15" filename="$USER_HOME$/my-chess-game/src/features/ScoringSystem.java" protocol="file" />
+      <jump line="19" column="24" filename="$USER_HOME$/my-chess-game/src/features/ScoringSystem.java" protocol="file" />
+      <jump line="3" column="0" filename="$USER_HOME$/my-chess-game/src/features/ScoringSystem.java" protocol="file" />
+      <jump line="10" column="15" filename="$USER_HOME$/my-chess-game/src/features/ScoringSystem.java" protocol="file" />
+      <jump line="58" column="50" filename="$USER_HOME$/my-chess-game/src/maingame/ChessGame.java" protocol="file" />
+      <jump line="8" column="10" filename="$USER_HOME$/my-chess-game/src/features/ScoringSystem.java" protocol="file" />
+      <jump line="0" column="0" filename="$USER_HOME$/my-chess-game/src/pieces/Piece.java" protocol="file" />
+      <jump line="2" column="0" filename="$USER_HOME$/my-chess-game/src/pieces/Piece.java" protocol="file" />
+      <jump line="21" column="26" filename="$USER_HOME$/my-chess-game/src/pieces/Piece.java" protocol="file" />
+      <jump line="19" column="31" filename="$USER_HOME$/my-chess-game/src/pieces/Piece.java" protocol="file" />
+      <jump line="35" column="8" filename="$USER_HOME$/my-chess-game/src/logic/PieceMovement.java" protocol="file" />
+      <jump line="28" column="8" filename="$USER_HOME$/my-chess-game/src/pieces/Piece.java" protocol="file" />
+      <jump line="20" column="19" filename="$USER_HOME$/my-chess-game/src/pieces/Piece.java" protocol="file" />
+      <jump line="22" column="6" filename="$USER_HOME$/my-chess-game/src/pieces/Piece.java" protocol="file" />
+      <jump line="26" column="22" filename="$USER_HOME$/my-chess-game/src/pieces/Piece.java" protocol="file" />
+      <jump line="30" column="23" filename="$USER_HOME$/my-chess-game/src/pieces/Piece.java" protocol="file" />
+      <jump line="26" column="7" filename="$USER_HOME$/my-chess-game/src/features/ScoringSystem.java" protocol="file" />
+      <jump line="12" column="4" filename="$USER_HOME$/my-chess-game/src/gui/ChessBoard.java" protocol="file" />
+      <jump line="42" column="24" filename="$USER_HOME$/my-chess-game/src/maingame/ChessGame.java" protocol="file" />
+      <jump line="33" column="33" filename="$USER_HOME$/my-chess-game/src/gui/ChessBoard.java" protocol="file" />
+      <jump line="28" column="0" filename="$USER_HOME$/my-chess-game/src/maingame/ChessGame.java" protocol="file" />
+      <jump line="42" column="0" filename="$USER_HOME$/my-chess-game/src/gui/ChessBoard.java" protocol="file" />
+      <jump line="35" column="49" filename="$USER_HOME$/my-chess-game/src/gui/ChessBoard.java" protocol="file" />
+      <jump line="43" column="46" filename="$USER_HOME$/my-chess-game/src/gui/ChessBoard.java" protocol="file" />
+      <jump line="49" column="29" filename="$USER_HOME$/my-chess-game/src/gui/ChessBoard.java" protocol="file" />
+      <jump line="51" column="46" filename="$USER_HOME$/my-chess-game/src/gui/ChessBoard.java" protocol="file" />
+      <jump line="57" column="29" filename="$USER_HOME$/my-chess-game/src/gui/ChessBoard.java" protocol="file" />
+      <jump line="27" column="61" filename="$USER_HOME$/my-chess-game/src/gui/ChessBoard.java" protocol="file" />
+      <jump line="25" column="44" filename="$USER_HOME$/my-chess-game/src/gui/ChessBoard.java" protocol="file" />
+      <jump line="76" column="0" filename="$USER_HOME$/my-chess-game/src/gui/ChessBoard.java" protocol="file" />
+      <jump line="45" column="8" filename="$USER_HOME$/my-chess-game/src/gui/ChessBoard.java" protocol="file" />
+      <jump line="34" column="8" filename="$USER_HOME$/my-chess-game/src/gui/ChessBoard.java" protocol="file" />
+      <jump line="52" column="8" filename="$USER_HOME$/my-chess-game/src/gui/ChessBoard.java" protocol="file" />
+      <jump line="20" column="0" filename="$USER_HOME$/my-chess-game/src/gui/ChessBoard.java" protocol="file" />
+      <jump line="26" column="44" filename="$USER_HOME$/my-chess-game/src/gui/ChessBoard.java" protocol="file" />
+      <jump line="28" column="79" filename="$USER_HOME$/my-chess-game/src/gui/ChessBoard.java" protocol="file" />
+      <jump line="27" column="0" filename="$USER_HOME$/my-chess-game/src/maingame/ChessGame.java" protocol="file" />
+      <jump line="32" column="0" filename="$USER_HOME$/my-chess-game/src/maingame/ChessGame.java" protocol="file" />
+      <jump line="11" column="35" filename="$USER_HOME$/my-chess-game/src/maingame/ChessGame.java" protocol="file" />
+      <jump line="15" column="56" filename="$USER_HOME$/my-chess-game/src/maingame/ChessGame.java" protocol="file" />
+      <jump line="18" column="30" filename="$USER_HOME$/my-chess-game/src/maingame/ChessGame.java" protocol="file" />
+      <jump line="19" column="33" filename="$USER_HOME$/my-chess-game/src/maingame/ChessGame.java" protocol="file" />
+      <jump line="12" column="0" filename="$USER_HOME$/my-chess-game/src/maingame/ChessGame.java" protocol="file" />
+      <jump line="10" column="39" filename="$USER_HOME$/my-chess-game/src/maingame/ChessGame.java" protocol="file" />
+      <jump line="64" column="41" filename="$USER_HOME$/my-chess-game/src/logic/PieceMovement.java" protocol="file" />
+      <jump line="32" column="8" filename="$USER_HOME$/my-chess-game/src/pieces/Piece.java" protocol="file" />
+      <jump line="29" column="0" filename="$USER_HOME$/my-chess-game/src/gui/ChessBoard.java" protocol="file" />
+      <jump line="6" column="17" filename="$USER_HOME$/my-chess-game/src/features/Model.java" protocol="file" />
+      <jump line="9" column="40" filename="$USER_HOME$/my-chess-game/src/features/Model.java" protocol="file" />
+      <jump line="14" column="0" filename="$USER_HOME$/my-chess-game/src/features/Model.java" protocol="file" />
+      <jump line="2" column="13" filename="$USER_HOME$/my-chess-game/src/features/Model.java" protocol="file" />
+      <jump line="27" column="61" filename="$USER_HOME$/my-chess-game/src/features/ScoringSystem.java" protocol="file" />
+    </project>
+    <project id="backend-7ef32cb5">
+      <jump line="0" column="0" filename="$USER_HOME$/taskflowplus/backend/src/main/resources/application.properties" protocol="file" />
+      <jump line="16" column="0" filename="$USER_HOME$/taskflowplus/backend/src/main/resources/application.properties" protocol="file" />
+      <jump line="4" column="18" filename="$USER_HOME$/taskflowplus/backend/src/main/resources/application.properties" protocol="file" />
+      <jump line="1" column="1" filename="$USER_HOME$/taskflowplus/backend/src/main/resources/application.yaml" protocol="file" />
+      <jump line="2" column="18" filename="$USER_HOME$/taskflowplus/backend/src/main/resources/application.yaml" protocol="file" />
+      <jump line="2" column="12" filename="$USER_HOME$/taskflowplus/backend/src/main/java/com/backend/entity/EROLE.java" protocol="file" />
+      <jump line="2" column="16" filename="$USER_HOME$/taskflowplus/backend/src/main/java/com/backend/entity/ROLE.java" protocol="file" />
+      <jump line="6" column="0" filename="$USER_HOME$/taskflowplus/backend/src/main/java/com/backend/entity/ROLE.java" protocol="file" />
+      <jump line="7" column="17" filename="$USER_HOME$/taskflowplus/backend/src/main/java/com/backend/repository/RoleRepository.java" protocol="file" />
+      <jump line="8" column="17" filename="$USER_HOME$/taskflowplus/backend/src/main/java/com/backend/repository/UserRepository.java" protocol="file" />
+      <jump line="2" column="7" filename="$USER_HOME$/taskflowplus/backend/src/main/java/com/backend/repository/RoleRepository.java" protocol="file" />
+      <jump line="8" column="48" filename="$USER_HOME$/taskflowplus/backend/src/main/java/com/backend/repository/RoleRepository.java" protocol="file" />
+      <jump line="23" column="16" filename="$USER_HOME$/taskflowplus/backend/src/main/java/com/backend/config/SecurityConfig.java" protocol="file" />
+      <jump line="25" column="18" filename="$USER_HOME$/taskflowplus/backend/src/main/java/com/backend/config/SecurityConfig.java" protocol="file" />
+      <jump line="21" column="25" filename="$USER_HOME$/taskflowplus/backend/src/main/java/com/backend/config/SecurityConfig.java" protocol="file" />
+      <jump line="8" column="17" filename="$MAVEN_REPOSITORY$/org/springframework/data/spring-data-jpa/3.5.1/spring-data-jpa-3.5.1.jar!/org/springframework/data/jpa/repository/JpaRepository.class" protocol="jar" />
+      <jump line="9" column="65" filename="$USER_HOME$/taskflowplus/backend/src/main/java/com/backend/repository/RoleRepository.java" protocol="file" />
+      <jump line="12" column="13" filename="$USER_HOME$/taskflowplus/backend/src/main/java/com/backend/entity/Role.java" protocol="file" />
+      <jump line="28" column="16" filename="$USER_HOME$/taskflowplus/backend/src/main/java/com/backend/config/SecurityConfig.java" protocol="file" />
+      <jump line="11" column="13" filename="$USER_HOME$/taskflowplus/backend/src/main/java/com/backend/config/SecurityConfig.java" protocol="file" />
+      <jump line="191" column="13" filename="$MAVEN_REPOSITORY$/org/springframework/security/spring-security-config/6.5.1/spring-security-config-6.5.1.jar!/org/springframework/security/config/annotation/web/AbstractRequestMatcherRegistry.class" protocol="jar" />
+      <jump line="42" column="0" filename="$MAVEN_REPOSITORY$/org/springframework/security/spring-security-config/6.5.1/spring-security-config-6.5.1.jar!/org/springframework/security/config/annotation/web/AbstractRequestMatcherRegistry.class" protocol="jar" />
+      <jump line="323" column="0" filename="$MAVEN_REPOSITORY$/org/springframework/security/spring-security-config/6.5.1/spring-security-config-6.5.1.jar!/org/springframework/security/config/annotation/web/AbstractRequestMatcherRegistry.class" protocol="jar" />
+      <jump line="95" column="0" filename="$MAVEN_REPOSITORY$/org/springframework/security/spring-security-config/6.5.1/spring-security-config-6.5.1.jar!/org/springframework/security/config/annotation/web/AbstractRequestMatcherRegistry.class" protocol="jar" />
+      <jump line="17" column="22" filename="$USER_HOME$/taskflowplus/backend/src/main/java/com/backend/config/SecurityConfig.java" protocol="file" />
+      <jump line="26" column="41" filename="$USER_HOME$/taskflowplus/backend/src/main/java/com/backend/config/SecurityConfig.java" protocol="file" />
+      <jump line="15" column="8" filename="$USER_HOME$/taskflowplus/backend/src/main/java/com/backend/config/SecurityConfig.java" protocol="file" />
+      <jump line="14" column="0" filename="$USER_HOME$/taskflowplus/backend/src/main/java/com/backend/config/SecurityConfig.java" protocol="file" />
+      <jump line="371" column="0" filename="$MAVEN_REPOSITORY$/org/springframework/security/spring-security-config/6.5.1/spring-security-config-6.5.1.jar!/org/springframework/security/config/annotation/web/builders/HttpSecurity.class" protocol="jar" />
+      <jump line="16" column="19" filename="$MAVEN_REPOSITORY$/org/springframework/security/spring-security-config/6.5.1/spring-security-config-6.5.1.jar!/org/springframework/security/config/annotation/web/configurers/FormLoginConfigurer.class" protocol="jar" />
+      <jump line="367" column="59" filename="$MAVEN_REPOSITORY$/org/springframework/security/spring-security-config/6.5.1/spring-security-config-6.5.1.jar!/org/springframework/security/config/annotation/web/builders/HttpSecurity.class" protocol="jar" />
+      <jump line="24" column="23" filename="$USER_HOME$/taskflowplus/backend/src/main/java/com/backend/config/SecurityConfig.java" protocol="file" />
+      <jump line="13" column="28" filename="$USER_HOME$/taskflowplus/backend/src/main/java/com/backend/config/SecurityConfig.java" protocol="file" />
+      <jump line="18" column="53" filename="$USER_HOME$/taskflowplus/backend/src/main/java/com/backend/config/SecurityConfig.java" protocol="file" />
+      <jump line="19" column="38" filename="$USER_HOME$/taskflowplus/backend/src/main/java/com/backend/config/SecurityConfig.java" protocol="file" />
+      <jump line="2" column="37" filename="$USER_HOME$/taskflowplus/backend/src/main/java/com/backend/config/SecurityConfig.java" protocol="file" />
+      <jump line="27" column="16" filename="$USER_HOME$/taskflowplus/backend/src/main/java/com/backend/config/SecurityConfig.java" protocol="file" />
+      <jump line="20" column="35" filename="$USER_HOME$/taskflowplus/backend/src/main/java/com/backend/config/SecurityConfig.java" protocol="file" />
+      <jump line="18" column="13" filename="$USER_HOME$/taskflowplus/backend/src/main/java/com/backend/entity/User.java" protocol="file" />
+      <jump line="24" column="4" filename="$USER_HOME$/taskflowplus/backend/src/main/java/com/backend/entity/User.java" protocol="file" />
+      <jump line="33" column="130" filename="$USER_HOME$/taskflowplus/backend/src/main/java/com/backend/entity/User.java" protocol="file" />
+      <jump line="36" column="0" filename="$USER_HOME$/taskflowplus/backend/src/main/java/com/backend/entity/User.java" protocol="file" />
+      <jump line="25" column="0" filename="$USER_HOME$/taskflowplus/backend/src/main/java/com/backend/entity/User.java" protocol="file" />
+      <jump line="2" column="7" filename="$USER_HOME$/taskflowplus/backend/src/main/java/com/backend/entity/User.java" protocol="file" />
+      <jump line="12" column="6" filename="$USER_HOME$/taskflowplus/backend/src/main/java/com/backend/entity/User.java" protocol="file" />
+      <jump line="34" column="2" filename="$USER_HOME$/taskflowplus/backend/src/main/java/com/backend/entity/User.java" protocol="file" />
+    </project>
+    <project id="Introduction to IDE Code Refactoring in Java-1a64a5fa">
+      <jump line="0" column="0" filename="$USER_HOME$/IdeaProjects/Introduction to IDE Code Refactoring in Java/Introduction/Introduction/Introduction/src/main/java/jetbrains/refactoring/course/introduction/Main.java" protocol="file" />
+      <jump line="0" column="0" filename="$USER_HOME$/IdeaProjects/Introduction to IDE Code Refactoring in Java/Introduction/GettingToKnowYou/GettingToKnowYou/src/main/java/jetbrains/refactoring/course/introduction/Main.java" protocol="file" />
+    </project>
+  </component>
+  <component name="VimMarksSettings">
+    <globalmarks />
+    <localmarks>
+      <file name="$MAVEN_REPOSITORY$/org/springframework/data/spring-data-jpa/3.5.1/spring-data-jpa-3.5.1.jar!/org/springframework/data/jpa/repository/JpaRepository.class" timestamp="1753019766397">
+        <mark key="&quot;" line="8" column="17" />
+      </file>
+      <file name="$USER_HOME$/my-chess-game/src/maingame/ChessGame.java" timestamp="1752935963786">
+        <mark key="&quot;" line="10" column="39" />
+        <mark key="[" line="18" column="25" />
+        <mark key="]" line="19" column="34" />
+        <mark key="." line="19" column="33" />
+        <mark key="^" line="19" column="34" />
+      </file>
+      <file name="$MAVEN_REPOSITORY$/org/springframework/security/spring-security-config/6.5.1/spring-security-config-6.5.1.jar!/org/springframework/security/config/annotation/web/AbstractRequestMatcherRegistry.class" timestamp="1753025021661">
+        <mark key="&quot;" line="95" column="0" />
+        <mark key="'" line="323" column="0" />
+      </file>
+      <file name="$USER_HOME$/my-chess-game/src/features/Model.java" timestamp="1753017471517">
+        <mark key="&quot;" line="2" column="13" />
+        <mark key="[" line="7" column="18" />
+        <mark key="]" line="4" column="21" />
+        <mark key="^" line="4" column="21" />
+        <mark key="." line="4" column="20" />
+      </file>
+      <file name="$USER_HOME$/my-chess-game/src/gui/ChessBoard.java" timestamp="1752935976419">
+        <mark key="&quot;" line="29" column="0" />
+        <mark key="[" line="27" column="79" />
+        <mark key="]" line="65" column="0" />
+        <mark key="." line="65" column="0" />
+      </file>
+      <file name="$USER_HOME$/taskflowplus/backend/src/main/java/com/backend/repository/RoleRepository.java" timestamp="1753019770428">
+        <mark key="&quot;" line="9" column="65" />
+        <mark key="[" line="9" column="59" />
+        <mark key="]" line="9" column="66" />
+        <mark key="^" line="9" column="66" />
+        <mark key="." line="9" column="65" />
+      </file>
+      <file name="$USER_HOME$/taskflowplus/backend/src/main/java/com/backend/entity/Role.java" timestamp="1753019775417">
+        <mark key="&quot;" line="12" column="13" />
+      </file>
+      <file name="$USER_HOME$/taskflowplus/backend/src/main/java/com/backend/repository/UserRepository.java" timestamp="1753019769209">
+        <mark key="&quot;" line="8" column="17" />
+      </file>
+      <file name="$USER_HOME$/taskflowplus/backend/src/main/resources/application.properties" timestamp="1753017536690">
+        <mark key="&quot;" line="4" column="18" />
+        <mark key="[" line="15" column="34" />
+        <mark key="]" line="16" column="0" />
+        <mark key="^" line="16" column="0" />
+        <mark key="." line="16" column="0" />
+      </file>
+      <file name="$USER_HOME$/taskflowplus/backend/src/main/resources/application.yaml" timestamp="1753017534387">
+        <mark key="&quot;" line="2" column="18" />
+        <mark key="[" line="0" column="0" />
+        <mark key="]" line="0" column="0" />
+        <mark key="^" line="0" column="2" />
+        <mark key="." line="0" column="0" />
+      </file>
+      <file name="$USER_HOME$/my-chess-game/src/logic/AIPlayer.java" timestamp="1752743305680">
+        <mark key="&quot;" line="16" column="57" />
+        <mark key="'" line="24" column="21" />
+        <mark key="[" line="50" column="42" />
+        <mark key="]" line="62" column="0" />
+        <mark key="." line="62" column="0" />
+        <mark key="^" line="59" column="12" />
+      </file>
+      <file name="$MAVEN_REPOSITORY$/org/springframework/security/spring-security-config/6.5.1/spring-security-config-6.5.1.jar!/org/springframework/security/config/annotation/web/configurers/FormLoginConfigurer.class" timestamp="1753088154450">
+        <mark key="&quot;" line="16" column="19" />
+      </file>
+      <file name="$USER_HOME$/taskflowplus/backend/src/main/java/com/backend/entity/User.java" timestamp="1753102799196">
+        <mark key="&quot;" line="18" column="13" />
+        <mark key="[" line="33" column="132" />
+        <mark key="]" line="33" column="132" />
+        <mark key="." line="33" column="131" />
+        <mark key="^" line="33" column="132" />
+      </file>
+      <file name="$USER_HOME$/my-chess-game/src/pieces/Piece.java" timestamp="1752935974325">
+        <mark key="&quot;" line="32" column="8" />
+        <mark key="'" line="19" column="22" />
+        <mark key="[" line="19" column="17" />
+        <mark key="]" line="19" column="32" />
+        <mark key="." line="19" column="31" />
+        <mark key="^" line="19" column="32" />
+      </file>
+      <file name="$USER_HOME$/my-chess-game/src/features/ScoringSystem.java" timestamp="1753017530204">
+        <mark key="&quot;" line="27" column="61" />
+        <mark key="'" line="8" column="13" />
+        <mark key="[" line="26" column="64" />
+        <mark key="]" line="27" column="62" />
+        <mark key="." line="27" column="61" />
+        <mark key="^" line="27" column="62" />
+      </file>
+      <file name="$USER_HOME$/taskflowplus/backend/src/main/java/com/backend/entity/EROLE.java" timestamp="1753017600531">
+        <mark key="[" line="0" column="0" />
+      </file>
+      <file name="$MAVEN_REPOSITORY$/org/springframework/security/spring-security-config/6.5.1/spring-security-config-6.5.1.jar!/org/springframework/security/config/annotation/web/builders/HttpSecurity.class" timestamp="1753088156334">
+        <mark key="&quot;" line="367" column="59" />
+      </file>
+      <file name="$USER_HOME$/taskflowplus/backend/src/main/java/com/backend/entity/ROLE.java" timestamp="1753019776479">
+        <mark key="&quot;" line="6" column="0" />
+      </file>
+      <file name="$USER_HOME$/my-chess-game/src/logic/PieceMovement.java" timestamp="1752935978218">
+        <mark key="&quot;" line="64" column="41" />
+        <mark key="'" line="120" column="8" />
+        <mark key="[" line="35" column="0" />
+        <mark key="]" line="35" column="0" />
+        <mark key="." line="35" column="0" />
+        <mark key="^" line="144" column="25" />
+      </file>
+      <file name="$USER_HOME$/taskflowplus/backend/src/main/java/com/backend/config/SecurityConfig.java" timestamp="1753095431075">
+        <mark key="&quot;" line="27" column="15" />
+        <mark key="[" line="13" column="28" />
+        <mark key="]" line="2" column="0" />
+        <mark key="." line="2" column="0" />
+      </file>
+    </localmarks>
+  </component>
+  <component name="VimRegisterSettings">
+    <registers>
+      <register name="&quot;" type="LINE_WISE">
+        <text encoding="base64">Cg==</text>
+      </register>
+      <register name="+" type="LINE_WISE">
+        <text encoding="base64">Cg==</text>
+      </register>
+      <register name="-" type="CHARACTER_WISE">
+        <text encoding="base64">Y29uZmlndXJl</text>
+      </register>
+      <register name="." type="CHARACTER_WISE">
+        <text encoding="base64">LCA=</text>
+      </register>
+      <register name="/" type="CHARACTER_WISE">
+        <text encoding="base64">bGF5b3V0</text>
+      </register>
+      <register name="0" type="CHARACTER_WISE">
+        <text encoding="base64">IEpQYW5lbCByYW5rUGFuZWwgPSBuZXcgSlBhbmVsKG5ldyBHcmlkTGF5b3V0KDgsIDEpKTsKICAgICAgICBmb3IgKGludCBpID0gODsgaSA+PSAxOyBpLS0pIHsKICAgICAgICAgICAgSkxhYmVsIHJhbmtMYWJlbCA9IG5ldyBKTGFiZWwoU3RyaW5nLnZhbHVlT2YoaSksIFN3aW5nQ29uc3RhbnRzLkNFTlRFUik7CiAgICAgICAgICAgIHJhbmtMYWJlbC5zZXRGb250KG5ldyBGb250KCJBcmlhbCIsIEZvbnQuUExBSU4sIDE0KSk7CiAgICAgICAgICAgIHJhbmtQYW5lbC5hZGQocmFua0xhYmVsKTsKICAgICAgICB9CiAgICAgICAgYm9hcmRQYW5lbC5hZGQocmFua1BhbmVsLCBCb3JkZXJMYXlvdXQuV0VTVCk7CgogICAgICAgIEpQYW5lbCBmaWxlUGFuZWwgPSBuZXcgSlBhbmVsKG5ldyBHcmlkTGF5b3V0KDEsIDgpKTsKICAgICAgICBmb3IgKGNoYXIgYyA9ICdhJzsgYyA8PSAnaCc7IGMrKykgewogICAgICAgICAgICBKTGFiZWwgZmlsZUxhYmVsID0gbmV3IEpMYWJlbChTdHJpbmcudmFsdWVPZihjKSwgU3dpbmdDb25zdGFudHMuQ0VOVEVSKTsKICAgICAgICAgICAgZmlsZUxhYmVsLnNldEZvbnQobmV3IEZvbnQoIkFyaWFsIiwgRm9udC5QTEFJTiwgMTQpKTsKICAgICAgICAgICAgZmlsZVBhbmVsLmFkZChmaWxlTGFiZWwpOwogICAgICAgIH0=</text>
+      </register>
+      <register name="1" type="LINE_WISE">
+        <text encoding="base64">Cg==</text>
+      </register>
+      <register name="2" type="LINE_WISE">
+        <text encoding="base64">ICAgIEAK</text>
+      </register>
+      <register name="3" type="LINE_WISE">
+        <text encoding="base64">aW1wb3J0IGxvbWJvay5HZW5lcmF0ZWQ7Cg==</text>
+      </register>
+      <register name="4" type="LINE_WISE">
+        <text encoding="base64">QEdlbmVyYXRlZAo=</text>
+      </register>
+      <register name="5" type="LINE_WISE">
+        <text encoding="base64">ICAgICAgICAgICAgICAgIC5mb3JtTG9naW4oY29zdCAtPiBjb3N0LmRlZmF1bHRTdWNjZXNzVXJsKCkpCg==</text>
+      </register>
+      <register name="6" type="LINE_WISE">
+        <text encoding="base64">ICAgICAgICAgICAgICAgIAo=</text>
+      </register>
+      <register name="7" type="LINE_WISE">
+        <text encoding="base64">aW1wb3J0IG9yZy5zcHJpbmdmcmFtZXdvcmsuc2VjdXJpdHkuY29uZmlnLmFubm90YXRpb24ubWV0aG9kLmNvbmZpZ3VyYXRpb24uRW5hYmxlTWV0aG9kU2VjdXJpdHk7Cg==</text>
+      </register>
+      <register name="8" type="LINE_WISE">
+        <text encoding="base64">QEVuYWJsZU1ldGhvZFNlY3VyaXR5Cg==</text>
+      </register>
+      <register name="9" type="LINE_WISE">
+        <text encoding="base64">aW1wb3J0IGNvbS5iYWNrZW5kLnNlY3VyaXR5LnNlcnZpY2VzLlVzZXJEZXRhaWxzU2VydmljZUltcGw7CmltcG9ydCBsb21ib2suQWxsQXJnc0NvbnN0cnVjdG9yOwppbXBvcnQgb3JnLnNwcmluZ2ZyYW1ld29yay5jb250ZXh0LmFubm90YXRpb24uQmVhbjsKaW1wb3J0IG9yZy5zcHJpbmdmcmFtZXdvcmsuY29udGV4dC5hbm5vdGF0aW9uLkNvbmZpZ3VyYXRpb247CmltcG9ydCBvcmcuc3ByaW5nZnJhbWV3b3JrLnNlY3VyaXR5LmNvbmZpZy5DdXN0b21pemVyOwppbXBvcnQgb3JnLnNwcmluZ2ZyYW1ld29yay5zZWN1cml0eS5jb25maWcuYW5ub3RhdGlvbi5tZXRob2QuY29uZmlndXJhdGlvbi5FbmFibGVNZXRob2RTZWN1cml0eTsKaW1wb3J0IG9yZy5zcHJpbmdmcmFtZXdvcmsuc2VjdXJpdHkuY29uZmlnLmFubm90YXRpb24ud2ViLmJ1aWxkZXJzLkh0dHBTZWN1cml0eTsKaW1wb3J0IG9yZy5zcHJpbmdmcmFtZXdvcmsuc2VjdXJpdHkuY29uZmlnLmFubm90YXRpb24ud2ViLmNvbmZpZ3VyZXJzLkFic3RyYWN0SHR0cENvbmZpZ3VyZXI7CmltcG9ydCBvcmcuc3ByaW5nZnJhbWV3b3JrLnNlY3VyaXR5LndlYi5TZWN1cml0eUZpbHRlckNoYWluOwoKQENvbmZpZ3VyYXRpb24KQEVuYWJsZU1ldGhvZFNlY3VyaXR5CkBBbGxBcmdzQ29uc3RydWN0b3IKcHVibGljIGNsYXNzIFNlY3VyaXR5Q29uZmlnIHsKICAgIHByaXZhdGUgZmluYWwgVXNlckRldGFpbHNTZXJ2aWNlSW1wbCB1c2VyRGV0YWlsc1NlcnZpY2U7CgogICAgQEJlYW4KICAgIHB1YmxpYyBTZWN1cml0eUZpbHRlckNoYWluIGZpbHRlckNoYWluKEh0dHBTZWN1cml0eSBodHRwU2VjdXJpdHkpIHRocm93cyBFeGNlcHRpb24gewogICAgICAgIHJldHVybiBodHRwU2VjdXJpdHkKICAgICAgICAgICAgICAgIC5jc3JmKEFic3RyYWN0SHR0cENvbmZpZ3VyZXI6OmRpc2FibGUpCiAgICAgICAgICAgICAgICAuYXV0aG9yaXplSHR0cFJlcXVlc3RzKGF1dGggLT5hdXRoCiAgICAgICAgICAgICAgICAgICAgICAgIC5yZXF1ZXN0TWF0Y2hlcnMoIi9sb2dpbnQiKQogICAgICAgICAgICAgICAgICAgICAgICAucGVybWl0QWxsKCkKICAgICAgICAgICAgICAgICAgICAgICAgLmFueVJlcXVlc3QoKS5hdXRoZW50aWNhdGVkKCkKICAgICAgICAgICAgICAgICkKICAgICAgICAgICAgICAgIC5mb3JtTG9naW4oQ3VzdG9taXplci53aXRoRGVmYXVsdHMoKSkKICAgICAgICAgICAgICAgIC5idWlsZCgpOwogICAgfQp9Cg==</text>
+      </register>
+      <register name=":" type="CHARACTER_WISE">
+        <text encoding="base64">dw==</text>
+      </register>
+    </registers>
+  </component>
+  <component name="VimSearchSettings">
+    <search>
+      <last-search encoding="base64">bGF5b3V0</last-search>
+      <last-offset encoding="base64" />
+      <last-pattern encoding="base64">bGF5b3V0</last-pattern>
+      <last-dir encoding="base64">MQ==</last-dir>
+      <show-last encoding="base64">dHJ1ZQ==</show-last>
+    </search>
+  </component>
+  <component name="VimVariables">
+    <vim-variables />
+  </component>
+</application>

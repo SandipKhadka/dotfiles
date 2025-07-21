@@ -9,6 +9,7 @@ map("n", "<leader>fh", builtin.help_tags, {})
 map("n", "<C-p>", builtin.git_files, {})
 map("n", "gi", builtin.lsp_implementations, {})
 map("n", "gr", builtin.lsp_references, {})
+map("n", "gd", builtin.lsp_definitions, {})
 map("n", "sg", builtin.spell_suggest, {})
 
 require("telescope").setup {

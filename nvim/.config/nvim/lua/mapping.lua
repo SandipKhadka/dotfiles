@@ -35,7 +35,6 @@ map("n", "<leader>fm", function()
 end)
 
 map("n", "<C-d>", "<C-d>zz")
-
 map("n", "<C-u>", "<C-u>zz")
 map("n", "n", "nzz")
 map("n", "N", "Nzz")

@@ -1,0 +1,11 @@
+<application>
+  <component name="Trusted.Paths">
+    <option name="TRUSTED_PROJECT_PATHS">
+      <map>
+        <entry key="$USER_HOME$/IdeaProjects/Introduction to IDE Code Refactoring in Java" value="true" />
+        <entry key="$USER_HOME$/my-chess-game" value="true" />
+        <entry key="$USER_HOME$/taskflowplus/backend" value="true" />
+      </map>
+    </option>
+  </component>
+</application>

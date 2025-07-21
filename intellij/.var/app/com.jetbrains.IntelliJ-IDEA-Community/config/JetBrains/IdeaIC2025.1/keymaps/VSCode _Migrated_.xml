@@ -1,0 +1,24 @@
+<keymap version="1" name="VSCode (Migrated)" parent="VSCode">
+  <action id="EditorAddCaretPerSelectedLine" />
+  <action id="EditorLineEnd">
+    <keyboard-shortcut first-keystroke="end" />
+    <keyboard-shortcut first-keystroke="ctrl 4" />
+  </action>
+  <action id="EditorLineStart">
+    <keyboard-shortcut first-keystroke="home" />
+    <keyboard-shortcut first-keystroke="ctrl 0" />
+  </action>
+  <action id="Generate">
+    <keyboard-shortcut first-keystroke="shift alt i" />
+  </action>
+  <action id="RenameElement">
+    <keyboard-shortcut first-keystroke="alt r" second-keystroke="n" />
+  </action>
+  <action id="Run">
+    <keyboard-shortcut first-keystroke="alt r" second-keystroke="f" />
+  </action>
+  <action id="ShowIntentionActions">
+    <keyboard-shortcut first-keystroke="ctrl period" />
+    <keyboard-shortcut first-keystroke="alt enter" />
+  </action>
+</keymap>

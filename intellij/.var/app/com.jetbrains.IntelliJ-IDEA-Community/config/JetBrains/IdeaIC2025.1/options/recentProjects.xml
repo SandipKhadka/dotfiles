@@ -1,0 +1,69 @@
+<application>
+  <component name="RecentProjectsManager">
+    <option name="additionalInfo">
+      <map>
+        <entry key="$USER_HOME$/budgetbuddy-django-bootstrap">
+          <value>
+            <RecentProjectMetaInfo displayName="budgetbuddy-django-bootstrap">
+              <option name="buildTimestamp" value="1752572264845" />
+              <option name="colorInfo">
+                <RecentProjectColorInfo associatedIndex="4" />
+              </option>
+              <option name="projectOpenTimestamp" value="1752572264845" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/IdeaProjects/Introduction to IDE Code Refactoring in Java">
+          <value>
+            <RecentProjectMetaInfo frameTitle="Main.java" projectWorkspaceId="2zxYU4IlzasuhvGL9nItNNPmDYY">
+              <option name="activationTimestamp" value="1752677750012" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IC-251.26927.53" />
+              <option name="buildTimestamp" value="1750655280000" />
+              <option name="colorInfo">
+                <RecentProjectColorInfo associatedIndex="6" />
+              </option>
+              <frame x="0" y="0" width="1920" height="1080" extendedState="6" />
+              <option name="productionCode" value="IC" />
+              <option name="projectOpenTimestamp" value="1752674203741" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/my-chess-game">
+          <value>
+            <RecentProjectMetaInfo frameTitle="my-chess-game – ScoringSystem.java" projectWorkspaceId="2zuN57jpbdnJZlui9mIlsMj3ReZ">
+              <option name="activationTimestamp" value="1753017529730" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IC-251.26927.53" />
+              <option name="buildTimestamp" value="1750655280000" />
+              <option name="colorInfo">
+                <RecentProjectColorInfo associatedIndex="3" />
+              </option>
+              <frame x="0" y="0" width="1920" height="1080" extendedState="6" />
+              <option name="productionCode" value="IC" />
+              <option name="projectOpenTimestamp" value="1752677752579" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/taskflowplus/backend">
+          <value>
+            <RecentProjectMetaInfo frameTitle="backend – User.java" opened="true" projectWorkspaceId="2zm0Pc9KQ6vMiNdmPDLSbfqGt8w">
+              <option name="activationTimestamp" value="1753103382899" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IC-251.26927.53" />
+              <option name="buildTimestamp" value="1750655280000" />
+              <option name="colorInfo">
+                <RecentProjectColorInfo associatedIndex="2" />
+              </option>
+              <frame x="0" y="0" width="1920" height="1080" extendedState="6" />
+              <option name="productionCode" value="IC" />
+              <option name="projectOpenTimestamp" value="1753088770470" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="lastOpenedProject" value="$USER_HOME$/taskflowplus/backend" />
+    <option name="lastProjectLocation" value="$USER_HOME$/IdeaProjects" />
+  </component>
+</application>

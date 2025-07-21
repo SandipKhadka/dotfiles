@@ -1,0 +1,19 @@
+<application>
+  <component name="DimensionService">
+    <location key="find.popup.0.0.1920.1080@120dpi" x="544" y="0" />
+    <size key="GridCell.Tab.0.left.0.0.1920.1080@120dpi" width="1818" height="304" />
+    <size key="GridCell.Tab.0.center.0.0.1920.1080@120dpi" width="1818" height="304" />
+    <size key="GridCell.Tab.0.right.0.0.1920.1080@120dpi" width="1818" height="304" />
+    <size key="GridCell.Tab.0.bottom.0.0.1920.1080@120dpi" width="1818" height="304" />
+    <size key="find.popup.0.0.1920.1080@120dpi" width="991" height="1233" />
+  </component>
+  <component name="WindowManager">
+    <frame x="0" y="0" width="1920" height="1080" extendedState="6" />
+  </component>
+  <component name="WindowStateApplicationService">
+    <state width="745" height="289" key="ShowUsagesActions.dimensionServiceKey" timestamp="1752742393978">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="745" height="289" key="ShowUsagesActions.dimensionServiceKey/0.0.1920.1080" timestamp="1752742393978" />
+  </component>
+</application>

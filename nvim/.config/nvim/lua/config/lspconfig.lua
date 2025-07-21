@@ -65,6 +65,10 @@ require("lspconfig").clangd.setup {
     on_init = on_init,
 }
 
+require("lspconfig").rust_analyzer.setup {
+    capabilities = capabilities,
+    on_init = on_init,
+}
 require("lspconfig").bashls.setup {
     capabilities = capabilities,
     on_init = on_init,

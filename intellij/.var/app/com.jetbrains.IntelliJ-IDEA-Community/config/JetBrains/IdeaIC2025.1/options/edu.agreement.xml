@@ -1,0 +1,6 @@
+<application>
+  <component name="UserAgreementSettings">
+    <option name="aiServiceAgreement" value="DECLINED" />
+    <option name="pluginAgreement" value="ACCEPTED" />
+  </component>
+</application>
