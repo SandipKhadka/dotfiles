@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE editor-preferences PUBLIC "-//NetBeans//DTD Editor Preferences 1.0//EN" "http://www.netbeans.org/dtds/EditorPreferences-1_0.dtd">
+<editor-preferences>
+    <entry javaType="methodvalue" name="identifier-acceptor" xml:space="preserve"><value><![CDATA[org.netbeans.modules.html.editor.HtmlSettingsFactory.getIdentifierAcceptor]]></value></entry>
+    <entry javaType="java.lang.String" name="mimetypesWithEnabledHtmlErrorChecking" xml:space="preserve"><value><![CDATA[;text/facelets;]]></value></entry>
+</editor-preferences>

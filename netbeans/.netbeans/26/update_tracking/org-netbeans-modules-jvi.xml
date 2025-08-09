@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<module codename="org.netbeans.modules.jvi/0">
+    <module_version install_time="1754015984114" last="true" origin="jVi Update Center JDK-11" specification_version="2.0.139.49">
+        <file crc="186454116" name="config/Modules/org-netbeans-modules-jvi.xml"/>
+        <file crc="634062049" name="modules/org-netbeans-modules-jvi.jar"/>
+    </module_version>
+</module>

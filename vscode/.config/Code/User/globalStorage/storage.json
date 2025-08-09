@@ -1,12 +1,12 @@
 {
     "telemetry.sqmId": "",
     "telemetry.machineId": "b11f416aa67479507276467a0360ef8f4abb2873835845472b292558912e21ec",
-    "telemetry.devDeviceId": "8f8c8fae-8f11-4429-80bb-3c764f605d89",
+    "telemetry.devDeviceId": "ab0d6674-5dd5-4073-8f21-29acaf6b92c3",
     "backupWorkspaces": {
         "workspaces": [],
         "folders": [
             {
-                "folderUri": "file:///home/sandip/dotfiles"
+                "folderUri": "file:///home/sandip/pusom.edu.np-test"
             }
         ],
         "emptyWindows": []
@@ -14,7 +14,8 @@
     "windowControlHeight": 30,
     "profileAssociations": {
         "workspaces": {
-            "file:///home/sandip/dotfiles": "__default__profile__"
+            "file:///home/sandip/dotfiles": "__default__profile__",
+            "file:///home/sandip/pusom.edu.np-test": "__default__profile__"
         },
         "emptyWindows": {}
     },
@@ -42,7 +43,7 @@
             "editorPartMinWidth": 220,
             "titleBarHeight": 30,
             "activityBarWidth": 48,
-            "sideBarWidth": 300,
+            "sideBarWidth": 0,
             "auxiliaryBarWidth": 0,
             "statusBarHeight": 0,
             "windowBorder": false
@@ -56,19 +57,27 @@
                 "fc70b4084c0b90bc1db163cd4948a8fa": {
                     "sideBarVisible": true,
                     "auxiliaryBarVisible": false
+                },
+                "6b10babfc1e52545b03db838cf50ede7": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "939e40306a8bd9f411644ede6fa41dd9": {
+                    "sideBarVisible": false,
+                    "auxiliaryBarVisible": false
                 }
             }
         }
     },
     "windowsState": {
         "lastActiveWindow": {
-            "folder": "file:///home/sandip/dotfiles",
-            "backupPath": "/home/sandip/.config/Code/Backups/4bf265aca94814fb1ada98240edef448",
+            "folder": "file:///home/sandip/pusom.edu.np-test",
+            "backupPath": "/home/sandip/.config/Code/Backups/861901e00d1ace951d174ae04cec3d60",
             "uiState": {
                 "mode": 0,
-                "x": 178,
+                "x": 176,
                 "y": 0,
-                "width": 1201,
+                "width": 1208,
                 "height": 800
             }
         },

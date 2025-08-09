@@ -16,17 +16,8 @@ opt.hlsearch = false
 opt.incsearch = true
 opt.showmatch = true
 
-local undodir
-if vim.loop.os_uname().sysname == "Linux" then
-    undodir = os.getenv "HOME" .. "/.nvim/undodir"
-elseif vim.loop.os_uname().sysname == "Windows_NT" then
-    undodir = os.getenv "USERPROFILE" .. "\\AppData\\Local\\nvim-data\\undodir"
-else
-    undodir = os.getenv "HOME" .. "/.nvim/undodir"
-end
-
-opt.undodir = undodir
 opt.undofile = true
+vim.opt.undodir = os.getenv "HOME" .. "/.vim/undodir"
 opt.backup = false
 opt.swapfile = false
 

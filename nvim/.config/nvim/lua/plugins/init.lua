@@ -89,6 +89,9 @@ local M = {
 
     {
         "tpope/vim-fugitive",
+        config = function()
+            require "config.fugitive"
+        end,
     },
 
     {
@@ -126,6 +129,7 @@ local M = {
                     "clangd",
                     "prettier",
                     "bashls",
+                    "debugpy",
                     "html",
                     "cssls",
                     "black",
@@ -147,17 +151,45 @@ local M = {
         config = function()
             require "config.tag"
         end,
-        {
-            "mfussenegger/nvim-jdtls",
-            ft = { "java" },
-            dependencies = {
-                "williamboman/mason.nvim",
-                "williamboman/mason-lspconfig.nvim",
-            },
-            config = function()
-                require "config.java"
-            end,
+    },
+    {
+        "mfussenegger/nvim-jdtls",
+        ft = { "java" },
+        dependencies = {
+            "williamboman/mason.nvim",
+            "williamboman/mason-lspconfig.nvim",
         },
+        config = function()
+            require "config.java"
+        end,
+    },
+
+    {
+        "rcarriga/nvim-dap-ui",
+        dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
+
+        config = function()
+            require "config.dap"
+            require "config.dap-ui"
+        end,
+    },
+
+    {
+        "NvChad/nvim-colorizer.lua",
+        config = function()
+            require("colorizer").setup {
+                filetypes = {
+                    "css",
+                    "scss",
+                    "html",
+                    "javascript",
+                    "typescript",
+                    "javascriptreact",
+                    "typescriptreact",
+                    "lua",
+                },
+            }
+        end,
     },
 }
 

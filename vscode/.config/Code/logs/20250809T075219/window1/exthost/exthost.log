@@ -1,0 +1,238 @@
+2025-08-09 07:52:23.119 [info] Extension host with pid 5544 started
+2025-08-09 07:52:23.119 [info] Skipping acquiring lock for /home/sandip/.config/Code/User/workspaceStorage/939e40306a8bd9f411644ede6fa41dd9.
+2025-08-09 07:52:23.323 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2025-08-09 07:52:23.397 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2025-08-09 07:52:23.624 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*'
+2025-08-09 07:52:23.631 [info] ExtensionService#_doActivateExtension vscode.npm, startup: true, activationEvent: 'workspaceContains:package.json'
+2025-08-09 07:52:24.092 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2025-08-09 07:52:24.374 [info] Eager extensions activated
+2025-08-09 07:52:24.613 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2025-08-09 07:52:24.619 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2025-08-09 07:52:24.684 [info] ExtensionService#_doActivateExtension ms-vscode-remote.remote-containers, startup: false, activationEvent: 'onStartupFinished'
+2025-08-09 07:52:26.645 [info] ExtensionService#_doActivateExtension vscode.git, startup: false, activationEvent: 'api', root cause: vscode.github
+2025-08-09 07:52:26.926 [info] ExtensionService#_doActivateExtension bradlc.vscode-tailwindcss, startup: false, activationEvent: 'onStartupFinished'
+2025-08-09 07:52:27.030 [info] ExtensionService#_doActivateExtension ritwickdey.LiveServer, startup: false, activationEvent: 'onStartupFinished'
+2025-08-09 07:52:29.211 [info] ExtensionService#_doActivateExtension vscode.configuration-editing, startup: false, activationEvent: 'onLanguage:json'
+2025-08-09 07:52:29.229 [info] ExtensionService#_doActivateExtension vscode.extension-editing, startup: false, activationEvent: 'onLanguage:json'
+2025-08-09 07:52:29.260 [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:json'
+2025-08-09 07:52:31.063 [info] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:javascriptreact'
+2025-08-09 07:52:31.248 [info] ExtensionService#_doActivateExtension VisualStudioExptTeam.intellicode-api-usage-examples, startup: false, activationEvent: 'onLanguage:javascriptreact'
+2025-08-09 07:52:31.625 [info] ExtensionService#_doActivateExtension VisualStudioExptTeam.vscodeintellicode, startup: false, activationEvent: 'onLanguage:javascriptreact'
+2025-08-09 07:52:33.984 [error] [VisualStudioExptTeam.intellicode-api-usage-examples] provider FAILED
+2025-08-09 07:52:33.985 [error] Error: Pending response rejected since connection got disposed
+	at Object.dispose (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:253353)
+	at Object.dispose (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:307659)
+	at v.handleConnectionClosed (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:308065)
+	at v.handleConnectionClosed (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:464965)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:307808
+	at i.invoke (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:255062)
+	at a.fire (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:255827)
+	at te (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241476)
+	at i.invoke (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:255062)
+	at a.fire (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:255827)
+	at u.fireClose (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:263670)
+	at ChildProcess.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:275914)
+	at ChildProcess.emit (node:events:530:35)
+	at maybeClose (node:internal/child_process:1101:16)
+	at Socket.<anonymous> (node:internal/child_process:456:11)
+	at Socket.emit (node:events:518:28)
+	at Pipe.<anonymous> (node:net:351:12)
+2025-08-09 07:52:35.106 [error] [VisualStudioExptTeam.intellicode-api-usage-examples] provider FAILED
+2025-08-09 07:52:35.106 [error] Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:52:53.527 [error] [VisualStudioExptTeam.intellicode-api-usage-examples] provider FAILED
+2025-08-09 07:52:53.527 [error] Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:53:00.458 [error] [VisualStudioExptTeam.intellicode-api-usage-examples] provider FAILED
+2025-08-09 07:53:00.458 [error] Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:53:01.461 [error] [VisualStudioExptTeam.intellicode-api-usage-examples] provider FAILED
+2025-08-09 07:53:01.462 [error] Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:53:12.519 [error] [VisualStudioExptTeam.intellicode-api-usage-examples] provider FAILED
+2025-08-09 07:53:12.519 [error] Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:53:18.852 [error] [VisualStudioExptTeam.intellicode-api-usage-examples] provider FAILED
+2025-08-09 07:53:18.853 [error] Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:53:21.454 [error] [VisualStudioExptTeam.intellicode-api-usage-examples] provider FAILED
+2025-08-09 07:53:21.454 [error] Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:53:24.369 [error] [VisualStudioExptTeam.intellicode-api-usage-examples] provider FAILED
+2025-08-09 07:53:24.369 [error] Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:53:37.675 [error] [VisualStudioExptTeam.intellicode-api-usage-examples] provider FAILED
+2025-08-09 07:53:37.675 [error] Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:53:39.175 [error] [VisualStudioExptTeam.intellicode-api-usage-examples] provider FAILED
+2025-08-09 07:53:39.175 [error] Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:53:47.780 [error] [VisualStudioExptTeam.intellicode-api-usage-examples] provider FAILED
+2025-08-09 07:53:47.780 [error] Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:53:48.192 [error] [VisualStudioExptTeam.intellicode-api-usage-examples] provider FAILED
+2025-08-09 07:53:48.193 [error] Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:53:49.316 [error] [VisualStudioExptTeam.intellicode-api-usage-examples] provider FAILED
+2025-08-09 07:53:49.316 [error] Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:54:12.463 [error] [VisualStudioExptTeam.intellicode-api-usage-examples] provider FAILED
+2025-08-09 07:54:12.463 [error] Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:54:15.629 [error] [VisualStudioExptTeam.intellicode-api-usage-examples] provider FAILED
+2025-08-09 07:54:15.629 [error] Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:54:37.113 [error] [VisualStudioExptTeam.intellicode-api-usage-examples] provider FAILED
+2025-08-09 07:54:37.113 [error] Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:54:37.873 [error] [VisualStudioExptTeam.intellicode-api-usage-examples] provider FAILED
+2025-08-09 07:54:37.873 [error] Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:54:39.856 [error] [VisualStudioExptTeam.intellicode-api-usage-examples] provider FAILED
+2025-08-09 07:54:39.857 [error] Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:54:40.598 [error] [VisualStudioExptTeam.intellicode-api-usage-examples] provider FAILED
+2025-08-09 07:54:40.598 [error] Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:54:42.189 [error] [VisualStudioExptTeam.intellicode-api-usage-examples] provider FAILED
+2025-08-09 07:54:42.189 [error] Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:54:45.558 [error] [VisualStudioExptTeam.intellicode-api-usage-examples] provider FAILED
+2025-08-09 07:54:45.558 [error] Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:54:51.038 [error] [VisualStudioExptTeam.intellicode-api-usage-examples] provider FAILED
+2025-08-09 07:54:51.038 [error] Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:54:52.635 [error] [VisualStudioExptTeam.intellicode-api-usage-examples] provider FAILED
+2025-08-09 07:54:52.636 [error] Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:54:52.947 [error] [VisualStudioExptTeam.intellicode-api-usage-examples] provider FAILED
+2025-08-09 07:54:52.947 [error] Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:54:54.105 [error] [VisualStudioExptTeam.intellicode-api-usage-examples] provider FAILED
+2025-08-09 07:54:54.105 [error] Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:55:03.788 [error] [VisualStudioExptTeam.intellicode-api-usage-examples] provider FAILED
+2025-08-09 07:55:03.789 [error] Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:55:08.893 [error] [VisualStudioExptTeam.intellicode-api-usage-examples] provider FAILED
+2025-08-09 07:55:08.893 [error] Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:55:10.840 [error] [VisualStudioExptTeam.intellicode-api-usage-examples] provider FAILED
+2025-08-09 07:55:10.840 [error] Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:55:12.688 [info] Extension host terminating: renderer closed the MessagePort
+2025-08-09 07:55:12.784 [warning] Canceled
+2025-08-09 07:55:12.988 [info] Extension host with pid 5544 exiting with code 0

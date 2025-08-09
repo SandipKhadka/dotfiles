@@ -26,10 +26,6 @@ map("n", "<C-Right>", ":vertical resize +2<CR>", { silent = true })
 map("n", "<tab>", "<CMD>bn<CR>", { silent = true })
 map("n", "<S-tab>", "<CMD>bp<CR>", { silent = true })
 
-map("n", "<leader>gs", "<cmd>Git<CR>")
-map("n", "gl", "<cmd>diffget //3<CR>")
-map("n", "gh", "<cmd>diffget //2<CR>")
-
 map("n", "<leader>fm", function()
     require("conform").format { lsp_fallback = true }
 end)
@@ -74,3 +70,6 @@ map("n", "<C-a>", "ggVG")
 
 map("n", "<leader>o", "<CMD>normal o<CR>")
 map("n", "<leader>O", "<CMD>normal O<CR>")
+
+map("n", "n", "nzzzv")
+map("n", "N", "Nzzzv")

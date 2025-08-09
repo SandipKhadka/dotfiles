@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE editor-preferences PUBLIC "-//NetBeans//DTD Editor Preferences 1.0//EN" "http://www.netbeans.org/dtds/EditorPreferences-1_0.dtd">
+<editor-preferences>
+    <entry javaType="java.lang.Boolean" name="autoCompletionAfterDot" xml:space="preserve"><value><![CDATA[true]]></value></entry>
+    <entry javaType="java.lang.Boolean" name="autoCompletionFull" xml:space="preserve"><value><![CDATA[true]]></value></entry>
+    <entry javaType="java.lang.Integer" name="codeComletionItemDescriptionWith" xml:space="preserve"><value><![CDATA[40]]></value></entry>
+    <entry javaType="java.lang.Boolean" name="codeCompletionSmartQuotes" xml:space="preserve"><value><![CDATA[true]]></value></entry>
+    <entry javaType="java.lang.Boolean" name="codeCompletionStringAutoConcatination" xml:space="preserve"><value><![CDATA[true]]></value></entry>
+    <entry javaType="java.lang.Boolean" name="codeCompletionTypeResolution" xml:space="preserve"><value><![CDATA[false]]></value></entry>
+</editor-preferences>

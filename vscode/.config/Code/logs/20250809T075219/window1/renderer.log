@@ -1,0 +1,216 @@
+2025-08-09 07:52:20.303 [warning] Via 'product.json#extensionEnabledApiProposals' extension 'ms-vsliveshare.vsliveshare' wants API proposal 'notebookCellExecutionState' but that proposal DOES NOT EXIST. Likely, the proposal has been finalized (check 'vscode.d.ts') or was abandoned.
+2025-08-09 07:52:20.325 [warning] Via 'product.json#extensionEnabledApiProposals' extension 'ms-python.gather' wants API proposal 'notebookCellExecutionState' but that proposal DOES NOT EXIST. Likely, the proposal has been finalized (check 'vscode.d.ts') or was abandoned.
+2025-08-09 07:52:20.326 [warning] Via 'product.json#extensionEnabledApiProposals' extension 'ms-python.vscode-pylance' wants API proposal 'mcpConfigurationProvider' but that proposal DOES NOT EXIST. Likely, the proposal has been finalized (check 'vscode.d.ts') or was abandoned.
+2025-08-09 07:52:20.960 [info] ChatSessionStore: Migrating 0 chat sessions from storage service to file system
+2025-08-09 07:52:21.512 [info] Started local extension host with pid 5544.
+2025-08-09 07:52:22.620 [warning] No search provider registered for scheme: file, waiting
+2025-08-09 07:52:23.994 [info] Settings Sync: Account status changed from uninitialized to unavailable
+2025-08-09 07:52:24.305 [error] Error while getting the latest version for the extension bradlc.vscode-tailwindcss from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Offline
+2025-08-09 07:52:24.310 [error] Error while getting the latest version for the extension ms-azuretools.vscode-docker from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Offline
+2025-08-09 07:52:24.313 [error] Error while getting the latest version for the extension ms-azuretools.vscode-containers from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Offline
+2025-08-09 07:52:24.316 [error] Error while getting the latest version for the extension ms-python.debugpy from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Offline
+2025-08-09 07:52:24.319 [error] Error while getting the latest version for the extension ms-python.vscode-pylance from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Offline
+2025-08-09 07:52:24.322 [error] Error while getting the latest version for the extension ms-python.python from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Offline
+2025-08-09 07:52:24.324 [error] Error while getting the latest version for the extension ms-python.vscode-python-envs from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Offline
+2025-08-09 07:52:24.327 [error] Error while getting the latest version for the extension ms-vscode-remote.remote-containers from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Offline
+2025-08-09 07:52:24.330 [error] Error while getting the latest version for the extension redhat.java from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Offline
+2025-08-09 07:52:24.332 [error] Error while getting the latest version for the extension ritwickdey.liveserver from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Offline
+2025-08-09 07:52:24.334 [error] Error while getting the latest version for the extension visualstudioexptteam.vscodeintellicode from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Offline
+2025-08-09 07:52:24.337 [error] Error while getting the latest version for the extension visualstudioexptteam.intellicode-api-usage-examples from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Offline
+2025-08-09 07:52:24.340 [error] Error while getting the latest version for the extension vmware.vscode-boot-dev-pack from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Offline
+2025-08-09 07:52:24.342 [error] Error while getting the latest version for the extension vmware.vscode-spring-boot from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Offline
+2025-08-09 07:52:24.344 [error] Error while getting the latest version for the extension vscjava.vscode-gradle from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Offline
+2025-08-09 07:52:24.347 [error] Error while getting the latest version for the extension vscjava.vscode-java-debug from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Offline
+2025-08-09 07:52:24.349 [error] Error while getting the latest version for the extension vscjava.vscode-java-dependency from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Offline
+2025-08-09 07:52:24.352 [error] Error while getting the latest version for the extension vscjava.vscode-java-pack from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Offline
+2025-08-09 07:52:24.358 [error] Error while getting the latest version for the extension vscjava.vscode-java-test from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Offline
+2025-08-09 07:52:24.360 [error] Error while getting the latest version for the extension vscjava.vscode-maven from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Offline
+2025-08-09 07:52:24.362 [error] Error while getting the latest version for the extension vscjava.vscode-spring-boot-dashboard from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Offline
+2025-08-09 07:52:24.365 [error] Error while getting the latest version for the extension vscjava.vscode-spring-initializr from https://marketplace.visualstudio.com/_apis/public/gallery/vscode/{publisher}/{name}/latest. Trying the fallback https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest Offline
+2025-08-09 07:52:24.457 [error] Error while getting the latest version for the extension bradlc.vscode-tailwindcss. Offline
+2025-08-09 07:52:24.460 [error] Error while getting the latest version for the extension ms-azuretools.vscode-docker. Offline
+2025-08-09 07:52:24.461 [error] Error while getting the latest version for the extension ms-azuretools.vscode-containers. Offline
+2025-08-09 07:52:24.462 [error] Error while getting the latest version for the extension ms-python.debugpy. Offline
+2025-08-09 07:52:24.464 [error] Error while getting the latest version for the extension ms-python.python. Offline
+2025-08-09 07:52:24.465 [error] Error while getting the latest version for the extension ms-python.vscode-pylance. Offline
+2025-08-09 07:52:24.467 [error] Error while getting the latest version for the extension ms-python.vscode-python-envs. Offline
+2025-08-09 07:52:24.470 [error] Error while getting the latest version for the extension ms-vscode-remote.remote-containers. Offline
+2025-08-09 07:52:24.472 [error] Error while getting the latest version for the extension redhat.java. Offline
+2025-08-09 07:52:24.474 [error] Error while getting the latest version for the extension ritwickdey.liveserver. Offline
+2025-08-09 07:52:24.476 [error] Error while getting the latest version for the extension visualstudioexptteam.vscodeintellicode. Offline
+2025-08-09 07:52:24.477 [error] Error while getting the latest version for the extension vmware.vscode-boot-dev-pack. Offline
+2025-08-09 07:52:24.479 [error] Error while getting the latest version for the extension visualstudioexptteam.intellicode-api-usage-examples. Offline
+2025-08-09 07:52:24.480 [error] Error while getting the latest version for the extension vmware.vscode-spring-boot. Offline
+2025-08-09 07:52:24.497 [error] Error while getting the latest version for the extension vscjava.vscode-gradle. Offline
+2025-08-09 07:52:24.499 [error] Error while getting the latest version for the extension vscjava.vscode-java-debug. Offline
+2025-08-09 07:52:24.501 [error] Error while getting the latest version for the extension vscjava.vscode-java-dependency. Offline
+2025-08-09 07:52:24.504 [error] Error while getting the latest version for the extension vscjava.vscode-java-pack. Offline
+2025-08-09 07:52:24.507 [error] Error while getting the latest version for the extension vscjava.vscode-java-test. Offline
+2025-08-09 07:52:24.509 [error] Error while getting the latest version for the extension vscjava.vscode-maven. Offline
+2025-08-09 07:52:24.587 [error] Error while getting the latest version for the extension vscjava.vscode-spring-boot-dashboard. Offline
+2025-08-09 07:52:24.589 [error] Error while getting the latest version for the extension vscjava.vscode-spring-initializr. Offline
+2025-08-09 07:52:26.112 [warning] Failed to fetch chat participant registry Offline
+2025-08-09 07:52:26.842 [info] [perf] Render performance baseline is 95ms
+2025-08-09 07:52:33.990 [error] Pending response rejected since connection got disposed: Error: Pending response rejected since connection got disposed
+	at Object.dispose (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:253353)
+	at Object.dispose (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:307659)
+	at v.handleConnectionClosed (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:308065)
+	at v.handleConnectionClosed (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:464965)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:307808
+	at i.invoke (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:255062)
+	at a.fire (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:255827)
+	at te (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241476)
+	at i.invoke (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:255062)
+	at a.fire (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:255827)
+	at u.fireClose (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:263670)
+	at ChildProcess.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:275914)
+	at ChildProcess.emit (node:events:530:35)
+	at maybeClose (node:internal/child_process:1101:16)
+	at Socket.<anonymous> (node:internal/child_process:456:11)
+	at Socket.emit (node:events:518:28)
+	at Pipe.<anonymous> (node:net:351:12)
+2025-08-09 07:52:35.109 [error] Unhandled method getIdAtPosition: Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:52:53.529 [error] Unhandled method getIdAtPosition: Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:53:00.460 [error] Unhandled method getIdAtPosition: Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:53:01.465 [error] Unhandled method getIdAtPosition: Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:53:12.522 [error] Unhandled method getIdAtPosition: Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:53:18.855 [error] Unhandled method getIdAtPosition: Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:53:21.456 [error] Unhandled method getIdAtPosition: Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:53:24.372 [error] Unhandled method getIdAtPosition: Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:53:37.677 [error] Unhandled method getIdAtPosition: Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:53:39.177 [error] Unhandled method getIdAtPosition: Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:53:47.783 [error] Unhandled method getIdAtPosition: Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:53:49.318 [error] Unhandled method getIdAtPosition: Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:54:12.466 [error] Unhandled method getIdAtPosition: Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:54:15.631 [error] Unhandled method getIdAtPosition: Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:54:37.119 [error] Unhandled method getIdAtPosition: Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:54:39.858 [error] Unhandled method getIdAtPosition: Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:54:42.191 [error] Unhandled method getIdAtPosition: Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:54:45.561 [error] Unhandled method getIdAtPosition: Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:54:51.040 [error] Unhandled method getIdAtPosition: Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:54:52.638 [error] Unhandled method getIdAtPosition: Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:54:54.107 [error] Unhandled method getIdAtPosition: Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:55:03.791 [error] Unhandled method getIdAtPosition: Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:55:08.897 [error] Unhandled method getIdAtPosition: Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:55:10.842 [error] Unhandled method getIdAtPosition: Error: Unhandled method getIdAtPosition
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246605
+	at re (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:246899)
+	at /home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241683
+	at Immediate.<anonymous> (/home/sandip/.vscode/extensions/visualstudioexptteam.intellicode-api-usage-examples-0.2.9/dist/extension.js:2:241703)
+	at process.processImmediate (node:internal/timers:485:21)
+2025-08-09 07:55:12.790 [warning] [backup tracker] suspended, ignoring unregister event file:///home/sandip/pusom.edu.np-test/package.json 

@@ -1,0 +1,31 @@
+2025-08-09 07:52:27.218 [info] [main] Log level: Info
+2025-08-09 07:52:27.219 [info] [main] Validating found git in: "git"
+2025-08-09 07:52:27.219 [info] [main] Using git "2.50.1" from "git"
+2025-08-09 07:52:27.219 [info] [Model][doInitialScan] Initial repository scan started
+2025-08-09 07:52:27.219 [info] > git rev-parse --show-toplevel [16ms]
+2025-08-09 07:52:27.219 [info] > git rev-parse --git-dir --git-common-dir [6ms]
+2025-08-09 07:52:27.219 [info] [Model][openRepository] Opened repository (path): /home/sandip/pusom.edu.np-test
+2025-08-09 07:52:27.219 [info] [Model][openRepository] Opened repository (real path): /home/sandip/pusom.edu.np-test
+2025-08-09 07:52:27.246 [info] > git config --get commit.template [15ms]
+2025-08-09 07:52:27.251 [info] > git rev-parse --show-toplevel [7ms]
+2025-08-09 07:52:27.290 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/dev refs/remotes/dev [20ms]
+2025-08-09 07:52:27.339 [info] > git status -z -uall [23ms]
+2025-08-09 07:52:27.341 [info] > git rev-parse --show-toplevel [54ms]
+2025-08-09 07:52:27.364 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [30ms]
+2025-08-09 07:52:27.408 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/dev refs/remotes/dev [20ms]
+2025-08-09 07:52:27.423 [info] > git rev-parse --show-toplevel [60ms]
+2025-08-09 07:52:27.440 [info] > git config --get --local branch.dev.vscode-merge-base [16ms]
+2025-08-09 07:52:27.453 [info] > git config --get commit.template [46ms]
+2025-08-09 07:52:27.455 [info] > git rev-parse --show-toplevel [17ms]
+2025-08-09 07:52:27.461 [info] [Model][doInitialScan] Initial repository scan completed - repositories (1), closed repositories (0), parent repositories (0), unsafe repositories (0)
+2025-08-09 07:52:27.476 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/origin/sandipkhadka refs/remotes/origin/sandipkhadka [25ms]
+2025-08-09 07:52:27.479 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/dev refs/remotes/dev [5ms]
+2025-08-09 07:52:27.525 [info] > git status -z -uall [32ms]
+2025-08-09 07:52:27.525 [info] > git for-each-ref --sort -committerdate --format %(refname)%00%(objectname)%00%(*objectname) [20ms]
+2025-08-09 07:52:27.861 [info] > git check-ignore -v -z --stdin [3ms]
+2025-08-09 07:52:32.275 [info] > git check-ignore -v -z --stdin [171ms]
+2025-08-09 07:52:32.477 [info] > git show --textconv :src/components/layout/Navbar.jsx [21ms]
+2025-08-09 07:52:32.480 [info] > git ls-files --stage -- src/components/layout/Navbar.jsx [6ms]
+2025-08-09 07:52:32.504 [info] > git cat-file -s f9d41ef9b02444dfd5e49c7617c673de110e6b68 [7ms]
+2025-08-09 07:52:32.767 [info] > git check-ignore -v -z --stdin [3ms]
+2025-08-09 07:54:39.731 [info] > git blame --root --incremental 48a4cc0242d229792fd08a4bb0c4d23b3d62e651 -- src/components/layout/Navbar.jsx [54ms]
