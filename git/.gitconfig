@@ -1,0 +1,56 @@
+[user]
+    name = sandip
+    email = sandip28bit2021@kcc.edu.np
+
+[core]
+    editor = nvim                      # Change to 'vim', 'nvim', or 'code --wait' if preferred
+    autocrlf = input                   # Keeps LF on Unix, converts CRLF on Windows
+    pager = less -FRX                  # Makes logs more readable
+    excludesfile = ~/.gitignore_global
+
+[color]
+    ui = true                          # Enables color in all outputs
+
+[alias]
+    st = status
+    ci = commit
+    ac = commit -am
+    co = checkout
+    br = branch
+    lg = log --graph --oneline --all --decorate
+    last = log -1 HEAD
+    unstage = reset HEAD --
+    amend = commit --amend
+    rb = rebase
+    hist = log --pretty=format:'%C(yellow)%h%Creset -%Cgreen%d%Creset %s %C(blue)[%an]' --graph
+    type = cat-file -t
+    dump = cat-file -p
+
+[push]
+    default = simple                   # Only push current branch to origin
+
+[pull]
+    rebase = true                     # Change to true if you prefer rebase instead of merge
+
+[diff]
+    tool = vimdiff                     # Change to meld, code, or another tool if preferred
+
+[merge]
+    tool = vimdiff
+    conflictstyle = diff3
+
+[credential]
+    helper = store                     # Or 'cache' for memory-based, or 'manager' on Windows
+
+[init]
+    defaultBranch = main              # Prevents 'master' as default for new repos
+
+[rebase]
+    autosquash = true                 # Enables fixup/squash commits with rebase -i
+
+[status]
+    showUntrackedFiles = all
+
+[fetch]
+    prune = true                      # Cleans up deleted branches from remotes
+
