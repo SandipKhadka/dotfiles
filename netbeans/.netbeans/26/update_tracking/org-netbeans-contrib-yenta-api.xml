@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<module codename="org.netbeans.contrib.yenta.api">
-    <module_version install_time="1754015983628" last="true" origin="jVi Update Center JDK-11" specification_version="1.2">
-        <file crc="322456248" name="config/Modules/org-netbeans-contrib-yenta-api.xml"/>
-        <file crc="2167863811" name="modules/ext/org.netbeans.contrib.yenta.api/org-netbeans-contrib-yenta/lib.jar"/>
-        <file crc="531256754" name="modules/org-netbeans-contrib-yenta-api.jar"/>
-    </module_version>
-</module>

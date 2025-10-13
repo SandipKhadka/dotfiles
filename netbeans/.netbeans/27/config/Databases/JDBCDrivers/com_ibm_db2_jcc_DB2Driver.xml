@@ -1,0 +1,10 @@
+<?xml version='1.0'?>
+<!DOCTYPE driver PUBLIC '-//NetBeans//DTD JDBC Driver 1.1//EN' 'http://www.netbeans.org/dtds/jdbc-driver-1_1.dtd'>
+<driver>
+  <name value='IBMDb2'/>
+  <display-name value='IBM DB2 Universal Driver'/>
+  <class value='com.ibm.db2.jcc.DB2Driver'/>
+  <urls>
+    <url value='file:/home/sandip/GlassFish_Server11/glassfish/domains/domain1/lib/mysql-connector-java-5.1.47.jar'/>
+  </urls>
+</driver>

@@ -1,0 +1,214 @@
+package com.akshamalainfotech.erp.admin.inventoryMgmt.inventoryReturned;
+
+import com.akshamalainfotech.erp.admin.jsf.AdminAuthenticationBean;
+import com.akshamalainfotech.erp.ejb.common.service.inventory.InventoryReturnedService;
+import com.akshamalainfotech.erp.ejb.common.service.inventory.IssuedInventoryService;
+import com.akshamalainfotech.erp.ejb.dto.common.*;
+import com.akshamalainfotech.erp.ejb.dto.common.inventory.InventoryItemConditionDto;
+import com.akshamalainfotech.erp.ejb.dto.common.inventory.InventoryReturnSearchFilter;
+import com.akshamalainfotech.erp.ejb.dto.common.inventory.InventoryReturnedDto;
+import com.akshamalainfotech.erp.ejb.dto.common.inventory.IssuedInventoryDto;
+import lombok.Getter;
+import lombok.Setter;
+import org.primefaces.model.FilterMeta;
+import org.primefaces.model.LazyDataModel;
+import org.primefaces.model.SortOrder;
+
+import javax.annotation.PostConstruct;
+import javax.faces.application.FacesMessage;
+import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
+import javax.inject.Inject;
+import javax.inject.Named;
+import java.io.Serializable;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+@Getter
+@Setter
+@Named
+@ViewScoped
+public class InventoryReturnedController implements Serializable {
+    @Inject
+    private AdminAuthenticationBean adminAuthenticationBean;
+    @Inject
+    private AdminDto adminDto;
+    @Inject
+    private CollegeDto collegeDto;
+    @Inject
+    private InventoryReturnedService inventoryReturnedService;
+    @Inject
+    private IssuedInventoryService issuedInventoryService;
+
+    private LazyDataModel<IssuedInventoryDto> lazyDataModel;
+    private InventoryReturnSearchFilter inventoryReturnedSearchFilter;
+    private InventoryReturnSearchFilter inventoryReturnSearchFilter;
+
+    private List<InventoryReturnedDto> inventoryReturnedDtos;
+    private List<InventoryItemConditionDto> inventoryItemConditionDtos;
+    private List<IssuedInventoryDto> issuedInventoryDtos;
+
+    private Map<Long, Integer> tempReturnQuantities = new HashMap<>();
+    private Map<Long, Integer> tempReturnConditionIds = new HashMap<>();
+    private Map<Long, Date> tempReturnDates = new HashMap<>();
+
+    @PostConstruct
+    public void init() {
+        lazyDataModel = new LazyDataModel<IssuedInventoryDto>() {
+            @Override
+            public List<IssuedInventoryDto> load(int first, int pageSize, String sortField, SortOrder sortOrder, Map<String, FilterMeta> filters) {
+                int pageNumber = first / pageSize;
+                List<IssuedInventoryDto> results = issuedInventoryService.getAllBySearchCriteria(
+                        inventoryReturnSearchFilter);
+                setRowCount((int) issuedInventoryService.countBySearchCriteria(
+                        inventoryReturnSearchFilter));
+                return results;
+            }
+        };
+
+        adminDto = adminAuthenticationBean.getAdminDto();
+        collegeDto = adminDto.getCollegeDto();
+        navigatePage();
+    }
+
+    public void createEditCommon() {
+        inventoryItemConditionDtos = inventoryReturnedService.getAllInventoryItemConditions();
+        issuedInventoryDtos = inventoryReturnedService.getAllIssuedInventories();
+    }
+
+    public void navigatePage() {
+        inventoryReturnedDtos = inventoryReturnedService.getAll();
+    }
+
+    public void search() {
+        lazyDataModel.load(0, lazyDataModel.getPageSize(), null, null, null);
+    }
+
+    public void resetSearch() {
+        inventoryReturnedSearchFilter = new InventoryReturnSearchFilter();
+        search();
+    }
+
+    public void returnInventory(IssuedInventoryDto item) {
+        Long itemId = item.getId();
+
+        Integer returnQty = tempReturnQuantities.get(itemId);
+        long returnCondId = tempReturnConditionIds.get(itemId);
+        Date returnDate = tempReturnDates.get(itemId);
+
+        if (returnQty == null || returnQty <= 0 || returnQty > (item.getQuantity() - item.getReturnedQuantity())) {
+            FacesContext.getCurrentInstance().addMessage(null,
+                    new FacesMessage(FacesMessage.SEVERITY_ERROR, "Invalid quantity", "Quantity must be positive and not exceed remaining."));
+            return;
+        }
+        if (returnCondId == 0 || returnDate == null) {
+            FacesContext.getCurrentInstance().addMessage(null,
+                    new FacesMessage(FacesMessage.SEVERITY_ERROR, "Invalid input", "Condition and date are required."));
+            return;
+        }
+
+        InventoryReturnedDto returnDto = new InventoryReturnedDto();
+        returnDto.setId(itemId);
+        returnDto.setQuantityReturned(returnQty);
+
+        InventoryItemConditionDto inventoryItemConditionDto = new InventoryItemConditionDto();
+        inventoryItemConditionDto.setId(returnCondId);
+        returnDto.setInventoryItemConditionDto(inventoryItemConditionDto);
+
+        returnDto.setReturnDate(returnDate);
+        returnDto.setCreatedByAdminDto(adminDto);
+
+        issuedInventoryService.updateReturnQuantity(item);
+        inventoryReturnedService.save(returnDto);
+
+        tempReturnQuantities.remove(itemId);
+        tempReturnConditionIds.remove(itemId);
+        tempReturnDates.remove(itemId);
+
+        search();
+    }
+
+    public void viewHistory(IssuedInventoryDto item) {
+        inventoryReturnedDtos = inventoryReturnedService.getByIssuedInventoryId(item);
+    }
+}
+
+----- Classpath: ---------------------------------------------
+bootPath: /home/sandip/.m2/repository/javax/javaee-endorsed-api/7.0/javaee-endorsed-api-7.0.jar:/usr/lib/jvm/java-8-zulu-openjdk-jdk/jre/lib/resources.jar:/usr/lib/jvm/java-8-zulu-openjdk-jdk/jre/lib/rt.jar:/usr/lib/jvm/java-8-zulu-openjdk-jdk/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-zulu-openjdk-jdk/jre/lib/jsse.jar:/usr/lib/jvm/java-8-zulu-openjdk-jdk/jre/lib/jce.jar:/usr/lib/jvm/java-8-zulu-openjdk-jdk/jre/lib/charsets.jar:/usr/lib/jvm/java-8-zulu-openjdk-jdk/jre/lib/jfr.jar:/usr/lib/jvm/java-8-zulu-openjdk-jdk/jre/lib/cat.jar:/usr/lib/jvm/java-8-zulu-openjdk-jdk/jre/classes:/usr/lib/jvm/java-8-zulu-openjdk-jdk/jre/lib/ext/cldrdata.jar:/usr/lib/jvm/java-8-zulu-openjdk-jdk/jre/lib/ext/crs-agent.jar:/usr/lib/jvm/java-8-zulu-openjdk-jdk/jre/lib/ext/dnsns.jar:/usr/lib/jvm/java-8-zulu-openjdk-jdk/jre/lib/ext/jaccess.jar:/usr/lib/jvm/java-8-zulu-openjdk-jdk/jre/lib/ext/localedata.jar:/usr/lib/jvm/java-8-zulu-openjdk-jdk/jre/lib/ext/nashorn.jar:/usr/lib/jvm/java-8-zulu-openjdk-jdk/jre/lib/ext/sunec.jar:/usr/lib/jvm/java-8-zulu-openjdk-jdk/jre/lib/ext/sunjce_provider.jar:/usr/lib/jvm/java-8-zulu-openjdk-jdk/jre/lib/ext/sunpkcs11.jar:/usr/lib/jvm/java-8-zulu-openjdk-jdk/jre/lib/ext/zipfs.jar
+classPath: /home/sandip/.m2/repository/javax/servlet/javax.servlet-api/3.0.1/javax.servlet-api-3.0.1.jar:/home/sandip/.m2/repository/javax/servlet/jsp/jsp-api/2.1/jsp-api-2.1.jar:/home/sandip/.m2/repository/org/apache/myfaces/core/myfaces-impl/2.2.4/myfaces-impl-2.2.4.jar:/home/sandip/.m2/repository/org/apache/myfaces/core/myfaces-api/2.2.4/myfaces-api-2.2.4.jar:/home/sandip/.m2/repository/org/apache/geronimo/specs/geronimo-jcdi_1.0_spec/1.0/geronimo-jcdi_1.0_spec-1.0.jar:/home/sandip/.m2/repository/org/apache/geronimo/specs/geronimo-atinject_1.0_spec/1.0/geronimo-atinject_1.0_spec-1.0.jar:/home/sandip/.m2/repository/commons-collections/commons-collections/3.2/commons-collections-3.2.jar:/home/sandip/.m2/repository/commons-codec/commons-codec/1.3/commons-codec-1.3.jar:/home/sandip/.m2/repository/commons-beanutils/commons-beanutils/1.8.3/commons-beanutils-1.8.3.jar:/home/sandip/.m2/repository/commons-digester/commons-digester/1.8/commons-digester-1.8.jar:/home/sandip/.m2/repository/commons-io/commons-io/2.2/commons-io-2.2.jar:/home/sandip/.m2/repository/cglib/cglib-nodep/2.1_3/cglib-nodep-2.1_3.jar:/home/sandip/.m2/repository/com/akshamalainfotech/akshamala-erp-EJB/1.0-SNAPSHOT/akshamala-erp-EJB-1.0-SNAPSHOT.jar:/home/sandip/.m2/repository/np/com/bahadur/converter/date/nepali/nepali-english-date-converter/1.0.0/nepali-english-date-converter-1.0.0.jar:/home/sandip/.m2/repository/ch/qos/logback/logback-core/1.2.3/logback-core-1.2.3.jar:/home/sandip/.m2/repository/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3.jar:/home/sandip/.m2/repository/org/codehaus/jettison/jettison/1.2/jettison-1.2.jar:/home/sandip/.m2/repository/stax/stax-api/1.0.1/stax-api-1.0.1.jar:/home/sandip/.m2/repository/com/thoughtworks/xstream/xstream/1.2.1/xstream-1.2.1.jar:/home/sandip/.m2/repository/xpp3/xpp3_min/1.1.3.4.O/xpp3_min-1.1.3.4.O.jar:/home/sandip/.m2/repository/commons-fileupload/commons-fileupload/1.4/commons-fileupload-1.4.jar:/home/sandip/.m2/repository/org/primefaces/primefaces/8.0/primefaces-8.0.jar:/home/sandip/.m2/repository/org/apache/commons/commons-lang3/3.9/commons-lang3-3.9.jar:/home/sandip/.m2/repository/com/google/code/gson/gson/2.8.6/gson-2.8.6.jar:/home/sandip/.m2/repository/org/glassfish/jersey/media/jersey-media-json-jackson/2.26/jersey-media-json-jackson-2.26.jar:/home/sandip/.m2/repository/org/glassfish/jersey/core/jersey-common/2.26/jersey-common-2.26.jar:/home/sandip/.m2/repository/javax/annotation/javax.annotation-api/1.2/javax.annotation-api-1.2.jar:/home/sandip/.m2/repository/org/glassfish/hk2/osgi-resource-locator/1.0.1/osgi-resource-locator-1.0.1.jar:/home/sandip/.m2/repository/org/glassfish/jersey/ext/jersey-entity-filtering/2.26/jersey-entity-filtering-2.26.jar:/home/sandip/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.8.4/jackson-annotations-2.8.4.jar:/home/sandip/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.8.4/jackson-databind-2.8.4.jar:/home/sandip/.m2/repository/com/fasterxml/jackson/module/jackson-module-jaxb-annotations/2.8.4/jackson-module-jaxb-annotations-2.8.4.jar:/home/sandip/.m2/repository/org/glassfish/jersey/media/jersey-media-multipart/2.26/jersey-media-multipart-2.26.jar:/home/sandip/.m2/repository/org/jvnet/mimepull/mimepull/1.9.6/mimepull-1.9.6.jar:/home/sandip/.m2/repository/org/glassfish/jersey/ext/jersey-bean-validation/2.26/jersey-bean-validation-2.26.jar:/home/sandip/.m2/repository/org/glassfish/hk2/external/javax.inject/2.5.0-b42/javax.inject-2.5.0-b42.jar:/home/sandip/.m2/repository/org/glassfish/jersey/core/jersey-server/2.26/jersey-server-2.26.jar:/home/sandip/.m2/repository/org/glassfish/jersey/core/jersey-client/2.26/jersey-client-2.26.jar:/home/sandip/.m2/repository/org/glassfish/jersey/media/jersey-media-jaxb/2.26/jersey-media-jaxb-2.26.jar:/home/sandip/.m2/repository/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar:/home/sandip/.m2/repository/org/hibernate/hibernate-validator/5.1.3.Final/hibernate-validator-5.1.3.Final.jar:/home/sandip/.m2/repository/com/fasterxml/classmate/1.0.0/classmate-1.0.0.jar:/home/sandip/.m2/repository/javax/el/javax.el-api/2.2.4/javax.el-api-2.2.4.jar:/home/sandip/.m2/repository/org/glassfish/web/javax.el/2.2.4/javax.el-2.2.4.jar:/home/sandip/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.1/javax.ws.rs-api-2.1.jar:/home/sandip/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-base/2.2.3/jackson-jaxrs-base-2.2.3.jar:/home/sandip/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.2.3/jackson-core-2.2.3.jar:/home/sandip/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-json-provider/2.10.0/jackson-jaxrs-json-provider-2.10.0.jar:/home/sandip/.m2/repository/org/bitbucket/b_c/jose4j/0.5.2/jose4j-0.5.2.jar:/home/sandip/.m2/repository/com/jcraft/jsch/0.1.53/jsch-0.1.53.jar:/home/sandip/.m2/repository/com/google/firebase/firebase-admin/7.0.0/firebase-admin-7.0.0.jar:/home/sandip/.m2/repository/com/google/api-client/google-api-client/1.30.10/google-api-client-1.30.10.jar:/home/sandip/.m2/repository/com/google/oauth-client/google-oauth-client/1.31.0/google-oauth-client-1.31.0.jar:/home/sandip/.m2/repository/com/google/http-client/google-http-client-jackson2/1.36.0/google-http-client-jackson2-1.36.0.jar:/home/sandip/.m2/repository/com/google/api-client/google-api-client-gson/1.30.10/google-api-client-gson-1.30.10.jar:/home/sandip/.m2/repository/com/google/http-client/google-http-client-gson/1.36.0/google-http-client-gson-1.36.0.jar:/home/sandip/.m2/repository/com/google/http-client/google-http-client/1.35.0/google-http-client-1.35.0.jar:/home/sandip/.m2/repository/org/apache/httpcomponents/httpclient/4.5.12/httpclient-4.5.12.jar:/home/sandip/.m2/repository/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar:/home/sandip/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/home/sandip/.m2/repository/com/google/j2objc/j2objc-annotations/1.3/j2objc-annotations-1.3.jar:/home/sandip/.m2/repository/io/opencensus/opencensus-api/0.24.0/opencensus-api-0.24.0.jar:/home/sandip/.m2/repository/io/opencensus/opencensus-contrib-http-util/0.24.0/opencensus-contrib-http-util-0.24.0.jar:/home/sandip/.m2/repository/com/google/api/api-common/1.9.2/api-common-1.9.2.jar:/home/sandip/.m2/repository/com/google/auto/value/auto-value-annotations/1.7.2/auto-value-annotations-1.7.2.jar:/home/sandip/.m2/repository/com/google/auth/google-auth-library-oauth2-http/0.20.0/google-auth-library-oauth2-http-0.20.0.jar:/home/sandip/.m2/repository/com/google/auth/google-auth-library-credentials/0.20.0/google-auth-library-credentials-0.20.0.jar:/home/sandip/.m2/repository/com/google/cloud/google-cloud-storage/1.110.0/google-cloud-storage-1.110.0.jar:/home/sandip/.m2/repository/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/home/sandip/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/sandip/.m2/repository/org/checkerframework/checker-compat-qual/2.5.5/checker-compat-qual-2.5.5.jar:/home/sandip/.m2/repository/com/google/errorprone/error_prone_annotations/2.3.4/error_prone_annotations-2.3.4.jar:/home/sandip/.m2/repository/com/google/apis/google-api-services-storage/v1-rev20200430-1.30.9/google-api-services-storage-v1-rev20200430-1.30.9.jar:/home/sandip/.m2/repository/com/google/cloud/google-cloud-core/1.93.6/google-cloud-core-1.93.6.jar:/home/sandip/.m2/repository/com/google/api/grpc/proto-google-common-protos/1.18.0/proto-google-common-protos-1.18.0.jar:/home/sandip/.m2/repository/com/google/cloud/google-cloud-core-http/1.93.6/google-cloud-core-http-1.93.6.jar:/home/sandip/.m2/repository/com/google/http-client/google-http-client-appengine/1.35.0/google-http-client-appengine-1.35.0.jar:/home/sandip/.m2/repository/com/google/api/gax-httpjson/0.74.0/gax-httpjson-0.74.0.jar:/home/sandip/.m2/repository/com/google/api/gax/1.57.0/gax-1.57.0.jar:/home/sandip/.m2/repository/io/grpc/grpc-context/1.30.0/grpc-context-1.30.0.jar:/home/sandip/.m2/repository/com/google/api/grpc/proto-google-iam-v1/0.13.0/proto-google-iam-v1-0.13.0.jar:/home/sandip/.m2/repository/com/google/protobuf/protobuf-java-util/3.12.2/protobuf-java-util-3.12.2.jar:/home/sandip/.m2/repository/org/threeten/threetenbp/1.4.4/threetenbp-1.4.4.jar:/home/sandip/.m2/repository/com/google/cloud/google-cloud-firestore/1.35.0/google-cloud-firestore-1.35.0.jar:/home/sandip/.m2/repository/com/google/cloud/google-cloud-core-grpc/1.93.6/google-cloud-core-grpc-1.93.6.jar:/home/sandip/.m2/repository/io/grpc/grpc-core/1.30.0/grpc-core-1.30.0.jar:/home/sandip/.m2/repository/com/google/android/annotations/4.1.1.4/annotations-4.1.1.4.jar:/home/sandip/.m2/repository/io/perfmark/perfmark-api/0.19.0/perfmark-api-0.19.0.jar:/home/sandip/.m2/repository/com/google/api/grpc/proto-google-cloud-firestore-admin-v1/1.35.0/proto-google-cloud-firestore-admin-v1-1.35.0.jar:/home/sandip/.m2/repository/com/google/api/grpc/proto-google-cloud-firestore-v1/1.35.0/proto-google-cloud-firestore-v1-1.35.0.jar:/home/sandip/.m2/repository/com/google/api/grpc/proto-google-cloud-firestore-v1beta1/0.88.0/proto-google-cloud-firestore-v1beta1-0.88.0.jar:/home/sandip/.m2/repository/io/opencensus/opencensus-contrib-grpc-util/0.24.0/opencensus-contrib-grpc-util-0.24.0.jar:/home/sandip/.m2/repository/io/grpc/grpc-protobuf/1.30.0/grpc-protobuf-1.30.0.jar:/home/sandip/.m2/repository/io/grpc/grpc-protobuf-lite/1.30.0/grpc-protobuf-lite-1.30.0.jar:/home/sandip/.m2/repository/org/codehaus/mojo/animal-sniffer-annotations/1.18/animal-sniffer-annotations-1.18.jar:/home/sandip/.m2/repository/io/grpc/grpc-api/1.30.0/grpc-api-1.30.0.jar:/home/sandip/.m2/repository/com/google/api/gax-grpc/1.57.0/gax-grpc-1.57.0.jar:/home/sandip/.m2/repository/io/grpc/grpc-auth/1.30.0/grpc-auth-1.30.0.jar:/home/sandip/.m2/repository/io/grpc/grpc-netty-shaded/1.30.0/grpc-netty-shaded-1.30.0.jar:/home/sandip/.m2/repository/io/grpc/grpc-alts/1.30.0/grpc-alts-1.30.0.jar:/home/sandip/.m2/repository/io/grpc/grpc-grpclb/1.30.0/grpc-grpclb-1.30.0.jar:/home/sandip/.m2/repository/org/conscrypt/conscrypt-openjdk-uber/2.2.1/conscrypt-openjdk-uber-2.2.1.jar:/home/sandip/.m2/repository/io/grpc/grpc-stub/1.30.0/grpc-stub-1.30.0.jar:/home/sandip/.m2/repository/com/google/guava/guava/29.0-android/guava-29.0-android.jar:/home/sandip/.m2/repository/io/netty/netty-codec-http/4.1.50.Final/netty-codec-http-4.1.50.Final.jar:/home/sandip/.m2/repository/io/netty/netty-common/4.1.50.Final/netty-common-4.1.50.Final.jar:/home/sandip/.m2/repository/io/netty/netty-buffer/4.1.50.Final/netty-buffer-4.1.50.Final.jar:/home/sandip/.m2/repository/io/netty/netty-codec/4.1.50.Final/netty-codec-4.1.50.Final.jar:/home/sandip/.m2/repository/io/netty/netty-handler/4.1.50.Final/netty-handler-4.1.50.Final.jar:/home/sandip/.m2/repository/io/netty/netty-resolver/4.1.50.Final/netty-resolver-4.1.50.Final.jar:/home/sandip/.m2/repository/io/netty/netty-transport/4.1.50.Final/netty-transport-4.1.50.Final.jar:/home/sandip/.m2/repository/org/apache/commons/commons-imaging/1.0-alpha1/commons-imaging-1.0-alpha1.jar:/home/sandip/.m2/repository/org/apache/sanselan/sanselan/0.97-incubator/sanselan-0.97-incubator.jar:/home/sandip/.m2/repository/net/sf/barcode4j/barcode4j/2.1/barcode4j-2.1.jar:/home/sandip/.m2/repository/avalon-framework/avalon-framework-impl/4.2.0/avalon-framework-impl-4.2.0.jar:/home/sandip/.m2/repository/commons-cli/commons-cli/1.0/commons-cli-1.0.jar:/home/sandip/.m2/repository/org/apache/ant/ant/1.7.1/ant-1.7.1.jar:/home/sandip/.m2/repository/org/apache/ant/ant-launcher/1.7.1/ant-launcher-1.7.1.jar:/home/sandip/.m2/repository/com/google/zxing/core/3.4.0/core-3.4.0.jar:/home/sandip/.m2/repository/com/google/zxing/javase/3.4.0/javase-3.4.0.jar:/home/sandip/.m2/repository/com/beust/jcommander/1.72/jcommander-1.72.jar:/home/sandip/.m2/repository/com/github/jai-imageio/jai-imageio-core/1.4.0/jai-imageio-core-1.4.0.jar:/home/sandip/.m2/repository/np/com/paawan/fonts/arial-unicode-ms/arial-unicode-ms-font/1.0.0/arial-unicode-ms-font-1.0.0.jar:/home/sandip/.m2/repository/np/com/paawan/fonts/preeti/preeti-font/1.0.0/preeti-font-1.0.0.jar:/home/sandip/.m2/repository/np/com/paawan/fonts/stencil/stencil-font/1.0.0/stencil-font-1.0.0.jar:/home/sandip/.m2/repository/np/com/paawan/fonts/stencilbt/stencilbt-font/1.0.0/stencilbt-font-1.0.0.jar:/home/sandip/.m2/repository/np/com/paawan/fonts/script-mt-bold/script-mt-bold-font/1.0.0/script-mt-bold-font-1.0.0.jar:/home/sandip/.m2/repository/np/com/paawan/fonts/times-new-roman/times-new-roman-font/1.0.0/times-new-roman-font-1.0.0.jar:/home/sandip/.m2/repository/np/com/paawan/fonts/revue-bt/revue-bt-font/1.0.0/revue-bt-font-1.0.0.jar:/home/sandip/.m2/repository/com/akshamalainfotech/akshamala-erp-Entity/1.0-SNAPSHOT/akshamala-erp-Entity-1.0-SNAPSHOT.jar:/home/sandip/.m2/repository/org/hibernate/hibernate-entitymanager/4.3.1.Final/hibernate-entitymanager-4.3.1.Final.jar:/home/sandip/.m2/repository/org/jboss/logging/jboss-logging/3.1.3.GA/jboss-logging-3.1.3.GA.jar:/home/sandip/.m2/repository/org/jboss/logging/jboss-logging-annotations/1.2.0.Beta1/jboss-logging-annotations-1.2.0.Beta1.jar:/home/sandip/.m2/repository/org/hibernate/hibernate-core/4.3.1.Final/hibernate-core-4.3.1.Final.jar:/home/sandip/.m2/repository/antlr/antlr/2.7.7/antlr-2.7.7.jar:/home/sandip/.m2/repository/org/jboss/jandex/1.1.0.Final/jandex-1.1.0.Final.jar:/home/sandip/.m2/repository/org/hibernate/common/hibernate-commons-annotations/4.0.4.Final/hibernate-commons-annotations-4.0.4.Final.jar:/home/sandip/.m2/repository/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/1.0.0.Final/hibernate-jpa-2.1-api-1.0.0.Final.jar:/home/sandip/.m2/repository/org/jboss/spec/javax/transaction/jboss-transaction-api_1.2_spec/1.0.0.Final/jboss-transaction-api_1.2_spec-1.0.0.Final.jar:/home/sandip/.m2/repository/org/javassist/javassist/3.18.1-GA/javassist-3.18.1-GA.jar:/home/sandip/.m2/repository/nl/bitwalker/UserAgentUtils/1.2.4/UserAgentUtils-1.2.4.jar:/home/sandip/.m2/repository/com/akshamalainfotech/akshamala-erp-admin-EJB/1.0-SNAPSHOT/akshamala-erp-admin-EJB-1.0-SNAPSHOT.jar:/home/sandip/.m2/repository/asm/asm/3.1/asm-3.1.jar:/home/sandip/.m2/repository/org/richfaces/richfaces/4.5.0.Final/richfaces-4.5.0.Final.jar:/home/sandip/.m2/repository/org/richfaces/richfaces-core/4.5.0.Final/richfaces-core-4.5.0.Final.jar:/home/sandip/.m2/repository/net/sourceforge/cssparser/cssparser/0.9.14/cssparser-0.9.14.jar:/home/sandip/.m2/repository/org/w3c/css/sac/1.3/sac-1.3.jar:/home/sandip/.m2/repository/org/richfaces/richfaces-a4j/4.5.0.Final/richfaces-a4j-4.5.0.Final.jar:/home/sandip/.m2/repository/org/atmosphere/atmosphere-runtime/0.8.5/atmosphere-runtime-0.8.5.jar:/home/sandip/.m2/repository/org/atmosphere/atmosphere-compat-jbossweb/0.8.5/atmosphere-compat-jbossweb-0.8.5.jar:/home/sandip/.m2/repository/org/atmosphere/atmosphere-compat-weblogic/0.8.5/atmosphere-compat-weblogic-0.8.5.jar:/home/sandip/.m2/repository/org/atmosphere/atmosphere-compat-tomcat7/0.8.5/atmosphere-compat-tomcat7-0.8.5.jar:/home/sandip/.m2/repository/org/atmosphere/atmosphere-compat-jetty/0.8.5/atmosphere-compat-jetty-0.8.5.jar:/home/sandip/.m2/repository/org/atmosphere/atmosphere-compat-tomcat/0.8.5/atmosphere-compat-tomcat-0.8.5.jar:/home/sandip/.m2/repository/org/slf4j/slf4j-api/1.6.4/slf4j-api-1.6.4.jar:/home/sandip/.m2/repository/org/apache/velocity/velocity/1.7/velocity-1.7.jar:/home/sandip/.m2/repository/commons-lang/commons-lang/2.4/commons-lang-2.4.jar:/home/sandip/.m2/repository/com/lowagie/itext/2.1.7/itext-2.1.7.jar:/home/sandip/.m2/repository/bouncycastle/bcmail-jdk14/138/bcmail-jdk14-138.jar:/home/sandip/.m2/repository/bouncycastle/bcprov-jdk14/138/bcprov-jdk14-138.jar:/home/sandip/.m2/repository/org/bouncycastle/bctsp-jdk14/1.38/bctsp-jdk14-1.38.jar:/home/sandip/.m2/repository/org/bouncycastle/bcprov-jdk14/1.38/bcprov-jdk14-1.38.jar:/home/sandip/.m2/repository/org/bouncycastle/bcmail-jdk14/1.38/bcmail-jdk14-1.38.jar:/home/sandip/.m2/repository/org/apache/poi/poi/3.8/poi-3.8.jar:/home/sandip/.m2/repository/org/apache/poi/poi-ooxml-schemas/3.8/poi-ooxml-schemas-3.8.jar:/home/sandip/.m2/repository/org/apache/xmlbeans/xmlbeans/2.3.0/xmlbeans-2.3.0.jar:/home/sandip/.m2/repository/org/apache/poi/poi-ooxml/3.8/poi-ooxml-3.8.jar:/home/sandip/.m2/repository/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar:/home/sandip/.m2/repository/net/sf/jasperreports/jasperreports/4.1.2/jasperreports-4.1.2.jar:/home/sandip/.m2/repository/commons-logging/commons-logging/1.0.2/commons-logging-1.0.2.jar:/home/sandip/.m2/repository/jfree/jcommon/1.0.15/jcommon-1.0.15.jar:/home/sandip/.m2/repository/jfree/jfreechart/1.0.12/jfreechart-1.0.12.jar:/home/sandip/.m2/repository/xml-apis/xml-apis/1.3.02/xml-apis-1.3.02.jar:/home/sandip/.m2/repository/org/codehaus/castor/castor/1.2/castor-1.2.jar:/home/sandip/.m2/repository/com/itextpdf/itextpdf/5.4.1/itextpdf-5.4.1.jar:/home/sandip/.m2/repository/eclipse/jdtcore/3.1.0/jdtcore-3.1.0.jar:/home/sandip/.m2/repository/com/smattme/mysql-backup4j/1.0.1/mysql-backup4j-1.0.1.jar:/home/sandip/.m2/repository/mysql/mysql-connector-java/8.0.12/mysql-connector-java-8.0.12.jar:/home/sandip/.m2/repository/com/google/protobuf/protobuf-java/2.6.0/protobuf-java-2.6.0.jar:/home/sandip/.m2/repository/org/zeroturnaround/zt-zip/1.12/zt-zip-1.12.jar:/home/sandip/.m2/repository/javax/mail/mail/1.5.0-b01/mail-1.5.0-b01.jar:/home/sandip/.m2/repository/javax/activation/activation/1.1/activation-1.1.jar:/home/sandip/.m2/repository/org/primefaces/extensions/primefaces-extensions/6.0.0/primefaces-extensions-6.0.0.jar:/home/sandip/.m2/repository/io/swagger/swagger-jaxrs/1.5.6/swagger-jaxrs-1.5.6.jar:/home/sandip/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.4.5/jackson-dataformat-yaml-2.4.5.jar:/home/sandip/.m2/repository/org/yaml/snakeyaml/1.12/snakeyaml-1.12.jar:/home/sandip/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-xml/2.4.5/jackson-dataformat-xml-2.4.5.jar:/home/sandip/.m2/repository/org/codehaus/woodstox/stax2-api/3.1.4/stax2-api-3.1.4.jar:/home/sandip/.m2/repository/io/swagger/swagger-core/1.5.6/swagger-core-1.5.6.jar:/home/sandip/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-joda/2.4.5/jackson-datatype-joda-2.4.5.jar:/home/sandip/.m2/repository/joda-time/joda-time/2.2/joda-time-2.2.jar:/home/sandip/.m2/repository/io/swagger/swagger-models/1.5.6/swagger-models-1.5.6.jar:/home/sandip/.m2/repository/io/swagger/swagger-annotations/1.5.6/swagger-annotations-1.5.6.jar:/home/sandip/.m2/repository/javax/ws/rs/jsr311-api/1.1.1/jsr311-api-1.1.1.jar:/home/sandip/.m2/repository/org/reflections/reflections/0.9.10/reflections-0.9.10.jar:/home/sandip/.m2/repository/com/google/code/findbugs/annotations/2.0.1/annotations-2.0.1.jar:/home/sandip/.m2/repository/org/projectlombok/lombok/1.18.22/lombok-1.18.22.jar:/home/sandip/projects/akshamala-inventory/admin/target/classes
+sourcePath: /home/sandip/projects/akshamala-inventory/admin/src/main/java:/home/sandip/projects/akshamala-inventory/admin/src/main/webapp:/home/sandip/projects/akshamala-inventory/admin/src/main/resources
+----- Original exception ---------------------------------------------
+java.lang.IllegalStateException: java.lang.AssertionError: Method parameter without PARAMETER flag
+	at com.sun.tools.javac.api.JavacTaskImpl.analyze(JavacTaskImpl.java:383)
+	at org.netbeans.modules.java.source.parsing.JavacParser.moveToPhase(JavacParser.java:765)
+	at org.netbeans.modules.java.source.parsing.JavacParser.getResult(JavacParser.java:536)
+	at org.netbeans.modules.java.source.parsing.JavacParser.getResult(JavacParser.java:140)
+	at org.netbeans.modules.parsing.impl.TaskProcessor.callGetResult(TaskProcessor.java:608)
+	at org.netbeans.modules.parsing.impl.SourceCache.getResult(SourceCache.java:241)
+	at org.netbeans.modules.parsing.impl.TaskProcessor$RequestPerformer.run(TaskProcessor.java:775)
+	at org.openide.util.lookup.Lookups.executeWith(Lookups.java:288)
+	at org.netbeans.modules.parsing.impl.TaskProcessor$RequestPerformer.execute(TaskProcessor.java:702)
+	at org.netbeans.modules.parsing.impl.TaskProcessor$CompilationJob.run(TaskProcessor.java:663)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:545)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:328)
+	at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:1403)
+	at org.netbeans.modules.openide.util.GlobalLookup.execute(GlobalLookup.java:45)
+	at org.openide.util.lookup.Lookups.executeWith(Lookups.java:287)
+	at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:2018)
+Caused by: java.lang.AssertionError: Method parameter without PARAMETER flag
+	at com.sun.tools.javac.util.Assert.error(Assert.java:162)
+	at com.sun.tools.javac.util.Assert.check(Assert.java:95)
+	at com.sun.tools.javac.comp.Flow$AssignAnalyzer.visitMethodDef(Flow.java:2504)
+	at com.sun.tools.javac.tree.JCTree$JCMethodDecl.accept(JCTree.java:960)
+	at com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:50)
+	at com.sun.tools.javac.comp.Flow$BaseAnalyzer.scan(Flow.java:461)
+	at com.sun.tools.javac.comp.Flow$AssignAnalyzer.scan(Flow.java:2090)
+	at com.sun.tools.javac.comp.Flow$AssignAnalyzer.visitClassDef(Flow.java:2449)
+	at com.sun.tools.javac.tree.JCTree$JCClassDecl.accept(JCTree.java:859)
+	at com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:50)
+	at com.sun.tools.javac.comp.Flow$BaseAnalyzer.scan(Flow.java:461)
+	at com.sun.tools.javac.comp.Flow$AssignAnalyzer.scan(Flow.java:2090)
+	at com.sun.tools.javac.comp.Flow$AssignAnalyzer.visitNewClass(Flow.java:3057)
+	at com.sun.tools.javac.tree.JCTree$JCNewClass.accept(JCTree.java:1915)
+	at com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:50)
+	at com.sun.tools.javac.comp.Flow$BaseAnalyzer.scan(Flow.java:461)
+	at com.sun.tools.javac.comp.Flow$AssignAnalyzer.scan(Flow.java:2090)
+	at com.sun.tools.javac.comp.Flow$AssignAnalyzer.scanExpr(Flow.java:2335)
+	at com.sun.tools.javac.comp.Flow$AssignAnalyzer.visitAssign(Flow.java:3120)
+	at com.sun.tools.javac.tree.JCTree$JCAssign.accept(JCTree.java:2105)
+	at com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:50)
+	at com.sun.tools.javac.comp.Flow$BaseAnalyzer.scan(Flow.java:461)
+	at com.sun.tools.javac.comp.Flow$AssignAnalyzer.scan(Flow.java:2090)
+	at com.sun.tools.javac.tree.TreeScanner.visitExec(TreeScanner.java:226)
+	at com.sun.tools.javac.tree.JCTree$JCExpressionStatement.accept(JCTree.java:1647)
+	at com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:50)
+	at com.sun.tools.javac.comp.Flow$BaseAnalyzer.scan(Flow.java:461)
+	at com.sun.tools.javac.comp.Flow$AssignAnalyzer.scan(Flow.java:2090)
+	at com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:58)
+	at com.sun.tools.javac.comp.Flow$AssignAnalyzer.visitBlock(Flow.java:2609)
+	at com.sun.tools.javac.tree.JCTree$JCBlock.accept(JCTree.java:1136)
+	at com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:50)
+	at com.sun.tools.javac.comp.Flow$BaseAnalyzer.scan(Flow.java:461)
+	at com.sun.tools.javac.comp.Flow$AssignAnalyzer.scan(Flow.java:2090)
+	at com.sun.tools.javac.comp.Flow$AssignAnalyzer.visitMethodDef(Flow.java:2512)
+	at com.sun.tools.javac.tree.JCTree$JCMethodDecl.accept(JCTree.java:960)
+	at com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:50)
+	at com.sun.tools.javac.comp.Flow$BaseAnalyzer.scan(Flow.java:461)
+	at com.sun.tools.javac.comp.Flow$AssignAnalyzer.scan(Flow.java:2090)
+	at com.sun.tools.javac.comp.Flow$AssignAnalyzer.visitClassDef(Flow.java:2449)
+	at com.sun.tools.javac.tree.JCTree$JCClassDecl.accept(JCTree.java:859)
+	at com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:50)
+	at com.sun.tools.javac.comp.Flow$BaseAnalyzer.scan(Flow.java:461)
+	at com.sun.tools.javac.comp.Flow$AssignAnalyzer.scan(Flow.java:2090)
+	at com.sun.tools.javac.comp.Flow$AssignAnalyzer.analyzeTree(Flow.java:3246)
+	at com.sun.tools.javac.comp.Flow$AssignAnalyzer.analyzeTree(Flow.java:3228)
+	at com.sun.tools.javac.comp.Flow.analyzeTree(Flow.java:230)
+	at com.sun.tools.javac.main.JavaCompiler.flow(JavaCompiler.java:1406)
+	at com.sun.tools.javac.main.JavaCompiler.flow(JavaCompiler.java:1370)
+	at com.sun.tools.javac.api.JavacTaskImpl.analyze(JavacTaskImpl.java:404)
+	at com.sun.tools.javac.api.JavacTaskImpl.lambda$analyze$1(JavacTaskImpl.java:379)
+	at com.sun.tools.javac.api.JavacTaskImpl.invocationHelper(JavacTaskImpl.java:152)
+	at com.sun.tools.javac.api.JavacTaskImpl.analyze(JavacTaskImpl.java:379)
+	... 15 more

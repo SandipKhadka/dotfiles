@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mode version="2.4">
+    <module name="org.netbeans.modules.projectui" spec="1.1" />
+    <name unique="explorer"  />
+  <kind type="view" />
+  <state type="joined"  minimized="true"  />
+  <constraints>
+    <path orientation="vertical" number="0" weight="0.4948453608247423"/>
+    <path orientation="horizontal" number="1" weight="0.75"/>
+    <path orientation="vertical" number="0" weight="0.75"/>
+    <path orientation="horizontal" number="20" weight="0.3"/>
+    <path orientation="vertical" number="20" weight="0.5"/>
+  </constraints>
+  <bounds x="192" y="259" width="441" height="399" />
+  <frame state="0"/>
+    <empty-behavior permanent="true"/>
+</mode>

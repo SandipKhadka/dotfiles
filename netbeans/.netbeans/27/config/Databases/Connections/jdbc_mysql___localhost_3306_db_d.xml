@@ -1,0 +1,11 @@
+<?xml version='1.0'?>
+<!DOCTYPE connection PUBLIC '-//NetBeans//DTD Database Connection 1.2//EN' 'http://www.netbeans.org/dtds/connection-1_2.dtd'>
+<connection>
+  <driver-class value='com.mysql.cj.jdbc.Driver'/>
+  <driver-name value='MySQL'/>
+  <database-url value='jdbc:mysql://localhost:3306/db_default'/>
+  <schema value=''/>
+  <user value='root'/>
+  <display-name value='akshamaladb'/>
+  <use-scrollable-cursors value='false'/>
+</connection>

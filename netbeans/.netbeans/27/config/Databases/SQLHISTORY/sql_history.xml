@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+<sql date="1758266217511" url="jdbc:mysql://localhost:3306/db_default">select * from INVENTORY_STOCK</sql>
+<sql date="1758434653357" url="jdbc:mysql://localhost:3306/db_default">select status from INVENTORY_GROUP</sql>
+<sql date="1756212601771" url="jdbc:mysql://localhost:3306/db_default">select * from INVENTORY_SUB_GROUP</sql>
+<sql date="1756556377111" url="jdbc:mysql://localhost:3306/db_default">select * from USERS</sql>
+<sql date="1756608540695" url="jdbc:mysql://localhost:3306/db_default">SELECT * FROM USERS LIMIT 100</sql>
+<sql date="1756450366588" url="jdbc:mysql://localhost:3306/db_default">RENAME TABLE INVENTPRY_ITEM_CONDITION TO INVENTORY_ITEM_CONDITION</sql>
+<sql date="1759056875914" url="jdbc:mysql://localhost:3306/db_default">select * from INVENTORY_ISSUED_INVENTORY_ENTRY_MAPPING</sql>
+<sql date="1756225142530" url="jdbc:mysql://localhost:3306/db_default">select * from INVENTORY_OPENING</sql>
+<sql date="1756609385217" url="jdbc:mysql://localhost:3306/db_default">INSERT INTO USERS (
+    BRANCH,
+    COLLEGE,
+    IS_TERMS_AND_CONDITIONS_ACCEPTED,
+    USERNAME,
+    PASSWORD
+)
+VALUES (
+    1.          'MIT College',                1,                            'john_doe',                   'securePassword123'       )</sql>
+<sql date="1758951371036" url="jdbc:mysql://localhost:3306/db_default">drop table INVENTORY_STOCK</sql>
+<sql date="1756450299958" url="jdbc:mysql://localhost:3306/db_default">ALTER TABLE INVENTPRY_ITEM_CONDITION TO INVENTORY_ITEM_CONDITION</sql>
+<sql date="1758251905694" url="jdbc:mysql://localhost:3306/db_default">SELECT * FROM INVENTORY_SSUED_INVENTORY_ENTRY_MAPPING</sql>
+<sql date="1759052111639" url="jdbc:mysql://localhost:3306/db_default">select aAVAILABLE_QUANTITY from INVENTORY_ITEM</sql>
+<sql date="1756609337169" url="jdbc:mysql://localhost:3306/db_default">INSERT INTO USERS (
+    BRANCH,
+    COLLEGE,
+    IS_TERMS_AND_CONDITIONS_ACCEPTED,
+    USERNAME,
+    PASSWORD
+)
+VALUES (
+    'Computer Science',           'MIT College',                1,                            'john_doe',                   'securePassword123'       )</sql>
+<sql date="1756646678501" url="jdbc:mysql://localhost:3306/db_default">select * from BRANCH</sql>
+<sql date="1759052090912" url="jdbc:mysql://localhost:3306/db_default">select availableQuantity from INVENTORY_ITEM</sql>
+<sql date="1758951338327" url="jdbc:mysql://localhost:3306/db_default">drop table INVENTORY_ISSUED_INVENTORY_ENTRY_MAPPING</sql>
+<sql date="1758251864473" url="jdbc:mysql://localhost:3306/db_default">SSUED_INVENTORY_ENTRY_MAPPING</sql>
+<sql date="1758951391616" url="jdbc:mysql://localhost:3306/db_default">drop table INVENTORY_RETURNED</sql>
+<sql date="1759052160469" url="jdbc:mysql://localhost:3306/db_default">select INVENTORY_GODOWN from INVENTORY_ITEM</sql>
+<sql date="1756459390971" url="jdbc:mysql://localhost:3306/db_default">drop table INVENTORY_ITEM_CONDITION</sql>
+<sql date="1759052256600" url="jdbc:mysql://localhost:3306/db_default">select INVENTORY_ITEM from ISSUED_INVENTORY</sql>
+<sql date="1758951427269" url="jdbc:mysql://localhost:3306/db_default">drop table INVENTORY_ITEM</sql>
+<sql date="1756458982141" url="jdbc:mysql://localhost:3306/db_default">SELECT * FROM INVENTORY_ITEM_VALUATION_METHOD</sql>
+<sql date="1758434717487" url="jdbc:mysql://localhost:3306/db_default">select status from INVENTORY_ITEM</sql>
+<sql date="1756182236691" url="jdbc:mysql://localhost:3306/db_default">select * from INVENTORY_GROUP</sql>
+<sql date="1759056121149" url="jdbc:mysql://localhost:3306/db_default">delete from ISSUED_INVENTORY</sql>
+<sql date="1756635164467" url="jdbc:mysql://localhost:3306/db_default">select * from INVENTORY_ITEM_CONDITION</sql>
+<sql date="1758251864423" url="jdbc:mysql://localhost:3306/db_default">SELECT * FROM INVENTORY_</sql>
+<sql date="1759052131574" url="jdbc:mysql://localhost:3306/db_default">select AVAILABLE_QUANTITY from INVENTORY_ITEM</sql>
+<sql date="1759056089628" url="jdbc:mysql://localhost:3306/db_default">delete from INVENTORY_ISSUED_INVENTORY_ENTRY_MAPPING</sql>
+<sql date="1758951404291" url="jdbc:mysql://localhost:3306/db_default">drop table ISSUED_INVENTORY</sql>
+<sql date="1756642817039" url="jdbc:mysql://localhost:3306/db_default">select * from ISSUED_INVENTORY</sql>
+<sql date="1756473926797" url="jdbc:mysql://localhost:3306/db_default">select * from INVENTORY_ITEM</sql>
+<sql date="1758251924029" url="jdbc:mysql://localhost:3306/db_default">SELECT * FROM INVENTORY_RETURNED</sql>
+<sql date="1759056102275" url="jdbc:mysql://localhost:3306/db_default">delete from INVENTORY_ITEM</sql>
+<sql date="1758872514081" url="jdbc:mysql://localhost:3306/db_default">select * from INVENTORY_TITLE</sql>
+</history>

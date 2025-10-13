@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mode version="2.4">
+    <module name="org.netbeans.core.ui/1" spec="1.2" />
+    <name unique="bottomSlidingSide"  />
+  <kind type="sliding" />
+  <slidingSide side="bottom" />
+  <slide-in-size tc-id="output" size="471" />
+  <slide-in-size tc-id="TerminalContainerTopComponent" size="395" />
+  <state type="joined"  />
+  <bounds x="39" y="502" width="1876" height="471" />
+  <frame state="0"/>
+    <empty-behavior permanent="true"/>
+</mode>

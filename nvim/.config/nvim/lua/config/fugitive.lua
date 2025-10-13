@@ -30,5 +30,5 @@ autocmd("BufWinEnter", {
     end,
 })
 
-map("n", "gu", "<cmd>diffget //2<CR>")
+map("n", "gl", "<cmd>diffget //2<CR>")
 map("n", "gh", "<cmd>diffget //3<CR>")

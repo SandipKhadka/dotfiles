@@ -61,6 +61,7 @@ map("n", "<leader>y", '"+y')
 map("v", "<leader>y", '"+y')
 map("n", "<leader>Y", '"+Y')
 map("n", "<leader>p", '"+p')
+map("v", "<leader>p", [["_d"+P]], { noremap = true, silent = true })
 
 map("n", "<leader>P", '"+P')
 

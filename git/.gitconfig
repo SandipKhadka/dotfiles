@@ -1,6 +1,6 @@
 [user]
     name = sandip
-    email = sandip28bit2021@kcc.edu.np
+    email = sandip29bit2021@kcc.edu.np
 
 [core]
     editor = nvim                      # Change to 'vim', 'nvim', or 'code --wait' if preferred
@@ -38,10 +38,6 @@
 [merge]
     tool = vimdiff
     conflictstyle = diff3
-
-[credential]
-    helper = store                     # Or 'cache' for memory-based, or 'manager' on Windows
-
 [init]
     defaultBranch = main              # Prevents 'master' as default for new repos
 
@@ -54,3 +50,5 @@
 [fetch]
     prune = true                      # Cleans up deleted branches from remotes
 
+[credential]
+	helper = cache

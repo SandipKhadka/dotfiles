@@ -33,52 +33,52 @@ capabilities.textDocument.completion.completionItem = {
     },
 }
 
-require("lspconfig").jdtls.setup {
+vim.lsp.config("jdtls", {
     capabilities = capabilities,
     on_init = on_init,
-}
+})
 
-require("lspconfig").html.setup {
+vim.lsp.config("html", {
     capabilities = capabilities,
     on_init = on_init,
-}
+})
 
-require("lspconfig").cssls.setup {
+vim.lsp.config("cssls", {
     capabilities = capabilities,
     on_init = on_init,
     filetypes = { "html", "javascript", "css" },
-}
+})
 
-require("lspconfig").ts_ls.setup {
+vim.lsp.config("tsserver", {
     capabilities = capabilities,
     on_init = on_init,
-    filetypes = { "javascript", "typescript", "html", "typescriptreact" },
-}
+    filetypes = { "jav)ascript", "typescript", "html", "typescriptreact" },
+})
 
-require("lspconfig").pyright.setup {
+vim.lsp.config("pyright", {
     capabilities = capabilities,
     on_init = on_init,
-}
+})
 
-require("lspconfig").clangd.setup {
+vim.lsp.config("clangd", {
     capabilities = capabilities,
     on_init = on_init,
-}
+})
 
-require("lspconfig").rust_analyzer.setup {
+vim.lsp.config("rust_analyzer", {
     capabilities = capabilities,
     on_init = on_init,
-}
-require("lspconfig").bashls.setup {
+})
+vim.lsp.config("bashls", {
     capabilities = capabilities,
     on_init = on_init,
 
     bashIde = {
         globPattern = "*@(.sh|.inc|.bash|.command)",
     },
-}
+})
 
-require("lspconfig").lua_ls.setup {
+vim.lsp.config("lua_ls", {
     capabilities = capabilities,
     on_init = on_init,
 
@@ -89,4 +89,4 @@ require("lspconfig").lua_ls.setup {
             },
         },
     },
-}
+})

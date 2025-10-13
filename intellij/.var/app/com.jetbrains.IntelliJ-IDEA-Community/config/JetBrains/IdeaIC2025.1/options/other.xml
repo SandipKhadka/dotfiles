@@ -1,8 +1,16 @@
 <application>
   <component name="ActionHistoryManager">
     <ids>
-      <option value="WelcomeScreen.Plugins" />
       <option value="ChangeKeymap" />
+      <option value="Scratch.ShowFilesPopup" />
+      <option value="$SelectAll" />
+      <option value="WelcomeScreen.Plugins" />
+      <option value="Vcs.ShowTabbedFileHistory" />
+      <option value="PCRefreshAction" />
+      <option value="ScrollPane-scrollEnd" />
+      <option value="performancePlugin.ProfileIndexingAction" />
+      <option value="EditorCloneCaretAbove" />
+      <option value="SelectIn" />
     </ids>
   </component>
   <component name="EduSettings">
@@ -17,63 +25,74 @@
     <option name="fontSize" value="17.0" />
     <option name="presentationModeIdeScale" value="1.75" />
   </component>
-  <component name="PropertyService"><![CDATA[{
-  "keyToString": {
-    "Edu.NewCourse": "ide",
-    "Educational.recentCoursesFilled": "true",
-    "Educational.stepikOAuthReset": "true",
-    "InstalledPluginsSearchHistory": "jetbrains",
-    "KEYMAP": "generate\nrename",
-    "LAST_CALCULATED_COLOR_INDEX_KEY": "6",
-    "MarketplacePluginsSearchHistory": "/suggested\nspring\nsp\nmouse\nmo",
-    "MemberChooser.copyJavadoc": "false",
-    "MemberChooser.showClasses": "true",
-    "RunOnceActivity.TerminalOptionsProvider.migration.2025.1.1": "true",
-    "RunOnceActivity.VFSInitializationConditionsToFusReporter": "true",
-    "RunOnceActivity.git.modal.commit.deprecation.notification": "true",
-    "RunOnceActivity.git.modal.commit.toggle": "true",
-    "SettingsSearchHistory": "jetbrains\nmouse",
-    "ask.about.ctrl.y.shortcut.v2": "true",
-    "build.toolwindow.Build Output.selection.state": "com.intellij.build.BuildTreeConsoleView",
-    "build.toolwindow.Sync.selection.state": "com.intellij.build.BuildTreeConsoleView",
-    "com.intellij.ide.projectWizard.generators.JavaNewProjectWizard$Step.selectedStep": "IntelliJ",
-    "com.jetbrains.edu.LAST_UPDATE": "1752674204386",
-    "decompiler.legal.notice.accepted": "true",
-    "defaultJdkConfigured": "true",
-    "docker.connection.created": "true",
-    "edu.ui.onboarding.tour.shown": "true",
-    "enter_selection_count": "5",
-    "experimental.ui.on.first.startup": "true",
-    "experimental.ui.used.version": "251.26927.53",
-    "fileTypeChangedCounter": "9",
-    "fontSizeToResetConsole": "16.25",
-    "fontSizeToResetEditor": "16.25",
-    "got.it.tooltip.Plugins Auto-Update": "1",
-    "got.it.tooltip.ai.translation.tooltip": "1",
-    "got.it.tooltip.edu.ai.theory.lookup.tooltip": "1",
-    "ideavim.statistics.timestamp": "1753024993079",
-    "input.method.disabler.muted": "true",
-    "installed.kotlin.plugin.version": "251.26927.53-IJ",
-    "jdk.selected.JAVA_MODULE": "ms-21",
-    "llm.installer.last.toolwindow.state": "LLM_INSTALLER",
-    "migrated.non.roamable.values.from.general.settings": "true",
-    "previousColorScheme": "_@user_Dark",
-    "project.wizard.group": "NPW.simple-project.Java",
-    "questionnaireAdvertisingNotification": "true",
-    "registry.to.advanced.settings.migration.build": "IC-251.26927.53",
-    "terminal.gen.one.option.visible": "false",
-    "toolwindow.showToolWindowsNames.ts": "2025-07-16T19:24:43.37437003"
+  <component name="PropertyService">{
+  &quot;keyToString&quot;: {
+    &quot;Edu.NewCourse&quot;: &quot;ide&quot;,
+    &quot;Educational.recentCoursesFilled&quot;: &quot;true&quot;,
+    &quot;Educational.stepikOAuthReset&quot;: &quot;true&quot;,
+    &quot;InstalledPluginsSearchHistory&quot;: &quot;z\n/suggested\njetbrains&quot;,
+    &quot;KEYMAP&quot;: &quot;generate\nrename&quot;,
+    &quot;LAST_CALCULATED_COLOR_INDEX_KEY&quot;: &quot;7&quot;,
+    &quot;MarketplacePluginsSearchHistory&quot;: &quot;/suggested\nreact\nreac\nlom\nlo&quot;,
+    &quot;MemberChooser.copyJavadoc&quot;: &quot;false&quot;,
+    &quot;MemberChooser.showClasses&quot;: &quot;true&quot;,
+    &quot;PluginConfigurable.selectionTab&quot;: &quot;1&quot;,
+    &quot;RunOnceActivity.TerminalFontSettingsService.fixStoredNonMonospacedFonts&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalOptionsProvider.migration.2025.1.1&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.VFSInitializationConditionsToFusReporter&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.modal.commit.deprecation.notification&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.modal.commit.toggle&quot;: &quot;true&quot;,
+    &quot;SettingsSearchHistory&quot;: &quot;mouse wheel\nopen in project\njetbrains\nmouse&quot;,
+    &quot;ask.about.ctrl.y.shortcut.v2&quot;: &quot;true&quot;,
+    &quot;build.toolwindow.Build Output.selection.state&quot;: &quot;com.intellij.build.BuildTreeConsoleView&quot;,
+    &quot;build.toolwindow.Sync.selection.state&quot;: &quot;com.intellij.build.BuildTreeConsoleView&quot;,
+    &quot;build.toolwindow.run.selection.state&quot;: &quot;com.intellij.build.BuildTreeConsoleView&quot;,
+    &quot;com.intellij.ide.projectWizard.generators.JavaNewProjectWizard$Step.selectedStep&quot;: &quot;IntelliJ&quot;,
+    &quot;com.intellij.openapi.roots.ui.configuration.TabbedModuleEditor.selectedEditor&quot;: &quot;Sources&quot;,
+    &quot;com.jetbrains.edu.LAST_UPDATE&quot;: &quot;1752674204386&quot;,
+    &quot;decompiler.legal.notice.accepted&quot;: &quot;true&quot;,
+    &quot;defaultJdkConfigured&quot;: &quot;true&quot;,
+    &quot;docker.connection.created&quot;: &quot;true&quot;,
+    &quot;edu.ui.onboarding.tour.shown&quot;: &quot;true&quot;,
+    &quot;enter_selection_count&quot;: &quot;5&quot;,
+    &quot;experimental.ui.on.first.startup&quot;: &quot;true&quot;,
+    &quot;experimental.ui.used.version&quot;: &quot;252.26199.169&quot;,
+    &quot;file.gist.reindex.count&quot;: &quot;8&quot;,
+    &quot;fileTypeChangedCounter&quot;: &quot;11&quot;,
+    &quot;fontSizeToResetConsole&quot;: &quot;16.25&quot;,
+    &quot;fontSizeToResetEditor&quot;: &quot;16.25&quot;,
+    &quot;got.it.tooltip.Plugins Auto-Update&quot;: &quot;1&quot;,
+    &quot;got.it.tooltip.ai.translation.tooltip&quot;: &quot;1&quot;,
+    &quot;got.it.tooltip.edu.ai.theory.lookup.tooltip&quot;: &quot;1&quot;,
+    &quot;got.it.tooltip.extract.method.gotit.navigate&quot;: &quot;1&quot;,
+    &quot;got.it.tooltip.web.preview.reload.on.save&quot;: &quot;1&quot;,
+    &quot;idea.islands.enabled&quot;: &quot;true&quot;,
+    &quot;ideavim.statistics.timestamp&quot;: &quot;1753024993079&quot;,
+    &quot;input.method.disabler.muted&quot;: &quot;true&quot;,
+    &quot;installed.kotlin.plugin.version&quot;: &quot;252.26199.169-IJ&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;ms-21&quot;,
+    &quot;llm.installer.last.toolwindow.state&quot;: &quot;LLM_INSTALLER&quot;,
+    &quot;migrated.non.roamable.values.from.general.settings&quot;: &quot;true&quot;,
+    &quot;previousColorScheme&quot;: &quot;_@user_Dark&quot;,
+    &quot;project.wizard.group&quot;: &quot;NPW.simple-project.Java&quot;,
+    &quot;questionnaireAdvertisingNotification&quot;: &quot;true&quot;,
+    &quot;registry.to.advanced.settings.migration.build&quot;: &quot;IC-252.26199.169&quot;,
+    &quot;second.reformat.confirmed.2&quot;: &quot;true&quot;,
+    &quot;terminal.gen.one.option.visible&quot;: &quot;false&quot;,
+    &quot;toolwindow.showToolWindowsNames.ts&quot;: &quot;2025-07-16T19:24:43.37437003&quot;
   },
-  "keyToStringList": {
-    "file.chooser.recent.files": [
-      "/home/sandip/taskflowplus/backend",
-      "/home/sandip/my-chess-game"
+  &quot;keyToStringList&quot;: {
+    &quot;file.chooser.recent.files&quot;: [
+      &quot;/home/sandip/projects/akshamala-inventory&quot;,
+      &quot;/home/sandip/NetBeansProjects/jsf-crud&quot;,
+      &quot;/home/sandip/taskflowplus/backend&quot;,
+      &quot;/home/sandip/my-chess-game&quot;
     ],
-    "fileTypeDetectors": [
-      "com.intellij.ide.scratch.ScratchFileServiceImpl$Detector",
-      "com.intellij.docker.dockerFile.DockerFileTypeDetector",
-      "org.jetbrains.plugins.textmate.TextMateFileType$TextMateFileDetector"
+    &quot;fileTypeDetectors&quot;: [
+      &quot;com.intellij.ide.scratch.ScratchFileServiceImpl$Detector&quot;,
+      &quot;com.intellij.docker.dockerFile.DockerFileTypeDetector&quot;,
+      &quot;org.jetbrains.plugins.textmate.TextMateFileType$TextMateFileDetector&quot;
     ]
   }
-}]]></component>
+}</component>
 </application>

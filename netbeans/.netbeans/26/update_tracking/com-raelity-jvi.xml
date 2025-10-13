@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<module codename="com.raelity.jvi/0">
-    <module_version install_time="1754015984211" last="true" origin="jVi Update Center JDK-11" specification_version="2.0.139.49">
-        <file crc="2999689313" name="config/Modules/com-raelity-jvi.xml"/>
-        <file crc="2766138143" name="modules/com-raelity-jvi.jar"/>
-        <file crc="1550053197" name="modules/ext/jvi-swing.jar"/>
-    </module_version>
-</module>

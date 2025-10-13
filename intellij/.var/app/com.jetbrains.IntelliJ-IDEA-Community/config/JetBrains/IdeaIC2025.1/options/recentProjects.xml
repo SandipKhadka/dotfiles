@@ -47,23 +47,63 @@
         </entry>
         <entry key="$USER_HOME$/taskflowplus/backend">
           <value>
-            <RecentProjectMetaInfo frameTitle="backend – User.java" opened="true" projectWorkspaceId="2zm0Pc9KQ6vMiNdmPDLSbfqGt8w">
-              <option name="activationTimestamp" value="1753103382899" />
+            <RecentProjectMetaInfo frameTitle="backend – SecurityConfig.java" projectWorkspaceId="2zm0Pc9KQ6vMiNdmPDLSbfqGt8w">
+              <option name="activationTimestamp" value="1756005457169" />
               <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
-              <option name="build" value="IC-251.26927.53" />
-              <option name="buildTimestamp" value="1750655280000" />
+              <option name="build" value="IC-252.23892.409" />
+              <option name="buildTimestamp" value="1754024820000" />
               <option name="colorInfo">
                 <RecentProjectColorInfo associatedIndex="2" />
               </option>
               <frame x="0" y="0" width="1920" height="1080" extendedState="6" />
               <option name="productionCode" value="IC" />
-              <option name="projectOpenTimestamp" value="1753088770470" />
+              <option name="projectOpenTimestamp" value="1755270999569" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/NetBeansProjects/jsf-crud">
+          <value>
+            <RecentProjectMetaInfo frameTitle="jsf-crud – StudentBean.java" projectWorkspaceId="30fiagVp2neq07KS2UsnPVakxAp">
+              <option name="activationTimestamp" value="1756481888941" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IC-252.23892.409" />
+              <option name="buildTimestamp" value="1754024820000" />
+              <option name="colorInfo">
+                <RecentProjectColorInfo associatedIndex="7" />
+              </option>
+              <frame x="0" y="0" width="1920" height="1080" extendedState="6" />
+              <option name="productionCode" value="IC" />
+              <option name="projectOpenTimestamp" value="1756005463854" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$APPLICATION_CONFIG_DIR$/light-edit">
+          <value>
+            <RecentProjectMetaInfo frameTitle="sdk_update.txt - .../share/ide-flatpak-wrapper" hidden="true" projectWorkspaceId="32gpWVOR7Bjq6FqX6Rhulis05wE">
+              <option name="activationTimestamp" value="1757852120762" />
+              <frame x="141" y="0" width="1400" height="1000" extendedState="6" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/projects/akshamala-inventory">
+          <value>
+            <RecentProjectMetaInfo frameTitle="akshamala-inventory – InventoryItemDaoImpl.java [akshamala-erp-EJB]" opened="true" projectWorkspaceId="31y2GWLtDQIu805aAOXvSRY3dlD">
+              <option name="activationTimestamp" value="1758969309863" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="build" value="IC-252.25557.131" />
+              <option name="buildTimestamp" value="1756326060000" />
+              <option name="colorInfo">
+                <RecentProjectColorInfo associatedIndex="7" />
+              </option>
+              <frame x="0" y="0" width="1920" height="1080" extendedState="6" />
+              <option name="productionCode" value="IC" />
+              <option name="projectOpenTimestamp" value="1758446205173" />
             </RecentProjectMetaInfo>
           </value>
         </entry>
       </map>
     </option>
-    <option name="lastOpenedProject" value="$USER_HOME$/taskflowplus/backend" />
-    <option name="lastProjectLocation" value="$USER_HOME$/IdeaProjects" />
+    <option name="lastOpenedProject" value="$USER_HOME$/projects/akshamala-inventory" />
+    <option name="lastProjectLocation" value="$USER_HOME$/projects" />
   </component>
 </application>

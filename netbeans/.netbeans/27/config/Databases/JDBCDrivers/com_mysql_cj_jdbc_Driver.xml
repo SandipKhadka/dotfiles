@@ -1,0 +1,11 @@
+<?xml version='1.0'?>
+<!DOCTYPE driver PUBLIC '-//NetBeans//DTD JDBC Driver 1.1//EN' 'http://www.netbeans.org/dtds/jdbc-driver-1_1.dtd'>
+<driver>
+  <name value='MySQL'/>
+  <display-name value='MySQL (Connector/J driver)'/>
+  <class value='com.mysql.cj.jdbc.Driver'/>
+  <urls>
+    <url value='file:/home/sandip/GlassFish_Server11/glassfish/domains/domain1/lib/mysql-connector-java-5.1.47.jar'/>
+    <url value='file:/usr/share/java/mysql-connector-j.jar'/>
+  </urls>
+</driver>
