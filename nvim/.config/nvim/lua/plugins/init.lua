@@ -1,9 +1,9 @@
 local M = {
-
     {
         "catppuccin/nvim",
         name = "catppuccin",
         priority = 1000,
+        lazy = false, -- Load immediately since it's a colorscheme
         config = function()
             require "config.theme.catppuccin"
         end,
@@ -12,6 +12,8 @@ local M = {
     {
         "rose-pine/neovim",
         name = "rose-pine",
+        priority = 1000,
+        lazy = false,
         config = function()
             require "config.theme.rose-pine"
         end,
@@ -25,10 +27,8 @@ local M = {
 
     {
         "stevearc/dressing.nvim",
+        event = "VeryLazy", -- Load only when needed
         opts = {},
-        config = function()
-            require("dressing").setup {}
-        end,
     },
 
     {
@@ -46,6 +46,19 @@ local M = {
     {
         "nvim-telescope/telescope.nvim",
         tag = "0.1.8",
+        cmd = "Telescope", -- Load on command
+        keys = { -- Load on keymap
+            {
+                "<leader>ff",
+                "<cmd>Telescope find_files<cr>",
+                desc = "Find Files",
+            },
+            {
+                "<leader>fg",
+                "<cmd>Telescope live_grep<cr>",
+                desc = "Live Grep",
+            },
+        },
         config = function()
             require "config.telescope"
         end,
@@ -53,6 +66,7 @@ local M = {
 
     {
         "neovim/nvim-lspconfig",
+        event = { "BufReadPre", "BufNewFile" }, -- Load when opening files
         dependencies = {
             "williamboman/mason.nvim",
             "williamboman/mason-lspconfig.nvim",
@@ -75,6 +89,7 @@ local M = {
 
     {
         "stevearc/conform.nvim",
+        event = { "BufWritePre" }, -- Load only before saving
         config = function()
             require "config.confirm"
         end,
@@ -82,6 +97,8 @@ local M = {
 
     {
         "nvim-treesitter/nvim-treesitter",
+        event = { "BufReadPost", "BufNewFile" }, -- Load when opening files
+        build = ":TSUpdate", -- Ensure treesitter is updated
         config = function()
             require "config.tree-sitter"
         end,
@@ -89,6 +106,7 @@ local M = {
 
     {
         "tpope/vim-fugitive",
+        cmd = { "Git", "Gstatus", "Gblame" }, -- Load on git commands
         config = function()
             require "config.fugitive"
         end,
@@ -96,6 +114,7 @@ local M = {
 
     {
         "lewis6991/gitsigns.nvim",
+        event = "BufReadPre", -- Load early for git signs
         config = function()
             require "config.git-signs"
         end,
@@ -103,6 +122,7 @@ local M = {
 
     {
         "mbbill/undotree",
+        cmd = "UndotreeToggle", -- Load only when toggling
         config = function()
             vim.keymap.set("n", "<leader>u", ":UndotreeToggle<CR>")
         end,
@@ -110,18 +130,20 @@ local M = {
 
     {
         "tpope/vim-commentary",
+        keys = { "gc", "gcc" }, -- Load on commentary keys
     },
 
     {
-        "Exafunction/codeium.vim",
+        "Exafunction/windsurf.vim",
     },
 
     {
         "WhoIsSethDaniel/mason-tool-installer.nvim",
+        dependencies = { "williamboman/mason.nvim" },
+        event = "VeryLazy", -- Load after UI is ready
         config = function()
             require("mason-tool-installer").setup {
                 ensure_installed = {
-                    "jdtls",
                     "stylua",
                     "lua_ls",
                     "rust_analyzer",
@@ -148,13 +170,22 @@ local M = {
 
     {
         "windwp/nvim-ts-autotag",
+        ft = {
+            "html",
+            "xml",
+            "javascript",
+            "javascriptreact",
+            "typescript",
+            "typescriptreact",
+        }, -- Load only for specific filetypes
         config = function()
             require "config.tag"
         end,
     },
+
     {
         "mfussenegger/nvim-jdtls",
-        ft = { "java" },
+        ft = { "java" }, -- Load only for Java files
         dependencies = {
             "williamboman/mason.nvim",
             "williamboman/mason-lspconfig.nvim",
@@ -166,8 +197,8 @@ local M = {
 
     {
         "rcarriga/nvim-dap-ui",
+        ft = { "python", "javascript", "typescript", "java" }, -- Load only for debuggable filetypes
         dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
-
         config = function()
             require "config.dap"
             require "config.dap-ui"
@@ -176,6 +207,7 @@ local M = {
 
     {
         "NvChad/nvim-colorizer.lua",
+        event = "BufReadPre", -- Load early for color highlighting
         config = function()
             require("colorizer").setup {
                 filetypes = {
@@ -187,6 +219,12 @@ local M = {
                     "javascriptreact",
                     "typescriptreact",
                     "lua",
+                },
+                user_default_options = {
+                    RGB = true,
+                    RRGGBB = true,
+                    names = false, -- Disable color names (faster)
+                    tailwind = false, -- Disable tailwind (faster if not using)
                 },
             }
         end,

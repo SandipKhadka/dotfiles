@@ -15,7 +15,7 @@ map("n", "<C-l>", "<C-w>l")
 map("n", "<C-j>", "<C-w>j")
 map("n", "<C-k>", "<C-w>k")
 map("n", "<C-m>", "<C-w>x")
-map("n", "<C-w>", "<cmd>bd<CR>")
+map("n", "<C-w>", "<cmd>w<bar>bd<CR>")
 map("n", "<C-o>", "<C-w>o>")
 
 map("n", "<C-Up>", ":resize +2<CR>", { silent = true })

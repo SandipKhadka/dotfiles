@@ -17,8 +17,17 @@
     <fileobject name="|home|sandip|.cache|netbeans|27|mavencachedirs|111944010|org-netbeans-modules-profiler">
         <attr name="settingsFor" urlvalue="file:/home/sandip/projects/akshamala-inventory/akshamala-erp-ejb/"/>
     </fileobject>
+    <fileobject name="|home|sandip|.cache|netbeans|27|mavencachedirs|1462617482|org-netbeans-modules-profiler">
+        <attr name="settingsFor" urlvalue="file:/home/sandip/projects/akshamala-erp/akshamala-erp-ear/"/>
+    </fileobject>
+    <fileobject name="|home|sandip|.cache|netbeans|27|mavencachedirs|1462617745|org-netbeans-modules-profiler">
+        <attr name="settingsFor" urlvalue="file:/home/sandip/projects/akshamala-erp/akshamala-erp-ejb/"/>
+    </fileobject>
     <fileobject name="|home|sandip|.cache|netbeans|27|mavencachedirs|1486533928|org-netbeans-modules-profiler">
         <attr name="settingsFor" urlvalue="file:/home/sandip/projects/akshamala-inventory/"/>
+    </fileobject>
+    <fileobject name="|home|sandip|.cache|netbeans|27|mavencachedirs|1527779793|org-netbeans-modules-profiler">
+        <attr name="settingsFor" urlvalue="file:/home/sandip/projects/akshamala-erp/"/>
     </fileobject>
     <fileobject name="|home|sandip|.cache|netbeans|27|mavencachedirs|1588723624|org-netbeans-modules-profiler">
         <attr name="settingsFor" urlvalue="file:/home/sandip/projects/akshamala-inventory/admin/"/>
@@ -26,8 +35,20 @@
     <fileobject name="|home|sandip|.cache|netbeans|27|mavencachedirs|1934051348|org-netbeans-modules-profiler">
         <attr name="settingsFor" urlvalue="file:/home/sandip/projects/akshamala-inventory/akshamala-erp-admin-EJB/"/>
     </fileobject>
+    <fileobject name="|home|sandip|.cache|netbeans|27|mavencachedirs|214177647|org-netbeans-modules-profiler">
+        <attr name="settingsFor" urlvalue="file:/home/sandip/projects/akshamala-erp/admin/"/>
+    </fileobject>
+    <fileobject name="|home|sandip|.cache|netbeans|27|mavencachedirs|509774513|org-netbeans-modules-profiler">
+        <attr name="settingsFor" urlvalue="file:/home/sandip/projects/akshamala-erp/akshamala-erp-Entity/"/>
+    </fileobject>
+    <fileobject name="|home|sandip|.cache|netbeans|27|remotefiles|101f319d9ecdb0b555b8acb7f13a2058.js">
+        <attr name="remote.url" stringvalue="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"/>
+    </fileobject>
     <fileobject name="|home|sandip|.cache|netbeans|27|remotefiles|2110e24e24492d9e84a582ae1b103fc9.css">
         <attr name="remote.url" stringvalue="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+    </fileobject>
+    <fileobject name="|home|sandip|.cache|netbeans|27|remotefiles|327d76436ce0a01434976cff1b147f50.js">
+        <attr name="remote.url" stringvalue="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"/>
     </fileobject>
     <fileobject name="|home|sandip|.cache|netbeans|27|remotefiles|3854bd70c455694bd4e5517dffc826d6.js">
         <attr name="remote.url" stringvalue="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.min.js"/>
@@ -35,11 +56,17 @@
     <fileobject name="|home|sandip|.cache|netbeans|27|remotefiles|4352c71c7dbf3ea299f6e8f75552d037.js">
         <attr name="remote.url" stringvalue="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"/>
     </fileobject>
+    <fileobject name="|home|sandip|.cache|netbeans|27|remotefiles|50a9bdd31fbf4abf097be255b8981588.css">
+        <attr name="remote.url" stringvalue="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    </fileobject>
     <fileobject name="|home|sandip|.cache|netbeans|27|remotefiles|606000e1a06ac90027754596adece26a.js">
         <attr name="remote.url" stringvalue="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"/>
     </fileobject>
     <fileobject name="|home|sandip|.cache|netbeans|27|remotefiles|65875d5d5745f4d9cef92bd519bd7439.css">
         <attr name="remote.url" stringvalue="https://use.fontawesome.com/releases/v5.7.2/css/all.css"/>
+    </fileobject>
+    <fileobject name="|home|sandip|.cache|netbeans|27|remotefiles|6f8bd9fb8fe489d207d9f446d5d0405d.js">
+        <attr name="remote.url" stringvalue="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"/>
     </fileobject>
     <fileobject name="|home|sandip|.cache|netbeans|27|remotefiles|8b11cdf1459a34b4401cadbb9adc5bb1.js">
         <attr name="remote.url" stringvalue="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"/>
@@ -50,8 +77,20 @@
     <fileobject name="|home|sandip|.cache|netbeans|27|remotefiles|96ae086b0703b19763f18193aeb039eb.js">
         <attr name="remote.url" stringvalue="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.3.5/jspdf.plugin.autotable.min.js"/>
     </fileobject>
+    <fileobject name="|home|sandip|.cache|netbeans|27|remotefiles|ac76be9a2d55ac1d04d07d0cd49ccd30.js">
+        <attr name="remote.url" stringvalue="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"/>
+    </fileobject>
     <fileobject name="|home|sandip|.cache|netbeans|27|remotefiles|d4e2112136739084b24165294f9173d2.css">
         <attr name="remote.url" stringvalue="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+    </fileobject>
+    <fileobject name="|home|sandip|.cache|netbeans|27|remotefiles|dd5b7639f389614afa64cccfdb905ff0.js">
+        <attr name="remote.url" stringvalue="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"/>
+    </fileobject>
+    <fileobject name="|home|sandip|.cache|netbeans|27|remotefiles|e0e0b343f529c6d7d7b01d1f014a85f6.css">
+        <attr name="remote.url" stringvalue="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"/>
+    </fileobject>
+    <fileobject name="|home|sandip|.cache|netbeans|27|remotefiles|e3ba2ada004aaff249f2794552e7e6bc.css">
+        <attr name="remote.url" stringvalue="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
     </fileobject>
     <fileobject name="|home|sandip|.cache|netbeans|27|remotefiles|e6d7c5a62ff81f1ea6c8dc96f6f610fc.css">
         <attr name="remote.url" stringvalue="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
@@ -444,8 +483,11 @@
     <fileobject name="|home|sandip|.m2|repository|nl|bitwalker|UserAgentUtils|1.2.4|UserAgentUtils-1.2.4-sources.jar">
         <attr name="lastRootCheckStamp" serialvalue="aced00057372000e6a6176612e7574696c2e44617465686a81014b59741903000078707708000001993decd35078"/>
     </fileobject>
+    <fileobject name="|home|sandip|.m2|repository|np|com|bahadur|converter|date|nepali|nepali-english-date-converter|1.0.0|nepali-english-date-converter-1.0.0-javadoc.jar">
+        <attr name="lastRootCheckStamp" serialvalue="aced00057372000e6a6176612e7574696c2e44617465686a81014b5974190300007870770800000199fa77120d78"/>
+    </fileobject>
     <fileobject name="|home|sandip|.m2|repository|np|com|bahadur|converter|date|nepali|nepali-english-date-converter|1.0.0|nepali-english-date-converter-1.0.0-sources.jar">
-        <attr name="lastRootCheckStamp" serialvalue="aced00057372000e6a6176612e7574696c2e44617465686a81014b59741903000078707708000001993d4ff04478"/>
+        <attr name="lastRootCheckStamp" serialvalue="aced00057372000e6a6176612e7574696c2e44617465686a81014b5974190300007870770800000199fbc719ad78"/>
     </fileobject>
     <fileobject name="|home|sandip|.m2|repository|org|apache|ant|ant|1.7.1|ant-1.7.1-sources.jar">
         <attr name="lastRootCheckStamp" serialvalue="aced00057372000e6a6176612e7574696c2e44617465686a81014b59741903000078707708000001993decd83878"/>
@@ -690,11 +732,47 @@
     <fileobject name="|home|sandip|.m2|repository|xml-apis|xml-apis|1.0.b2|xml-apis-1.0.b2-sources.jar">
         <attr name="lastRootCheckStamp" serialvalue="aced00057372000e6a6176612e7574696c2e44617465686a81014b59741903000078707708000001993decd33478"/>
     </fileobject>
+    <fileobject name="|home|sandip|projects|akshamala-erp|admin">
+        <attr name="AuxilaryConfiguration" stringvalue="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>\u000a&lt;project-private>\u000a    &lt;properties xmlns=&quot;http://www.netbeans.org/ns/maven-properties-data/1&quot;>\u000a        &lt;org-netbeans-modules-maven-j2ee.netbeans_2e_deployment_2e_server_2e_id>[/home/sandip/Downloads/glassfish-4.1/glassfish:/home/sandip/Downloads/glassfish-4.1/glassfish/domains/domain]deployer:gfv4ee7:localhost:4848&lt;/org-netbeans-modules-maven-j2ee.netbeans_2e_deployment_2e_server_2e_id>\u000a    &lt;/properties>\u000a    &lt;editor-bookmarks xmlns=&quot;http://www.netbeans.org/ns/editor-bookmarks/2&quot; lastBookmarkId=&quot;0&quot;/>\u000a    &lt;open-files xmlns=&quot;http://www.netbeans.org/ns/projectui-open-files/2&quot;>\u000a        &lt;group>\u000a            &lt;file>file:/home/sandip/projects/akshamala-erp/admin/src/main/webapp/css/header.css&lt;/file>\u000a        &lt;/group>\u000a    &lt;/open-files>\u000a&lt;/project-private>\u000a"/>
+    </fileobject>
+    <fileobject name="|home|sandip|projects|akshamala-erp|admin|src|main|java|com|akshamalainfotech|erp|admin|rest|configuration|SwaggerJaxrsConfig.java">
+        <attr name="org.netbeans.modules.web.IsServletFile" boolvalue="true"/>
+    </fileobject>
+    <fileobject name="|home|sandip|projects|akshamala-erp|admin|src|main|java|com|akshamalainfotech|erp|admin|servlet|AdminPasswordResetServlet.java">
+        <attr name="org.netbeans.modules.web.IsServletFile" boolvalue="true"/>
+    </fileobject>
+    <fileobject name="|home|sandip|projects|akshamala-erp|admin|src|main|java|com|akshamalainfotech|erp|admin|servlet|AsyncServlet.java">
+        <attr name="org.netbeans.modules.web.IsServletFile" boolvalue="true"/>
+    </fileobject>
+    <fileobject name="|home|sandip|projects|akshamala-erp|admin|src|main|java|com|akshamalainfotech|erp|admin|servlet|DynamicImageServlet.java">
+        <attr name="org.netbeans.modules.web.IsServletFile" boolvalue="true"/>
+    </fileobject>
+    <fileobject name="|home|sandip|projects|akshamala-erp|admin|src|main|java|com|akshamalainfotech|erp|admin|servlet|IpnValidate.java">
+        <attr name="org.netbeans.modules.web.IsServletFile" boolvalue="true"/>
+    </fileobject>
+    <fileobject name="|home|sandip|projects|akshamala-erp|admin|src|main|java|com|akshamalainfotech|erp|admin|servlet|TestCommison.java">
+        <attr name="org.netbeans.modules.web.IsServletFile" boolvalue="true"/>
+    </fileobject>
+    <fileobject name="|home|sandip|projects|akshamala-erp|admin|src|main|java|com|akshamalainfotech|erp|admin|servlet|TestPojoServlet.java">
+        <attr name="org.netbeans.modules.web.IsServletFile" boolvalue="true"/>
+    </fileobject>
+    <fileobject name="|home|sandip|projects|akshamala-erp|admin|src|main|java|com|akshamalainfotech|erp|admin|servlet|UserServlet.java">
+        <attr name="org.netbeans.modules.web.IsServletFile" boolvalue="true"/>
+    </fileobject>
+    <fileobject name="|home|sandip|projects|akshamala-erp|akshamala-erp-Entity">
+        <attr name="AuxilaryConfiguration" stringvalue="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>\u000a&lt;project-private>\u000a    &lt;open-files xmlns=&quot;http://www.netbeans.org/ns/projectui-open-files/2&quot;>\u000a        &lt;group/>\u000a    &lt;/open-files>\u000a    &lt;editor-bookmarks xmlns=&quot;http://www.netbeans.org/ns/editor-bookmarks/2&quot; lastBookmarkId=&quot;0&quot;/>\u000a&lt;/project-private>\u000a"/>
+    </fileobject>
+    <fileobject name="|home|sandip|projects|akshamala-erp|akshamala-erp-ear">
+        <attr name="AuxilaryConfiguration" stringvalue="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>\u000a&lt;project-private>\u000a    &lt;properties xmlns=&quot;http://www.netbeans.org/ns/maven-properties-data/1&quot;>\u000a        &lt;org-netbeans-modules-maven-j2ee.netbeans_2e_deployment_2e_server_2e_id>[/home/sandip/Downloads/glassfish-4.1/glassfish:/home/sandip/Downloads/glassfish-4.1/glassfish/domains/domain]deployer:gfv4ee7:localhost:4848&lt;/org-netbeans-modules-maven-j2ee.netbeans_2e_deployment_2e_server_2e_id>\u000a    &lt;/properties>\u000a&lt;/project-private>\u000a"/>
+    </fileobject>
+    <fileobject name="|home|sandip|projects|akshamala-erp|akshamala-erp-ejb">
+        <attr name="AuxilaryConfiguration" stringvalue="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>\u000a&lt;project-private>\u000a    &lt;properties xmlns=&quot;http://www.netbeans.org/ns/maven-properties-data/1&quot;>\u000a        &lt;org-netbeans-modules-maven-j2ee.netbeans_2e_deployment_2e_server_2e_id>[/home/sandip/Downloads/glassfish-4.1/glassfish:/home/sandip/Downloads/glassfish-4.1/glassfish/domains/domain]deployer:gfv4ee7:localhost:4848&lt;/org-netbeans-modules-maven-j2ee.netbeans_2e_deployment_2e_server_2e_id>\u000a    &lt;/properties>\u000a    &lt;open-files xmlns=&quot;http://www.netbeans.org/ns/projectui-open-files/2&quot;>\u000a        &lt;group/>\u000a    &lt;/open-files>\u000a    &lt;editor-bookmarks xmlns=&quot;http://www.netbeans.org/ns/editor-bookmarks/2&quot; lastBookmarkId=&quot;0&quot;/>\u000a&lt;/project-private>\u000a"/>
+    </fileobject>
     <fileobject name="|home|sandip|projects|akshamala-inventory">
         <attr name="AuxilaryConfiguration" stringvalue="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>\u000a&lt;project-private>\u000a    &lt;editor-bookmarks xmlns=&quot;http://www.netbeans.org/ns/editor-bookmarks/2&quot; lastBookmarkId=&quot;0&quot;/>\u000a&lt;/project-private>\u000a"/>
     </fileobject>
     <fileobject name="|home|sandip|projects|akshamala-inventory|admin">
-        <attr name="AuxilaryConfiguration" stringvalue="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>\u000a&lt;project-private>\u000a    &lt;properties xmlns=&quot;http://www.netbeans.org/ns/maven-properties-data/1&quot;>\u000a        &lt;org-netbeans-modules-maven-j2ee.netbeans_2e_deployment_2e_server_2e_id>[/home/sandip/Downloads/glassfish-4.1/glassfish:/home/sandip/Downloads/glassfish-4.1/glassfish/domains/domain]deployer:gfv4ee7:localhost:4848&lt;/org-netbeans-modules-maven-j2ee.netbeans_2e_deployment_2e_server_2e_id>\u000a    &lt;/properties>\u000a    &lt;editor-bookmarks xmlns=&quot;http://www.netbeans.org/ns/editor-bookmarks/2&quot; lastBookmarkId=&quot;0&quot;/>\u000a    &lt;open-files xmlns=&quot;http://www.netbeans.org/ns/projectui-open-files/2&quot;>\u000a        &lt;group>\u000a            &lt;file>file:/home/sandip/projects/akshamala-inventory/admin/src/main/java/com/akshamalainfotech/erp/admin/inventoryMgmt/itemSubGroup/InventorySubGroupController.java&lt;/file>\u000a            &lt;file>file:/home/sandip/projects/akshamala-inventory/admin/src/main/webapp/inventorySubGroup.xhtml&lt;/file>\u000a            &lt;file>file:/home/sandip/projects/akshamala-inventory/admin/src/main/webapp/inventoryItem.xhtml&lt;/file>\u000a            &lt;file>file:/home/sandip/projects/akshamala-inventory/admin/src/main/webapp/issuedInventory.xhtml&lt;/file>\u000a        &lt;/group>\u000a    &lt;/open-files>\u000a&lt;/project-private>\u000a"/>
+        <attr name="AuxilaryConfiguration" stringvalue="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>\u000a&lt;project-private>\u000a    &lt;properties xmlns=&quot;http://www.netbeans.org/ns/maven-properties-data/1&quot;>\u000a        &lt;org-netbeans-modules-maven-j2ee.netbeans_2e_deployment_2e_server_2e_id>[/home/sandip/Downloads/glassfish-4.1/glassfish:/home/sandip/Downloads/glassfish-4.1/glassfish/domains/domain]deployer:gfv4ee7:localhost:4848&lt;/org-netbeans-modules-maven-j2ee.netbeans_2e_deployment_2e_server_2e_id>\u000a    &lt;/properties>\u000a    &lt;open-files xmlns=&quot;http://www.netbeans.org/ns/projectui-open-files/2&quot;>\u000a        &lt;group>\u000a            &lt;file>file:/home/sandip/projects/akshamala-inventory/admin/pom.xml&lt;/file>\u000a        &lt;/group>\u000a    &lt;/open-files>\u000a    &lt;editor-bookmarks xmlns=&quot;http://www.netbeans.org/ns/editor-bookmarks/2&quot; lastBookmarkId=&quot;0&quot;/>\u000a&lt;/project-private>\u000a"/>
     </fileobject>
     <fileobject name="|home|sandip|projects|akshamala-inventory|admin|src|main|java|com|akshamalainfotech|erp|admin|rest|configuration|SwaggerJaxrsConfig.java">
         <attr name="org.netbeans.modules.web.IsServletFile" boolvalue="true"/>
@@ -721,13 +799,13 @@
         <attr name="org.netbeans.modules.web.IsServletFile" boolvalue="true"/>
     </fileobject>
     <fileobject name="|home|sandip|projects|akshamala-inventory|akshamala-erp-Entity">
-        <attr name="AuxilaryConfiguration" stringvalue="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>\u000a&lt;project-private>\u000a    &lt;open-files xmlns=&quot;http://www.netbeans.org/ns/projectui-open-files/2&quot;>\u000a        &lt;group/>\u000a    &lt;/open-files>\u000a    &lt;editor-bookmarks xmlns=&quot;http://www.netbeans.org/ns/editor-bookmarks/2&quot; lastBookmarkId=&quot;0&quot;/>\u000a&lt;/project-private>\u000a"/>
+        <attr name="AuxilaryConfiguration" stringvalue="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>\u000a&lt;project-private>\u000a    &lt;editor-bookmarks xmlns=&quot;http://www.netbeans.org/ns/editor-bookmarks/2&quot; lastBookmarkId=&quot;0&quot;/>\u000a    &lt;open-files xmlns=&quot;http://www.netbeans.org/ns/projectui-open-files/2&quot;>\u000a        &lt;group/>\u000a    &lt;/open-files>\u000a&lt;/project-private>\u000a"/>
     </fileobject>
     <fileobject name="|home|sandip|projects|akshamala-inventory|akshamala-erp-admin-EJB">
         <attr name="AuxilaryConfiguration" stringvalue="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>\u000a&lt;project-private>\u000a    &lt;editor-bookmarks xmlns=&quot;http://www.netbeans.org/ns/editor-bookmarks/2&quot; lastBookmarkId=&quot;0&quot;/>\u000a    &lt;open-files xmlns=&quot;http://www.netbeans.org/ns/projectui-open-files/2&quot;>\u000a        &lt;group/>\u000a    &lt;/open-files>\u000a&lt;/project-private>\u000a"/>
     </fileobject>
     <fileobject name="|home|sandip|projects|akshamala-inventory|akshamala-erp-ejb">
-        <attr name="AuxilaryConfiguration" stringvalue="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>\u000a&lt;project-private>\u000a    &lt;properties xmlns=&quot;http://www.netbeans.org/ns/maven-properties-data/1&quot;>\u000a        &lt;org-netbeans-modules-maven-j2ee.netbeans_2e_deployment_2e_server_2e_id>[/home/sandip/Downloads/glassfish-4.1/glassfish:/home/sandip/Downloads/glassfish-4.1/glassfish/domains/domain]deployer:gfv4ee7:localhost:4848&lt;/org-netbeans-modules-maven-j2ee.netbeans_2e_deployment_2e_server_2e_id>\u000a    &lt;/properties>\u000a    &lt;editor-bookmarks xmlns=&quot;http://www.netbeans.org/ns/editor-bookmarks/2&quot; lastBookmarkId=&quot;0&quot;/>\u000a    &lt;open-files xmlns=&quot;http://www.netbeans.org/ns/projectui-open-files/2&quot;>\u000a        &lt;group/>\u000a    &lt;/open-files>\u000a&lt;/project-private>\u000a"/>
+        <attr name="AuxilaryConfiguration" stringvalue="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>\u000a&lt;project-private>\u000a    &lt;properties xmlns=&quot;http://www.netbeans.org/ns/maven-properties-data/1&quot;>\u000a        &lt;org-netbeans-modules-maven-j2ee.netbeans_2e_deployment_2e_server_2e_id>[/home/sandip/Downloads/glassfish-4.1/glassfish:/home/sandip/Downloads/glassfish-4.1/glassfish/domains/domain]deployer:gfv4ee7:localhost:4848&lt;/org-netbeans-modules-maven-j2ee.netbeans_2e_deployment_2e_server_2e_id>\u000a    &lt;/properties>\u000a    &lt;open-files xmlns=&quot;http://www.netbeans.org/ns/projectui-open-files/2&quot;>\u000a        &lt;group>\u000a            &lt;file>file:/home/sandip/projects/akshamala-inventory/akshamala-erp-ejb/src/main/java/com/akshamalainfotech/erp/ejb/common/dao/impl/DatabaseInitialization.java&lt;/file>\u000a            &lt;file>file:/home/sandip/projects/akshamala-inventory/akshamala-erp-ejb/src/main/resources/META-INF/persistence.xml&lt;/file>\u000a        &lt;/group>\u000a    &lt;/open-files>\u000a    &lt;editor-bookmarks xmlns=&quot;http://www.netbeans.org/ns/editor-bookmarks/2&quot; lastBookmarkId=&quot;0&quot;/>\u000a&lt;/project-private>\u000a"/>
     </fileobject>
     <fileobject name="|usr|lib|jvm|java-24-openjdk">
         <attr name="J2SEPlatform.displayName" stringvalue="JDK 24 (System)"/>

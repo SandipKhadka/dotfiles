@@ -4,4 +4,4 @@ require "mapping"
 require "option"
 require "autocmd"
 
-vim.cmd.colorscheme "rose-pine"
+vim.cmd.colorscheme "catppuccin"

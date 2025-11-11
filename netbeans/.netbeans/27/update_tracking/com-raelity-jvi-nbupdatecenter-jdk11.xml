@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<module codename="com.raelity.jvi.nbupdatecenter.jdk11">
+    <module_version install_time="1761102667963" last="true" origin="NetBeans Plugin Portal" specification_version="1.0">
+        <file crc="3434642416" name="config/Modules/com-raelity-jvi-nbupdatecenter-jdk11.xml"/>
+        <file crc="3264038566" name="modules/com-raelity-jvi-nbupdatecenter-jdk11.jar"/>
+        <file crc="2607400102" name="update_tracking/com-raelity-jvi-nbupdatecenter-jdk11.xml"/>
+    </module_version>
+</module>

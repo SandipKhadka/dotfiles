@@ -1,4 +1,6 @@
 local autocmd = vim.api.nvim_create_autocmd
+
+-- Your existing LspAttach keymaps
 autocmd("LspAttach", {
     callback = function(e)
         local opts = { buffer = e.buf }
@@ -6,7 +8,7 @@ autocmd("LspAttach", {
             vim.lsp.buf.hover()
         end, opts)
         vim.keymap.set("n", "<leader>ws", function()
-            vim.lsp.buf.workleader_symbol()
+            vim.lsp.buf.workspace_symbol() -- fixed typo here ("workleader_symbol" -> "workspace_symbol")
         end, opts)
         vim.keymap.set("n", "<leader>vd", function()
             vim.diagnostic.open_float()
@@ -31,15 +33,25 @@ autocmd("LspAttach", {
         end, opts)
     end,
 })
-autocmd("BufWritePre", {
-    pattern = "*",
-    callback = function(args)
-        require("conform").format { bufnr = args.buf }
-    end,
-})
 
--- yank highlight
+-- Format on save with conform
+-- autocmd("BufWritePre", {
+--     pattern = "*",
+--     callback = function(args)
+--         require("conform").format { bufnr = args.buf }
+--     end,
+-- })
+
+-- Highlight yank
 autocmd("TextYankPost", {
     pattern = "*",
     command = "lua vim.highlight.on_yank({higroup='IncSearch', timeout=150})",
+})
+
+-- Auto-save on InsertLeave and FocusLost
+autocmd({ "InsertLeave", "FocusLost" }, {
+    pattern = "*",
+    callback = function()
+        vim.cmd "silent! write"
+    end,
 })

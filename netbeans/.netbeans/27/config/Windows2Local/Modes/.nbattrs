@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE attributes PUBLIC "-//NetBeans//DTD DefaultAttributes 1.0//EN" "http://www.netbeans.org/dtds/attributes-1_0.dtd">
 <attributes version="1.0">
+    <fileobject name="anonymousMode_2">
+        <attr name="WinSys-TCRef-Order" stringvalue=""/>
+    </fileobject>
+    <fileobject name="anonymousMode_3">
+        <attr name="WinSys-TCRef-Order" stringvalue=""/>
+    </fileobject>
+    <fileobject name="anonymousMode_4">
+        <attr name="WinSys-TCRef-Order" stringvalue=""/>
+    </fileobject>
     <fileobject name="bottomSlidingSide">
         <attr name="WinSys-TCRef-Order" stringvalue="output/TaskListTopComponent/NotificationCenterTopComponent/TerminalContainerTopComponent"/>
     </fileobject>
@@ -11,13 +20,13 @@
         <attr name="WinSys-TCRef-Order" stringvalue="CommonPalette"/>
     </fileobject>
     <fileobject name="editor">
-        <attr name="WinSys-TCRef-Order" stringvalue="TreeDiffViewerTopComponent/CoverageReportTopComponent/JShellEditor/dbgInstances/MultiView-java#002Eso2D0988CFtext#002Ehistory#007C/MultiView-java#002Eso10CA9CC2xt#002Ehistory#007C_2/MultiView-html#002Eso29C6EAE1text#002Ehistory#007C/MultiView-html#002EsoD3B7C254xt#002Ehistory#007C_2/MultiView-html#002EsoD3B7C255xt#002Ehistory#007C_3"/>
+        <attr name="WinSys-TCRef-Order" stringvalue="TreeDiffViewerTopComponent/CoverageReportTopComponent/JShellEditor/dbgInstances/MultiView-java#002Eso2D0988CFtext#002Ehistory#007C/MultiView-css#002EsouAA09361xt#002Ehistory#007C_1"/>
     </fileobject>
     <fileobject name="explorer">
         <attr name="WinSys-TCRef-Order" stringvalue="favorites/DashboardTopComponent/debuggingView"/>
     </fileobject>
     <fileobject name="leftSlidingSide">
-        <attr name="WinSys-TCRef-Order" stringvalue="projectTab_tc/navigatorTC/services/projectTabLogical_tc"/>
+        <attr name="WinSys-TCRef-Order" stringvalue="services/navigatorTC/projectTab_tc/projectTabLogical_tc"/>
     </fileobject>
     <fileobject name="navigator">
         <attr name="WinSys-TCRef-Order" stringvalue="breakpointsView/TruffleASTDebugView/DomTC"/>
@@ -27,5 +36,14 @@
     </fileobject>
     <fileobject name="properties">
         <attr name="WinSys-TCRef-Order" stringvalue="CssStylesTC/properties/AnalyzeStackTopComponent/JavaHierarchyTopComponent/KnockoutTC"/>
+    </fileobject>
+    <fileobject name="rightSlidingSide">
+        <attr name="WinSys-TCRef-Order" stringvalue=""/>
+    </fileobject>
+    <fileobject name="topSlidingSide">
+        <attr name="WinSys-TCRef-Order" stringvalue=""/>
+    </fileobject>
+    <fileobject name="webpreview">
+        <attr name="WinSys-TCRef-Order" stringvalue=""/>
     </fileobject>
 </attributes>

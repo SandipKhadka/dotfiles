@@ -1,6 +1,7 @@
 # theme config
 theme = rose-pine
 
+
 # font related
 font-family = "JetBrains Mono"
 font-size = 15

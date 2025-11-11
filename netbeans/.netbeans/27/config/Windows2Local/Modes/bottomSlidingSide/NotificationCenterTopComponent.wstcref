@@ -2,7 +2,7 @@
 
 <tc-ref version="2.2">
     <tc-id id="NotificationCenterTopComponent" />
-    <state opened="false" />
+    <state opened="true" />
     <previousMode name="output"  index="0"  />
     <docking-status default-mode="slided" />
 </tc-ref>

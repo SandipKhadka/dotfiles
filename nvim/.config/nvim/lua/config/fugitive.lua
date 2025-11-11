@@ -30,5 +30,15 @@ autocmd("BufWinEnter", {
     end,
 })
 
-map("n", "gl", "<cmd>diffget //2<CR>")
-map("n", "gh", "<cmd>diffget //3<CR>")
+map("n", "gh", "<cmd>diffget //2<CR>")
+map("n", "gl", "<cmd>diffget //3<CR>")
+
+map("n", "<leader>ah", function()
+    vim.cmd "Git checkout --ours %"
+    vim.cmd "Gwrite"
+end)
+
+map("n", "<leader>al", function()
+    vim.cmd "Git checkout --theirs %"
+    vim.cmd "Gwrite"
+end)

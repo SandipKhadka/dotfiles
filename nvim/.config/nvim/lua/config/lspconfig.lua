@@ -68,6 +68,23 @@ vim.lsp.config("clangd", {
 vim.lsp.config("rust_analyzer", {
     capabilities = capabilities,
     on_init = on_init,
+
+    ["rust-analyzer"] = {
+        diagnostics = {
+            enable = true, -- enable real-time diagnostics
+            run = "onType",
+            disabled = { "unresolved-proc-macro" }, -- optional
+        },
+        check = {
+            command = "clippy", -- or "check" for basic ownership/type checking
+            onType = true, -- Enable as-you-type
+        },
+
+        cargo = {
+            allFeatures = true,
+            loadOutDirsFromCheck = true,
+        },
+    },
 })
 vim.lsp.config("bashls", {
     capabilities = capabilities,

@@ -5,6 +5,7 @@
 <sql date="1756212601771" url="jdbc:mysql://localhost:3306/db_default">select * from INVENTORY_SUB_GROUP</sql>
 <sql date="1756556377111" url="jdbc:mysql://localhost:3306/db_default">select * from USERS</sql>
 <sql date="1756608540695" url="jdbc:mysql://localhost:3306/db_default">SELECT * FROM USERS LIMIT 100</sql>
+<sql date="1760848096960" url="jdbc:mysql://localhost:3306/db_default">select * from GENDER</sql>
 <sql date="1756450366588" url="jdbc:mysql://localhost:3306/db_default">RENAME TABLE INVENTPRY_ITEM_CONDITION TO INVENTORY_ITEM_CONDITION</sql>
 <sql date="1759056875914" url="jdbc:mysql://localhost:3306/db_default">select * from INVENTORY_ISSUED_INVENTORY_ENTRY_MAPPING</sql>
 <sql date="1756225142530" url="jdbc:mysql://localhost:3306/db_default">select * from INVENTORY_OPENING</sql>
@@ -43,7 +44,7 @@ VALUES (
 <sql date="1758434717487" url="jdbc:mysql://localhost:3306/db_default">select status from INVENTORY_ITEM</sql>
 <sql date="1756182236691" url="jdbc:mysql://localhost:3306/db_default">select * from INVENTORY_GROUP</sql>
 <sql date="1759056121149" url="jdbc:mysql://localhost:3306/db_default">delete from ISSUED_INVENTORY</sql>
-<sql date="1756635164467" url="jdbc:mysql://localhost:3306/db_default">select * from INVENTORY_ITEM_CONDITION</sql>
+<sql date="1760859054697" url="jdbc:mysql://localhost:3306/db_default">select * FROM INVENTORY_ITEM_CONDITION</sql>
 <sql date="1758251864423" url="jdbc:mysql://localhost:3306/db_default">SELECT * FROM INVENTORY_</sql>
 <sql date="1759052131574" url="jdbc:mysql://localhost:3306/db_default">select AVAILABLE_QUANTITY from INVENTORY_ITEM</sql>
 <sql date="1759056089628" url="jdbc:mysql://localhost:3306/db_default">delete from INVENTORY_ISSUED_INVENTORY_ENTRY_MAPPING</sql>
@@ -51,6 +52,8 @@ VALUES (
 <sql date="1756642817039" url="jdbc:mysql://localhost:3306/db_default">select * from ISSUED_INVENTORY</sql>
 <sql date="1756473926797" url="jdbc:mysql://localhost:3306/db_default">select * from INVENTORY_ITEM</sql>
 <sql date="1758251924029" url="jdbc:mysql://localhost:3306/db_default">SELECT * FROM INVENTORY_RETURNED</sql>
+<sql date="1761013608038" url="jdbc:mysql://localhost:3306/db_default">select * from ADMIN</sql>
 <sql date="1759056102275" url="jdbc:mysql://localhost:3306/db_default">delete from INVENTORY_ITEM</sql>
+<sql date="1760847153260" url="jdbc:mysql://localhost:3306/db_default">select * FROM ADMIN_PROFILE</sql>
 <sql date="1758872514081" url="jdbc:mysql://localhost:3306/db_default">select * from INVENTORY_TITLE</sql>
 </history>
