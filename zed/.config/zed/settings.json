@@ -7,11 +7,23 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "toolbar": {
+    "agent_review": false,
+    "selections_menu": false,
+    "quick_actions": false,
+    "breadcrumbs": false
+  },
   "ui_font_size": 16,
   "buffer_font_family": "JetBrains Mono",
   "base_keymap": "VSCode",
   "buffer_font_size": 16,
-  "theme": "Rosé Pine",
+  "relative_line_numbers": "enabled",
+
+  "theme": {
+    "mode": "system",
+    "light": "Ayu Light",
+    "dark": "VSCode Dark Polished"
+  },
   "vim_mode": true,
   "vim": {
     "use_system_clipboard": "always"

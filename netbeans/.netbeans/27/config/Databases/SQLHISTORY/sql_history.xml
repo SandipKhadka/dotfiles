@@ -4,11 +4,14 @@
 <sql date="1758434653357" url="jdbc:mysql://localhost:3306/db_default">select status from INVENTORY_GROUP</sql>
 <sql date="1756212601771" url="jdbc:mysql://localhost:3306/db_default">select * from INVENTORY_SUB_GROUP</sql>
 <sql date="1756556377111" url="jdbc:mysql://localhost:3306/db_default">select * from USERS</sql>
-<sql date="1756608540695" url="jdbc:mysql://localhost:3306/db_default">SELECT * FROM USERS LIMIT 100</sql>
+<sql date="1763108439501" url="jdbc:mysql://localhost:3306/db_default">SELECT @sql as 'Command to execute'</sql>
 <sql date="1760848096960" url="jdbc:mysql://localhost:3306/db_default">select * from GENDER</sql>
-<sql date="1756450366588" url="jdbc:mysql://localhost:3306/db_default">RENAME TABLE INVENTPRY_ITEM_CONDITION TO INVENTORY_ITEM_CONDITION</sql>
-<sql date="1759056875914" url="jdbc:mysql://localhost:3306/db_default">select * from INVENTORY_ISSUED_INVENTORY_ENTRY_MAPPING</sql>
+<sql date="1763100648053" url="jdbc:mysql://localhost:3306/db_default">update ADMIN
+set USERNAME = "admin"</sql>
+<sql date="1763108443580" url="jdbc:mysql://localhost:3306/db_default">DEALLOCATE PREPARE stmt</sql>
 <sql date="1756225142530" url="jdbc:mysql://localhost:3306/db_default">select * from INVENTORY_OPENING</sql>
+<sql date="1763108385767" url="jdbc:mysql://localhost:3306/db_default">SELECT 'Table renaming completed successfully!' as status</sql>
+<sql date="1763108385771" url="jdbc:mysql://localhost:3306/db_default">END IF</sql>
 <sql date="1756609385217" url="jdbc:mysql://localhost:3306/db_default">INSERT INTO USERS (
     BRANCH,
     COLLEGE,
@@ -18,10 +21,9 @@
 )
 VALUES (
     1.          'MIT College',                1,                            'john_doe',                   'securePassword123'       )</sql>
-<sql date="1758951371036" url="jdbc:mysql://localhost:3306/db_default">drop table INVENTORY_STOCK</sql>
-<sql date="1756450299958" url="jdbc:mysql://localhost:3306/db_default">ALTER TABLE INVENTPRY_ITEM_CONDITION TO INVENTORY_ITEM_CONDITION</sql>
+<sql date="1763108385769" url="jdbc:mysql://localhost:3306/db_default">ELSE
+    SELECT 'No tables needed renaming - all were already uppercase!' as status</sql>
 <sql date="1758251905694" url="jdbc:mysql://localhost:3306/db_default">SELECT * FROM INVENTORY_SSUED_INVENTORY_ENTRY_MAPPING</sql>
-<sql date="1759052111639" url="jdbc:mysql://localhost:3306/db_default">select aAVAILABLE_QUANTITY from INVENTORY_ITEM</sql>
 <sql date="1756609337169" url="jdbc:mysql://localhost:3306/db_default">INSERT INTO USERS (
     BRANCH,
     COLLEGE,
@@ -31,29 +33,112 @@ VALUES (
 )
 VALUES (
     'Computer Science',           'MIT College',                1,                            'john_doe',                   'securePassword123'       )</sql>
-<sql date="1756646678501" url="jdbc:mysql://localhost:3306/db_default">select * from BRANCH</sql>
-<sql date="1759052090912" url="jdbc:mysql://localhost:3306/db_default">select availableQuantity from INVENTORY_ITEM</sql>
-<sql date="1758951338327" url="jdbc:mysql://localhost:3306/db_default">drop table INVENTORY_ISSUED_INVENTORY_ENTRY_MAPPING</sql>
-<sql date="1758251864473" url="jdbc:mysql://localhost:3306/db_default">SSUED_INVENTORY_ENTRY_MAPPING</sql>
+<sql date="1763108385740" url="jdbc:mysql://localhost:3306/db_default">SELECT GROUP_CONCAT(
+    CONCAT(
+        'RENAME TABLE `', table_name, '` TO `', 
+        UPPER(table_name), '`;'
+    ) SEPARATOR '\n'
+) INTO @rename_commands
+FROM information_schema.tables 
+WHERE table_schema = 'db_default' 
+AND table_type = 'BASE TABLE'
+AND BINARY table_name != UPPER(table_name)</sql>
+<sql date="1763098944003" url="jdbc:mysql://localhost:3306/db_default">UPDATE ADMIN 
+SET IS_COLLEGE_SUPER_ADMIN = true</sql>
+<sql date="1763108736860" url="jdbc:mysql://localhost:3306/db_default">select USERNAME from ADMIN</sql>
+<sql date="1763098971852" url="jdbc:mysql://localhost:3306/db_default">UPDATE ADMIN 
+SET IS_SUPER_ADMIN = false</sql>
 <sql date="1758951391616" url="jdbc:mysql://localhost:3306/db_default">drop table INVENTORY_RETURNED</sql>
+<sql date="1763108385761" url="jdbc:mysql://localhost:3306/db_default">IF @rename_commands IS NOT NULL THEN
+    PREPARE stmt FROM @rename_commands</sql>
 <sql date="1759052160469" url="jdbc:mysql://localhost:3306/db_default">select INVENTORY_GODOWN from INVENTORY_ITEM</sql>
+<sql date="1763108940787" url="jdbc:mysql://localhost:3306/db_default">select * from STATUS</sql>
 <sql date="1756459390971" url="jdbc:mysql://localhost:3306/db_default">drop table INVENTORY_ITEM_CONDITION</sql>
+<sql date="1763097192161" url="jdbc:mysql://localhost:3306/db_default">select COLLEGE from BRANCH</sql>
+<sql date="1763096237573" url="jdbc:mysql://localhost:3306/db_default">UPDATE  ADMIN
+SET COLLEGE =1</sql>
+<sql date="1763107710818" url="jdbc:mysql://localhost:3306/db_default">SELECT CONCAT('RENAME TABLE `', table_name, '` TO `', UPPER(table_name), '`;')
+FROM information_schema.tables
+WHERE table_schema = db_default</sql>
+<sql date="1763107935129" url="jdbc:mysql://localhost:3306/db_default">SELECT CONCAT('RENAME TABLE `', table_name, '` TO `', UPPER(table_name), '`;') 
+FROM information_schema.tables
+WHERE table_schema = 'db_default'</sql>
+<sql date="1763099512282" url="jdbc:mysql://localhost:3306/db_default">update ADMIN
+set USERNAME = "admin1"</sql>
+<sql date="1763108385759" url="jdbc:mysql://localhost:3306/db_default">SELECT 
+    COUNT(*) as tables_to_rename,
+    IFNULL(@rename_commands, 'All tables are already uppercase') as rename_commands
+FROM information_schema.tables 
+WHERE table_schema = 'db_default' 
+AND table_type = 'BASE TABLE'
+AND BINARY table_name != UPPER(table_name)</sql>
 <sql date="1759052256600" url="jdbc:mysql://localhost:3306/db_default">select INVENTORY_ITEM from ISSUED_INVENTORY</sql>
 <sql date="1758951427269" url="jdbc:mysql://localhost:3306/db_default">drop table INVENTORY_ITEM</sql>
+<sql date="1763096162581" url="jdbc:mysql://localhost:3306/db_default">SELECT * FROM COLLEGE</sql>
+<sql date="1763099185904" url="jdbc:mysql://localhost:3306/db_default">UPDATE ADMIN 
+SET IS_SUPER_ADMIN = true</sql>
 <sql date="1756458982141" url="jdbc:mysql://localhost:3306/db_default">SELECT * FROM INVENTORY_ITEM_VALUATION_METHOD</sql>
+<sql date="1763108439504" url="jdbc:mysql://localhost:3306/db_default">PREPARE stmt FROM @sql</sql>
+<sql date="1759056089628" url="jdbc:mysql://localhost:3306/db_default">delete from INVENTORY_ISSUED_INVENTORY_ENTRY_MAPPING</sql>
+<sql date="1763109079812" url="jdbc:mysql://localhost:3306/db_default">RENAME TABLE STATUS to status</sql>
+<sql date="1758951404291" url="jdbc:mysql://localhost:3306/db_default">drop table ISSUED_INVENTORY</sql>
+<sql date="1763108439496" url="jdbc:mysql://localhost:3306/db_default">SET @sql = IF(@tables_to_rename IS NOT NULL, 
+    CONCAT('RENAME TABLE ', @tables_to_rename, ';'), 
+    'SELECT "All tables are already uppercase" as result;')</sql>
+<sql date="1759056102275" url="jdbc:mysql://localhost:3306/db_default">delete from INVENTORY_ITEM</sql>
+<sql date="1763099311779" url="jdbc:mysql://localhost:3306/db_default">SELECT * FROM ADMIN_PROFILE</sql>
+<sql date="1756608540695" url="jdbc:mysql://localhost:3306/db_default">SELECT * FROM USERS LIMIT 100</sql>
+<sql date="1763108439494" url="jdbc:mysql://localhost:3306/db_default">SELECT GROUP_CONCAT(
+    CONCAT('`', table_name, '` TO `', UPPER(table_name), '`')
+) INTO @tables_to_rename
+FROM information_schema.tables 
+WHERE table_schema = 'db_default' 
+AND table_type = 'BASE TABLE'
+AND BINARY table_name != UPPER(table_name)</sql>
+<sql date="1756450366588" url="jdbc:mysql://localhost:3306/db_default">RENAME TABLE INVENTPRY_ITEM_CONDITION TO INVENTORY_ITEM_CONDITION</sql>
+<sql date="1759056875914" url="jdbc:mysql://localhost:3306/db_default">select * from INVENTORY_ISSUED_INVENTORY_ENTRY_MAPPING</sql>
+<sql date="1758951371036" url="jdbc:mysql://localhost:3306/db_default">drop table INVENTORY_STOCK</sql>
+<sql date="1763106901507" url="jdbc:mysql://localhost:3306/db_default">select USERNAME from `admin`</sql>
+<sql date="1756450299958" url="jdbc:mysql://localhost:3306/db_default">ALTER TABLE INVENTPRY_ITEM_CONDITION TO INVENTORY_ITEM_CONDITION</sql>
+<sql date="1759052111639" url="jdbc:mysql://localhost:3306/db_default">select aAVAILABLE_QUANTITY from INVENTORY_ITEM</sql>
+<sql date="1763096096905" url="jdbc:mysql://localhost:3306/db_default">INSERT INTO COLLEGE(BRAND_NAME,NAME,CODE,ABOUT_YEARLY_RENEW_CHARGE,STATUS,CREATED_BY_ADMIN(
+ VALUES("MYBRAND","COLLEGE","123",1,1,1)</sql>
+<sql date="1763970898385" url="jdbc:mysql://localhost:3306/db_default">select `PARENT_UNIT` from inventory_unit</sql>
+<sql date="1763106845502" url="jdbc:mysql://localhost:3306/db_default">select * from BRANCH</sql>
+<sql date="1759052090912" url="jdbc:mysql://localhost:3306/db_default">select availableQuantity from INVENTORY_ITEM</sql>
+<sql date="1763099112080" url="jdbc:mysql://localhost:3306/db_default">UPDATE ADMIN 
+SET ADMIN_PROFILE = 1</sql>
+<sql date="1758951338327" url="jdbc:mysql://localhost:3306/db_default">drop table INVENTORY_ISSUED_INVENTORY_ENTRY_MAPPING</sql>
+<sql date="1763099353708" url="jdbc:mysql://localhost:3306/db_default">UPDATE ADMIN 
+SET ADMIN_PROFILE = 2</sql>
+<sql date="1763108439486" url="jdbc:mysql://localhost:3306/db_default">USE db_default</sql>
+<sql date="1758251864473" url="jdbc:mysql://localhost:3306/db_default">SSUED_INVENTORY_ENTRY_MAPPING</sql>
+<sql date="1763099406713" url="jdbc:mysql://localhost:3306/db_default">update ADMIN
+SET IS_SUPER_ADMIN = false</sql>
+<sql date="1763100656841" url="jdbc:mysql://localhost:3306/db_default">update ADMIN
+SET IS_SUPER_ADMIN = true</sql>
+<sql date="1763108443578" url="jdbc:mysql://localhost:3306/db_default">EXECUTE stmt</sql>
+<sql date="1763108930081" url="jdbc:mysql://localhost:3306/db_default">select USERNAME from STATUS</sql>
+<sql date="1763108439488" url="jdbc:mysql://localhost:3306/db_default">SET SESSION group_concat_max_len = 1000000</sql>
+<sql date="1763096123423" url="jdbc:mysql://localhost:3306/db_default">INSERT INTO COLLEGE(BRAND_NAME,`NAME`,CODE,ABOUT_YEARLY_RENEW_CHARGE,STATUS,CREATED_BY_ADMIN(
+ VALUES("MYBRAND","COLLEGE","123",1,1,1)</sql>
+<sql date="1763109175200" url="jdbc:mysql://localhost:3306/db_default">RENAME TABLE `STATUS` TO `status`</sql>
 <sql date="1758434717487" url="jdbc:mysql://localhost:3306/db_default">select status from INVENTORY_ITEM</sql>
+<sql date="1763096140910" url="jdbc:mysql://localhost:3306/db_default">INSERT INTO COLLEGE(BRAND_NAME,`NAME`,CODE,ABOUT_YEARLY_RENEW_CHARGE,STATUS,CREATED_BY_ADMIN)
+ VALUES("MYBRAND","COLLEGE","123",1,1,1)</sql>
+<sql date="1763106884156" url="jdbc:mysql://localhost:3306/db_default">select * from `admin`</sql>
+<sql date="1763108990795" url="jdbc:mysql://localhost:3306/db_default">drop table status</sql>
 <sql date="1756182236691" url="jdbc:mysql://localhost:3306/db_default">select * from INVENTORY_GROUP</sql>
 <sql date="1759056121149" url="jdbc:mysql://localhost:3306/db_default">delete from ISSUED_INVENTORY</sql>
+<sql date="1763109153775" url="jdbc:mysql://localhost:3306/db_default">SHOW TABLES LIKE 'STATUS'</sql>
 <sql date="1760859054697" url="jdbc:mysql://localhost:3306/db_default">select * FROM INVENTORY_ITEM_CONDITION</sql>
 <sql date="1758251864423" url="jdbc:mysql://localhost:3306/db_default">SELECT * FROM INVENTORY_</sql>
 <sql date="1759052131574" url="jdbc:mysql://localhost:3306/db_default">select AVAILABLE_QUANTITY from INVENTORY_ITEM</sql>
-<sql date="1759056089628" url="jdbc:mysql://localhost:3306/db_default">delete from INVENTORY_ISSUED_INVENTORY_ENTRY_MAPPING</sql>
-<sql date="1758951404291" url="jdbc:mysql://localhost:3306/db_default">drop table ISSUED_INVENTORY</sql>
+<sql date="1763097101863" url="jdbc:mysql://localhost:3306/db_default">update BRANCH 
+SET CREATED_BY_ADMIN=1</sql>
 <sql date="1756642817039" url="jdbc:mysql://localhost:3306/db_default">select * from ISSUED_INVENTORY</sql>
 <sql date="1756473926797" url="jdbc:mysql://localhost:3306/db_default">select * from INVENTORY_ITEM</sql>
 <sql date="1758251924029" url="jdbc:mysql://localhost:3306/db_default">SELECT * FROM INVENTORY_RETURNED</sql>
-<sql date="1761013608038" url="jdbc:mysql://localhost:3306/db_default">select * from ADMIN</sql>
-<sql date="1759056102275" url="jdbc:mysql://localhost:3306/db_default">delete from INVENTORY_ITEM</sql>
-<sql date="1760847153260" url="jdbc:mysql://localhost:3306/db_default">select * FROM ADMIN_PROFILE</sql>
+<sql date="1763108717195" url="jdbc:mysql://localhost:3306/db_default">select * from ADMIN</sql>
 <sql date="1758872514081" url="jdbc:mysql://localhost:3306/db_default">select * from INVENTORY_TITLE</sql>
 </history>

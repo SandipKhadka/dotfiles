@@ -1,6 +1,5 @@
 local o = vim.o -- global options
 local wo = vim.wo -- window-local options
-local bo = vim.bo -- buffer-local options
 local opt = vim.opt -- more flexible options setter
 local g = vim.g -- global variables
 

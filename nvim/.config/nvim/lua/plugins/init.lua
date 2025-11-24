@@ -46,7 +46,6 @@ local M = {
     {
         "nvim-telescope/telescope.nvim",
         tag = "0.1.8",
-        cmd = "Telescope", -- Load on command
         keys = { -- Load on keymap
             {
                 "<leader>ff",
@@ -106,7 +105,6 @@ local M = {
 
     {
         "tpope/vim-fugitive",
-        cmd = { "Git", "Gstatus", "Gblame" }, -- Load on git commands
         config = function()
             require "config.fugitive"
         end,

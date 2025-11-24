@@ -15,7 +15,15 @@ map("n", "<C-l>", "<C-w>l")
 map("n", "<C-j>", "<C-w>j")
 map("n", "<C-k>", "<C-w>k")
 map("n", "<C-m>", "<C-w>x")
-map("n", "<C-w>", "<cmd>w<bar>bd<CR>")
+
+map("n", "<C-w>", function ()
+    if not vim.bo.readonly and  vim.bo.modifiable then
+        vim.cmd("w")
+    end
+
+    vim.cmd("bd")
+end)
+
 map("n", "<C-o>", "<C-w>o>")
 
 map("n", "<C-Up>", ":resize +2<CR>", { silent = true })
