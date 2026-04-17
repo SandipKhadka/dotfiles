@@ -1,9 +1,7 @@
-# theme config
-theme = rose-pine
+# Theme config
+theme = Rose Pine
 
-
-# font related
-font-family = "JetBrains Mono"
+# Font settings
+font-family = JetBrains Mono
 font-size = 15
-font-feature = -calt, -liga, -dlig  # disable ligature
-
+font-feature = -calt,-liga,-dlig

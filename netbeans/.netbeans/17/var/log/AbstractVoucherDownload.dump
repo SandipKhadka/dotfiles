@@ -1,0 +1,408 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.akshamalainfotech.erp.admin.account.voucher;
+
+import com.akshamalainfotech.erp.admin.ejb.service.JournalVoucherMasterLedgerSubLedgerMasterMapService;
+import com.akshamalainfotech.erp.admin.jsf.AdminAuthenticationBean;
+import com.akshamalainfotech.erp.admin.pagination.PaginationJSFBean;
+import com.akshamalainfotech.erp.admin.utils.Utility;
+import com.akshamalainfotech.erp.ejb.common.beans.SearchJournalVoucherBean;
+import com.akshamalainfotech.erp.ejb.common.constant.ReportGroupAccountConstant;
+import com.akshamalainfotech.erp.ejb.common.dao.AdminRoleBeanRemote;
+import com.akshamalainfotech.erp.ejb.common.helperAbstract.AbstractExcelDownloadHelper;
+import com.akshamalainfotech.erp.ejb.common.service.JournalVoucherService;
+import com.akshamalainfotech.erp.ejb.common.service.MetaTableService;
+import com.akshamalainfotech.erp.ejb.common.service.ReportFormatAccountBranchMapService;
+import com.akshamalainfotech.erp.ejb.dto.collegeAdmin.FiscalYearDto;
+import com.akshamalainfotech.erp.ejb.dto.common.AdminDto;
+import com.akshamalainfotech.erp.ejb.dto.common.BranchDto;
+import com.akshamalainfotech.erp.ejb.dto.common.CollegeDto;
+import com.akshamalainfotech.erp.ejb.dto.common.JournalVoucherDto;
+import com.akshamalainfotech.erp.ejb.dto.common.JournalVoucherMasterLedgerSubLedgerMasterMapDto;
+import com.akshamalainfotech.erp.ejb.dto.common.ReportFormatAccountDto;
+import com.akshamalainfotech.erp.ejb.mapper.JournalVoucherMasterLedgerSubLedgerMasterMapMapper;
+import com.akshamalainfotech.erp.ejb.service.collegeAdmin.FiscalYearService;
+import com.akshamalainfotech.erp.ejb.utility.ConvertNumberToWord;
+import com.akshamalainfotech.erp.ejb.utility.DateUtility;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import javax.annotation.PostConstruct;
+import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.ViewScoped;
+import javax.inject.Inject;
+import javax.servlet.ServletContext;
+import lombok.Getter;
+import lombok.Setter;
+import net.sf.jasperreports.engine.JRDataSource;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
+
+/**
+ *
+ * @author paawan
+ */
+@Getter
+@Setter
+@ViewScoped
+public abstract class AbstractVoucherDownload extends AbstractExcelDownloadHelper {
+
+    @Inject
+    protected JournalVoucherMasterLedgerSubLedgerMasterMapService journalVoucherMasterLedgerSubLedgerMasterMapService;
+
+    @Inject
+    protected ReportFormatAccountBranchMapService reportFormatAccountBranchMapService;
+
+    @Inject
+    protected JournalVoucherService journalVoucherService;
+
+    @ManagedProperty(value = "#{adminAuthenticationBean}")
+    protected AdminAuthenticationBean adminAuthenticationBean;
+
+    @Inject
+    protected Utility utility;
+
+    @Inject
+    protected AdminRoleBeanRemote adminRoleBeanRemote;
+
+    @ManagedProperty(value = "#{paginationJSFBean}")
+    protected PaginationJSFBean paginationJSFBean;
+
+    protected List<JournalVoucherMasterLedgerSubLedgerMasterMapDto> journalVoucherMasterLedgerSubLedgerMasterMapDtos;
+
+    protected JournalVoucherDto journalVoucherDto;
+
+    protected List<FiscalYearDto> fiscalYearDtos;
+
+    protected boolean editRole;
+
+    protected boolean deleteRole;
+
+    protected boolean createRole;
+
+    protected boolean postRole;
+
+    protected SearchJournalVoucherBean searchJournalVoucherBean;
+
+    protected boolean selectAll;
+
+    @Inject
+    protected FiscalYearService fiscalYearService;
+
+    protected BranchDto branchDto;
+
+    protected AdminDto adminDto;
+
+    protected CollegeDto collegeDto;
+
+    @Inject
+    protected MetaTableService metaTableService;
+
+    protected JournalVoucherMasterLedgerSubLedgerMasterMapDto journalVoucherMasterLedgerSubLedgerMasterMapDto;
+    
+    private double totalDebitAmount;
+    
+    private double totalCreditAmount;
+
+    @PostConstruct
+    public void init() {
+        adminDto = adminAuthenticationBean.getAdminDto();
+        collegeDto = adminAuthenticationBean.getCollegeDto();
+        branchDto = adminAuthenticationBean.getBranchDto();
+        journalVoucherMasterLedgerSubLedgerMasterMapDto = new JournalVoucherMasterLedgerSubLedgerMasterMapDto();
+        navigateToPage();
+    }
+
+    public String navigateToPage() {
+        if (hasValidAdminRole()) {
+            return "output.xhtml?faces-redirect=true";
+        }
+        checkRoles();
+        journalVoucherDto = new JournalVoucherDto();
+        searchJournalVoucherBean = new SearchJournalVoucherBean();
+        searchJournalVoucherBean.setNotPostedOnly(Boolean.FALSE);
+        fiscalYearDtos = fiscalYearService.getAllByCollegeIdForDropDown(collegeDto);
+        search();
+        return "";
+    }
+
+    protected abstract boolean hasValidAdminRole();
+
+    protected abstract void checkRoles();
+
+    public void search() {
+        Utility.removeSessionBeanJSFDataModelObject("paginationJSFBean");
+        paginationJSFBean = (PaginationJSFBean) Utility.getSessionObject("paginationJSFBean");
+        journalVoucherMasterLedgerSubLedgerMasterMapDtos = new ArrayList();
+        searchJournalVoucherBean.setBranchDto(adminAuthenticationBean.getBranchDto());
+        setTransactionTypeNotInStatus();
+        searchJournalVoucherBean.setShowRunningFiscalYearOnly(Boolean.TRUE);
+        totalDebitAmount=0.0;
+        totalCreditAmount=0.0;
+        paginationJSFBean.setFirstRow(0);
+        paginationJSFBean.setTotalRows(journalVoucherMasterLedgerSubLedgerMasterMapService.searchCount(searchJournalVoucherBean, collegeDto).intValue());
+        if (paginationJSFBean.getTotalRows() > 0) {
+            loadPaginatedData();
+        } else {
+            Utility.showFailureMessage("No Record(s) Found");
+        }
+    }
+
+    protected abstract void setTransactionTypeNotInStatus();
+
+    public void loadPaginatedData() {
+        totalDebitAmount=0.0;
+        totalCreditAmount=0.0;
+        journalVoucherMasterLedgerSubLedgerMasterMapDtos = journalVoucherMasterLedgerSubLedgerMasterMapService.search(searchJournalVoucherBean, paginationJSFBean.getFirstRow(), paginationJSFBean.getRowsPerPage(), collegeDto);
+        if(!journalVoucherMasterLedgerSubLedgerMasterMapDtos.isEmpty()){
+            for(JournalVoucherMasterLedgerSubLedgerMasterMapDto journalVoucherMasterLedgerSubLedgerMasterMapDto:journalVoucherMasterLedgerSubLedgerMasterMapDtos){
+                totalDebitAmount+=journalVoucherMasterLedgerSubLedgerMasterMapDto.getDebitAmount();
+                totalCreditAmount+=journalVoucherMasterLedgerSubLedgerMasterMapDto.getDebitAmount();
+            }
+        }
+        paginationJSFBean.paginationSetting();
+    }
+
+    public void delete() {
+        if (checkIfPosted()) {
+            return;
+        } else {
+            List<JournalVoucherDto> journalVoucherDtos = new ArrayList();
+            journalVoucherDtos.add(journalVoucherDto);
+            deleteJournals(journalVoucherDtos);
+        }
+    }
+
+    private void deleteJournals(List<JournalVoucherDto> journalVoucherDtos) {
+        if (journalVoucherService.delete(journalVoucherDtos, adminDto)) {
+            Utility.showSuccessMessage("Successfully Deleted");
+            search();
+        }
+    }
+
+    private boolean checkIfPosted() {
+        if (journalVoucherDto.isPosted() && !adminDto.isSuperAdmin() && !adminDto.isCentralAdmin() && !adminDto.getCollegeSuperAdmin()) {
+            Utility.showFailureMessage("Posted Journals Are Not Allowed To Edit And Delete");
+            return true;
+        }
+        return false;
+    }
+
+    public void postJournal() {
+        List<JournalVoucherDto> journalVoucherDtos = new ArrayList();
+        journalVoucherDtos.add(journalVoucherDto);
+        postJournals(journalVoucherDtos);
+    }
+
+    private void postJournals(List<JournalVoucherDto> journalVoucherDtos) {
+        if (journalVoucherService.postJournal(journalVoucherDtos, adminDto, adminAuthenticationBean.getBranchDto(), adminAuthenticationBean.getCollegeDto())) {
+            Utility.showSuccessMessage("Successfully Posted");
+            search();
+        }
+    }
+
+    public void postJournalBulk() {
+        Map<Long, JournalVoucherDto> journalVoucherDtoIdMap = new HashMap();
+        for (JournalVoucherMasterLedgerSubLedgerMasterMapDto journalVoucherMasterLedgerSubLedgerMasterMapDto : journalVoucherMasterLedgerSubLedgerMasterMapDtos) {
+            if (journalVoucherMasterLedgerSubLedgerMasterMapDto.isTransientSelected() && !journalVoucherDtoIdMap.containsKey(journalVoucherMasterLedgerSubLedgerMasterMapDto.getJournalVoucherDto().getId())) {
+                journalVoucherDtoIdMap.put(journalVoucherMasterLedgerSubLedgerMasterMapDto.getJournalVoucherDto().getId(), journalVoucherMasterLedgerSubLedgerMasterMapDto.getJournalVoucherDto());
+            }
+        }
+        if (journalVoucherDtoIdMap.isEmpty()) {
+            Utility.showFailureMessage("Select At Least One");
+            return;
+        }
+        postJournals(new ArrayList(journalVoucherDtoIdMap.values()));
+    }
+
+    public void onChangeSelectAll() {
+        for (JournalVoucherMasterLedgerSubLedgerMasterMapDto journalVoucherMasterLedgerSubLedgerMasterMapDto : journalVoucherMasterLedgerSubLedgerMasterMapDtos) {
+            if (selectAll) {
+                journalVoucherMasterLedgerSubLedgerMasterMapDto.setTransientSelected(true);
+            } else {
+                journalVoucherMasterLedgerSubLedgerMasterMapDto.setTransientSelected(false);
+            }
+        }
+
+    }
+
+    public void deleteBulk() {
+        Map<Long, JournalVoucherDto> journalVoucherDtoIdMap = new HashMap();
+        for (JournalVoucherMasterLedgerSubLedgerMasterMapDto journalVoucherMasterLedgerSubLedgerMasterMapDto : journalVoucherMasterLedgerSubLedgerMasterMapDtos) {
+            if (journalVoucherMasterLedgerSubLedgerMasterMapDto.isTransientSelected() && !journalVoucherDtoIdMap.containsKey(journalVoucherMasterLedgerSubLedgerMasterMapDto.getJournalVoucherDto().getId())) {
+                if (!journalVoucherMasterLedgerSubLedgerMasterMapDto.getJournalVoucherDto().isPosted() || adminDto.isSuperAdmin()) {
+                    journalVoucherDtoIdMap.put(journalVoucherMasterLedgerSubLedgerMasterMapDto.getJournalVoucherDto().getId(), journalVoucherMasterLedgerSubLedgerMasterMapDto.getJournalVoucherDto());
+                } else if (adminDto.isSuperAdmin() || adminDto.isCentralAdmin()) {
+                    journalVoucherDtoIdMap.put(journalVoucherMasterLedgerSubLedgerMasterMapDto.getJournalVoucherDto().getId(), journalVoucherMasterLedgerSubLedgerMasterMapDto.getJournalVoucherDto());
+                } else {
+                    Utility.showFailureMessage("Posted Journal Vouchers Can't Be Deleted");
+                    return;
+                }
+            }
+        }
+        if (journalVoucherDtoIdMap.isEmpty()) {
+            Utility.showFailureMessage("Select At Least One");
+            return;
+        }
+        deleteJournals(new ArrayList(journalVoucherDtoIdMap.values()));
+    }
+
+    @Override
+    protected String setJrxmlFile(ServletContext context) {
+        ReportFormatAccountDto reportFormatAccountDto = reportFormatAccountBranchMapService.getActiveOnlyByBranchIdAndReportGroup(adminAuthenticationBean.getBranchDto(), ReportGroupAccountConstant.VOUCHER.getName(), collegeDto);
+        return setJrxmlFile(context, reportFormatAccountDto.getReportFormatPath());
+    }
+
+    @Override
+    protected Map setParametersToDownload(ServletContext context, JasperReport jr, JRDataSource dataSource) throws JRException {
+        Map paramertersMap = new HashMap();
+
+        paramertersMap.put("journalVoucherNumber", journalVoucherDto.getJournalVoucherNumber());
+        paramertersMap.put("transactionDate", DateUtility.convertToAd(journalVoucherDto.getTransactionDateBs()));
+        paramertersMap.put("transientTransactionDateBs", journalVoucherDto.getTransactionDateBs());
+        paramertersMap.put("preparedDesignation", journalVoucherDto.getPreparedDesignation());
+        paramertersMap.put("preparedBy", journalVoucherDto.getPreparedBy());
+        paramertersMap.put("preparedDate", journalVoucherDto.getPreparedDate());
+        paramertersMap.put("forwardedBy", journalVoucherDto.getForwardedBy());
+        paramertersMap.put("forwardedDesignation", journalVoucherDto.getForwardedDesignation());
+        paramertersMap.put("forwardedDate", journalVoucherDto.getForwardedDate());
+        paramertersMap.put("approvedBy", journalVoucherDto.getApprovedBy());
+        paramertersMap.put("approvedDesignation", journalVoucherDto.getApprovedDesignation());
+        paramertersMap.put("approvedDate", journalVoucherDto.getApprovedDate());
+        paramertersMap.put("collegeName", branchDto.getName());
+        paramertersMap.put("collegeAddress", branchDto.getAddress());
+        paramertersMap.put("boardImageLogo", branchDto.getCollegeLogoPath());
+        paramertersMap.put("voucherType", journalVoucherDto.getVoucherTransactionType());
+        paramertersMap.put("inWords", ConvertNumberToWord.convertNumber((long) journalVoucherDto.getTotalDebitAmount()));
+        paramertersMap.put("collegeContact", branchDto.getContact());
+        paramertersMap.put("panNumber", branchDto.getPanNumber());
+        return paramertersMap;
+    }
+
+    @Override
+    protected JRBeanCollectionDataSource setListToCollectionDataSource() {
+        List<JournalVoucherMasterLedgerSubLedgerMasterMapDto> journalVoucherMasterLedgerSubLedgerMasterMapDtos = journalVoucherMasterLedgerSubLedgerMasterMapService.getActiveOnlyByJournalVoucherId(journalVoucherDto, collegeDto);
+        for (JournalVoucherMasterLedgerSubLedgerMasterMapDto journalVoucherMasterLedgerSubLedgerMasterMapDto : journalVoucherMasterLedgerSubLedgerMasterMapDtos) {
+            if (journalVoucherMasterLedgerSubLedgerMasterMapDto.getSubLedgerMasterDto().getId() == null) {
+                journalVoucherMasterLedgerSubLedgerMasterMapDto.getSubLedgerMasterDto().setName("");
+                journalVoucherMasterLedgerSubLedgerMasterMapDto.setTransientParticulars(journalVoucherMasterLedgerSubLedgerMasterMapDto.getLedgerMasterBranchMapDto().getLedgerMasterDto().getName());
+            } else {
+                journalVoucherMasterLedgerSubLedgerMasterMapDto.setTransientParticulars(journalVoucherMasterLedgerSubLedgerMasterMapDto.getLedgerMasterBranchMapDto().getLedgerMasterDto().getName() + " " + journalVoucherMasterLedgerSubLedgerMasterMapDto.getSubLedgerMasterDto().getName());
+            }
+
+        }
+        Collections.sort(journalVoucherMasterLedgerSubLedgerMasterMapDtos, JournalVoucherMasterLedgerSubLedgerMasterMapMapper.orderComparator);
+
+        return new JRBeanCollectionDataSource(journalVoucherMasterLedgerSubLedgerMasterMapDtos, false);
+    }
+
+    public void downloadVoucherDetail() {
+        try {
+            ReportFormatAccountDto reportFormatAccountDto = reportFormatAccountBranchMapService.getActiveOnlyByBranchIdAndReportGroup(adminAuthenticationBean.getBranchDto(), ReportGroupAccountConstant.VOUCHER.getName(), collegeDto);
+            if (reportFormatAccountDto.getId() == null) {
+                Utility.showFailureMessage("Account Report Format Not Found for Current Branch");
+                return;
+            }
+            downloadPdf();
+        } catch (Exception e) {
+            e.getMessage();
+        }
+    }
+
+    public String initEdit() {
+        if (checkIfPosted()) {
+            return null;
+        }
+        return returnToEditPage();
+    }
+
+    protected abstract String returnToEditPage();
+
+}
+
+----- Classpath: ---------------------------------------------
+bootPath: /tmp/f4118776040bb2df8663854eb0ceecd149b3c28f.jar:/usr/lib/jvm/java-8-zulu-openjdk-jdk/jre/lib/resources.jar:/usr/lib/jvm/java-8-zulu-openjdk-jdk/jre/lib/rt.jar:/usr/lib/jvm/java-8-zulu-openjdk-jdk/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-zulu-openjdk-jdk/jre/lib/jsse.jar:/usr/lib/jvm/java-8-zulu-openjdk-jdk/jre/lib/jce.jar:/usr/lib/jvm/java-8-zulu-openjdk-jdk/jre/lib/charsets.jar:/usr/lib/jvm/java-8-zulu-openjdk-jdk/jre/lib/jfr.jar:/usr/lib/jvm/java-8-zulu-openjdk-jdk/jre/lib/cat.jar:/usr/lib/jvm/java-8-zulu-openjdk-jdk/jre/classes:/usr/lib/jvm/java-8-zulu-openjdk-jdk/jre/lib/ext/cldrdata.jar:/usr/lib/jvm/java-8-zulu-openjdk-jdk/jre/lib/ext/crs-agent.jar:/usr/lib/jvm/java-8-zulu-openjdk-jdk/jre/lib/ext/dnsns.jar:/usr/lib/jvm/java-8-zulu-openjdk-jdk/jre/lib/ext/jaccess.jar:/usr/lib/jvm/java-8-zulu-openjdk-jdk/jre/lib/ext/localedata.jar:/usr/lib/jvm/java-8-zulu-openjdk-jdk/jre/lib/ext/nashorn.jar:/usr/lib/jvm/java-8-zulu-openjdk-jdk/jre/lib/ext/sunec.jar:/usr/lib/jvm/java-8-zulu-openjdk-jdk/jre/lib/ext/sunjce_provider.jar:/usr/lib/jvm/java-8-zulu-openjdk-jdk/jre/lib/ext/sunpkcs11.jar:/usr/lib/jvm/java-8-zulu-openjdk-jdk/jre/lib/ext/zipfs.jar
+classPath: /home/sandip/.m2/repository/com/fest/akshamala-erp-Entity/1.0-SNAPSHOT/akshamala-erp-Entity-1.0-SNAPSHOT.jar:/home/sandip/.m2/repository/org/hibernate/hibernate-entitymanager/4.3.1.Final/hibernate-entitymanager-4.3.1.Final.jar:/home/sandip/.m2/repository/org/jboss/logging/jboss-logging/3.1.3.GA/jboss-logging-3.1.3.GA.jar:/home/sandip/.m2/repository/org/jboss/logging/jboss-logging-annotations/1.2.0.Beta1/jboss-logging-annotations-1.2.0.Beta1.jar:/home/sandip/.m2/repository/org/hibernate/hibernate-core/4.3.1.Final/hibernate-core-4.3.1.Final.jar:/home/sandip/.m2/repository/antlr/antlr/2.7.7/antlr-2.7.7.jar:/home/sandip/.m2/repository/org/jboss/jandex/1.1.0.Final/jandex-1.1.0.Final.jar:/home/sandip/.m2/repository/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar:/home/sandip/.m2/repository/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar:/home/sandip/.m2/repository/org/hibernate/common/hibernate-commons-annotations/4.0.4.Final/hibernate-commons-annotations-4.0.4.Final.jar:/home/sandip/.m2/repository/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/1.0.0.Final/hibernate-jpa-2.1-api-1.0.0.Final.jar:/home/sandip/.m2/repository/org/jboss/spec/javax/transaction/jboss-transaction-api_1.2_spec/1.0.0.Final/jboss-transaction-api_1.2_spec-1.0.0.Final.jar:/home/sandip/.m2/repository/org/javassist/javassist/3.18.1-GA/javassist-3.18.1-GA.jar:/home/sandip/.m2/repository/nl/bitwalker/UserAgentUtils/1.2.4/UserAgentUtils-1.2.4.jar:/home/sandip/.m2/repository/np/com/bahadur/converter/date/nepali/nepali-english-date-converter/1.0.0/nepali-english-date-converter-1.0.0.jar:/home/sandip/.m2/repository/ch/qos/logback/logback-core/1.2.3/logback-core-1.2.3.jar:/home/sandip/.m2/repository/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3.jar:/home/sandip/.m2/repository/com/itextpdf/itextpdf/5.4.1/itextpdf-5.4.1.jar:/home/sandip/.m2/repository/org/codehaus/jettison/jettison/1.2/jettison-1.2.jar:/home/sandip/.m2/repository/stax/stax-api/1.0.1/stax-api-1.0.1.jar:/home/sandip/.m2/repository/javax/javaee-api/8.0/javaee-api-8.0.jar:/home/sandip/.m2/repository/com/sun/mail/javax.mail/1.6.0/javax.mail-1.6.0.jar:/home/sandip/.m2/repository/javax/activation/activation/1.1/activation-1.1.jar:/home/sandip/.m2/repository/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.jar:/home/sandip/.m2/repository/com/thoughtworks/xstream/xstream/1.2.1/xstream-1.2.1.jar:/home/sandip/.m2/repository/xpp3/xpp3_min/1.1.3.4.O/xpp3_min-1.1.3.4.O.jar:/home/sandip/.m2/repository/net/sf/jasperreports/jasperreports/6.20.6/jasperreports-6.20.6.jar:/home/sandip/.m2/repository/commons-beanutils/commons-beanutils/1.9.4/commons-beanutils-1.9.4.jar:/home/sandip/.m2/repository/commons-digester/commons-digester/2.1/commons-digester-2.1.jar:/home/sandip/.m2/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar:/home/sandip/.m2/repository/org/apache/commons/commons-collections4/4.2/commons-collections4-4.2.jar:/home/sandip/.m2/repository/com/github/librepdf/openpdf/1.3.30.jaspersoft.3/openpdf-1.3.30.jaspersoft.3.jar:/home/sandip/.m2/repository/org/jfree/jcommon/1.0.23/jcommon-1.0.23.jar:/home/sandip/.m2/repository/org/jfree/jfreechart/1.0.19/jfreechart-1.0.19.jar:/home/sandip/.m2/repository/org/eclipse/jdt/ecj/3.21.0/ecj-3.21.0.jar:/home/sandip/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.14.1/jackson-core-2.14.1.jar:/home/sandip/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.14.1/jackson-databind-2.14.1.jar:/home/sandip/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.14.1/jackson-annotations-2.14.1.jar:/home/sandip/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-xml/2.14.1/jackson-dataformat-xml-2.14.1.jar:/home/sandip/.m2/repository/org/codehaus/woodstox/stax2-api/4.2.1/stax2-api-4.2.1.jar:/home/sandip/.m2/repository/com/fasterxml/woodstox/woodstox-core/6.4.0/woodstox-core-6.4.0.jar:/home/sandip/.m2/repository/org/richfaces/richfaces/4.5.0.Final/richfaces-4.5.0.Final.jar:/home/sandip/.m2/repository/org/richfaces/richfaces-core/4.5.0.Final/richfaces-core-4.5.0.Final.jar:/home/sandip/.m2/repository/net/sourceforge/cssparser/cssparser/0.9.14/cssparser-0.9.14.jar:/home/sandip/.m2/repository/org/w3c/css/sac/1.3/sac-1.3.jar:/home/sandip/.m2/repository/org/richfaces/richfaces-a4j/4.5.0.Final/richfaces-a4j-4.5.0.Final.jar:/home/sandip/.m2/repository/commons-fileupload/commons-fileupload/1.4/commons-fileupload-1.4.jar:/home/sandip/.m2/repository/commons-io/commons-io/2.16.1/commons-io-2.16.1.jar:/home/sandip/.m2/repository/org/primefaces/primefaces/8.0/primefaces-8.0.jar:/home/sandip/.m2/repository/org/apache/commons/commons-lang3/3.9/commons-lang3-3.9.jar:/home/sandip/.m2/repository/com/google/code/gson/gson/2.8.6/gson-2.8.6.jar:/home/sandip/.m2/repository/org/glassfish/jersey/containers/jersey-container-servlet/2.26/jersey-container-servlet-2.26.jar:/home/sandip/.m2/repository/org/glassfish/jersey/containers/jersey-container-servlet-core/2.26/jersey-container-servlet-core-2.26.jar:/home/sandip/.m2/repository/org/glassfish/jersey/core/jersey-common/2.26/jersey-common-2.26.jar:/home/sandip/.m2/repository/javax/annotation/javax.annotation-api/1.2/javax.annotation-api-1.2.jar:/home/sandip/.m2/repository/org/glassfish/hk2/osgi-resource-locator/1.0.1/osgi-resource-locator-1.0.1.jar:/home/sandip/.m2/repository/org/glassfish/jersey/core/jersey-server/2.26/jersey-server-2.26.jar:/home/sandip/.m2/repository/org/glassfish/jersey/media/jersey-media-jaxb/2.26/jersey-media-jaxb-2.26.jar:/home/sandip/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.1/javax.ws.rs-api-2.1.jar:/home/sandip/.m2/repository/org/glassfish/jersey/media/jersey-media-json-jackson/2.26/jersey-media-json-jackson-2.26.jar:/home/sandip/.m2/repository/org/glassfish/jersey/ext/jersey-entity-filtering/2.26/jersey-entity-filtering-2.26.jar:/home/sandip/.m2/repository/com/fasterxml/jackson/module/jackson-module-jaxb-annotations/2.8.4/jackson-module-jaxb-annotations-2.8.4.jar:/home/sandip/.m2/repository/org/glassfish/jersey/media/jersey-media-moxy/2.26/jersey-media-moxy-2.26.jar:/home/sandip/.m2/repository/org/eclipse/persistence/org.eclipse.persistence.moxy/2.6.4/org.eclipse.persistence.moxy-2.6.4.jar:/home/sandip/.m2/repository/org/eclipse/persistence/org.eclipse.persistence.core/2.6.4/org.eclipse.persistence.core-2.6.4.jar:/home/sandip/.m2/repository/org/eclipse/persistence/org.eclipse.persistence.asm/2.6.4/org.eclipse.persistence.asm-2.6.4.jar:/home/sandip/.m2/repository/org/glassfish/jersey/media/jersey-media-json-processing/2.26/jersey-media-json-processing-2.26.jar:/home/sandip/.m2/repository/org/glassfish/javax.json/1.1/javax.json-1.1.jar:/home/sandip/.m2/repository/org/glassfish/jsonp-jaxrs/1.1.1/jsonp-jaxrs-1.1.1.jar:/home/sandip/.m2/repository/org/glassfish/jersey/media/jersey-media-multipart/2.26/jersey-media-multipart-2.26.jar:/home/sandip/.m2/repository/org/jvnet/mimepull/mimepull/1.9.6/mimepull-1.9.6.jar:/home/sandip/.m2/repository/org/glassfish/jersey/core/jersey-client/2.26/jersey-client-2.26.jar:/home/sandip/.m2/repository/org/glassfish/hk2/external/javax.inject/2.5.0-b42/javax.inject-2.5.0-b42.jar:/home/sandip/.m2/repository/org/glassfish/jersey/ext/jersey-bean-validation/2.26/jersey-bean-validation-2.26.jar:/home/sandip/.m2/repository/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar:/home/sandip/.m2/repository/org/hibernate/hibernate-validator/5.1.3.Final/hibernate-validator-5.1.3.Final.jar:/home/sandip/.m2/repository/com/fasterxml/classmate/1.0.0/classmate-1.0.0.jar:/home/sandip/.m2/repository/javax/el/javax.el-api/2.2.4/javax.el-api-2.2.4.jar:/home/sandip/.m2/repository/org/glassfish/web/javax.el/2.2.4/javax.el-2.2.4.jar:/home/sandip/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-base/2.2.3/jackson-jaxrs-base-2.2.3.jar:/home/sandip/.m2/repository/com/owlike/genson/1.6/genson-1.6.jar:/home/sandip/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-json-provider/2.10.0/jackson-jaxrs-json-provider-2.10.0.jar:/home/sandip/.m2/repository/org/bitbucket/b_c/jose4j/0.5.2/jose4j-0.5.2.jar:/home/sandip/.m2/repository/org/apache/velocity/velocity/1.7/velocity-1.7.jar:/home/sandip/.m2/repository/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar:/home/sandip/.m2/repository/commons-lang/commons-lang/2.4/commons-lang-2.4.jar:/home/sandip/.m2/repository/com/jcraft/jsch/0.1.53/jsch-0.1.53.jar:/home/sandip/.m2/repository/com/google/firebase/firebase-admin/7.0.0/firebase-admin-7.0.0.jar:/home/sandip/.m2/repository/com/google/api-client/google-api-client/1.30.10/google-api-client-1.30.10.jar:/home/sandip/.m2/repository/com/google/oauth-client/google-oauth-client/1.31.0/google-oauth-client-1.31.0.jar:/home/sandip/.m2/repository/com/google/http-client/google-http-client-jackson2/1.36.0/google-http-client-jackson2-1.36.0.jar:/home/sandip/.m2/repository/com/google/api-client/google-api-client-gson/1.30.10/google-api-client-gson-1.30.10.jar:/home/sandip/.m2/repository/com/google/http-client/google-http-client-gson/1.36.0/google-http-client-gson-1.36.0.jar:/home/sandip/.m2/repository/com/google/http-client/google-http-client/1.35.0/google-http-client-1.35.0.jar:/home/sandip/.m2/repository/org/apache/httpcomponents/httpclient/4.5.12/httpclient-4.5.12.jar:/home/sandip/.m2/repository/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar:/home/sandip/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/home/sandip/.m2/repository/com/google/j2objc/j2objc-annotations/1.3/j2objc-annotations-1.3.jar:/home/sandip/.m2/repository/io/opencensus/opencensus-api/0.24.0/opencensus-api-0.24.0.jar:/home/sandip/.m2/repository/io/opencensus/opencensus-contrib-http-util/0.24.0/opencensus-contrib-http-util-0.24.0.jar:/home/sandip/.m2/repository/com/google/api/api-common/1.9.2/api-common-1.9.2.jar:/home/sandip/.m2/repository/com/google/auto/value/auto-value-annotations/1.7.2/auto-value-annotations-1.7.2.jar:/home/sandip/.m2/repository/com/google/auth/google-auth-library-oauth2-http/0.20.0/google-auth-library-oauth2-http-0.20.0.jar:/home/sandip/.m2/repository/com/google/auth/google-auth-library-credentials/0.20.0/google-auth-library-credentials-0.20.0.jar:/home/sandip/.m2/repository/com/google/cloud/google-cloud-storage/1.110.0/google-cloud-storage-1.110.0.jar:/home/sandip/.m2/repository/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/home/sandip/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/sandip/.m2/repository/org/checkerframework/checker-compat-qual/2.5.5/checker-compat-qual-2.5.5.jar:/home/sandip/.m2/repository/com/google/errorprone/error_prone_annotations/2.3.4/error_prone_annotations-2.3.4.jar:/home/sandip/.m2/repository/com/google/apis/google-api-services-storage/v1-rev20200430-1.30.9/google-api-services-storage-v1-rev20200430-1.30.9.jar:/home/sandip/.m2/repository/com/google/cloud/google-cloud-core/1.93.6/google-cloud-core-1.93.6.jar:/home/sandip/.m2/repository/com/google/api/grpc/proto-google-common-protos/1.18.0/proto-google-common-protos-1.18.0.jar:/home/sandip/.m2/repository/com/google/cloud/google-cloud-core-http/1.93.6/google-cloud-core-http-1.93.6.jar:/home/sandip/.m2/repository/com/google/http-client/google-http-client-appengine/1.35.0/google-http-client-appengine-1.35.0.jar:/home/sandip/.m2/repository/com/google/api/gax-httpjson/0.74.0/gax-httpjson-0.74.0.jar:/home/sandip/.m2/repository/com/google/api/gax/1.57.0/gax-1.57.0.jar:/home/sandip/.m2/repository/io/grpc/grpc-context/1.30.0/grpc-context-1.30.0.jar:/home/sandip/.m2/repository/com/google/api/grpc/proto-google-iam-v1/0.13.0/proto-google-iam-v1-0.13.0.jar:/home/sandip/.m2/repository/com/google/protobuf/protobuf-java/3.12.2/protobuf-java-3.12.2.jar:/home/sandip/.m2/repository/com/google/protobuf/protobuf-java-util/3.12.2/protobuf-java-util-3.12.2.jar:/home/sandip/.m2/repository/org/threeten/threetenbp/1.4.4/threetenbp-1.4.4.jar:/home/sandip/.m2/repository/com/google/cloud/google-cloud-firestore/1.35.0/google-cloud-firestore-1.35.0.jar:/home/sandip/.m2/repository/com/google/cloud/google-cloud-core-grpc/1.93.6/google-cloud-core-grpc-1.93.6.jar:/home/sandip/.m2/repository/io/grpc/grpc-core/1.30.0/grpc-core-1.30.0.jar:/home/sandip/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/home/sandip/.m2/repository/com/google/api/grpc/proto-google-cloud-firestore-admin-v1/1.35.0/proto-google-cloud-firestore-admin-v1-1.35.0.jar:/home/sandip/.m2/repository/com/google/api/grpc/proto-google-cloud-firestore-v1/1.35.0/proto-google-cloud-firestore-v1-1.35.0.jar:/home/sandip/.m2/repository/com/google/api/grpc/proto-google-cloud-firestore-v1beta1/0.88.0/proto-google-cloud-firestore-v1beta1-0.88.0.jar:/home/sandip/.m2/repository/io/opencensus/opencensus-contrib-grpc-util/0.24.0/opencensus-contrib-grpc-util-0.24.0.jar:/home/sandip/.m2/repository/io/grpc/grpc-protobuf/1.30.0/grpc-protobuf-1.30.0.jar:/home/sandip/.m2/repository/io/grpc/grpc-protobuf-lite/1.30.0/grpc-protobuf-lite-1.30.0.jar:/home/sandip/.m2/repository/io/grpc/grpc-api/1.30.0/grpc-api-1.30.0.jar:/home/sandip/.m2/repository/com/google/api/gax-grpc/1.57.0/gax-grpc-1.57.0.jar:/home/sandip/.m2/repository/io/grpc/grpc-auth/1.30.0/grpc-auth-1.30.0.jar:/home/sandip/.m2/repository/io/grpc/grpc-netty-shaded/1.30.0/grpc-netty-shaded-1.30.0.jar:/home/sandip/.m2/repository/io/grpc/grpc-alts/1.30.0/grpc-alts-1.30.0.jar:/home/sandip/.m2/repository/io/grpc/grpc-grpclb/1.30.0/grpc-grpclb-1.30.0.jar:/home/sandip/.m2/repository/org/conscrypt/conscrypt-openjdk-uber/2.2.1/conscrypt-openjdk-uber-2.2.1.jar:/home/sandip/.m2/repository/io/grpc/grpc-stub/1.30.0/grpc-stub-1.30.0.jar:/home/sandip/.m2/repository/com/google/guava/guava/29.0-android/guava-29.0-android.jar:/home/sandip/.m2/repository/io/netty/netty-codec-http/4.1.50.Final/netty-codec-http-4.1.50.Final.jar:/home/sandip/.m2/repository/io/netty/netty-common/4.1.50.Final/netty-common-4.1.50.Final.jar:/home/sandip/.m2/repository/io/netty/netty-buffer/4.1.50.Final/netty-buffer-4.1.50.Final.jar:/home/sandip/.m2/repository/io/netty/netty-codec/4.1.50.Final/netty-codec-4.1.50.Final.jar:/home/sandip/.m2/repository/io/netty/netty-handler/4.1.50.Final/netty-handler-4.1.50.Final.jar:/home/sandip/.m2/repository/io/netty/netty-resolver/4.1.50.Final/netty-resolver-4.1.50.Final.jar:/home/sandip/.m2/repository/io/netty/netty-transport/4.1.50.Final/netty-transport-4.1.50.Final.jar:/home/sandip/.m2/repository/org/apache/commons/commons-imaging/1.0-alpha1/commons-imaging-1.0-alpha1.jar:/home/sandip/.m2/repository/org/apache/sanselan/sanselan/0.97-incubator/sanselan-0.97-incubator.jar:/home/sandip/.m2/repository/org/projectlombok/lombok/1.18.22/lombok-1.18.22.jar:/home/sandip/.m2/repository/net/sf/barcode4j/barcode4j/2.1/barcode4j-2.1.jar:/home/sandip/.m2/repository/avalon-framework/avalon-framework-impl/4.2.0/avalon-framework-impl-4.2.0.jar:/home/sandip/.m2/repository/commons-cli/commons-cli/1.0/commons-cli-1.0.jar:/home/sandip/.m2/repository/org/apache/ant/ant/1.7.1/ant-1.7.1.jar:/home/sandip/.m2/repository/org/apache/ant/ant-launcher/1.7.1/ant-launcher-1.7.1.jar:/home/sandip/.m2/repository/com/google/zxing/core/3.4.0/core-3.4.0.jar:/home/sandip/.m2/repository/com/google/zxing/javase/3.4.0/javase-3.4.0.jar:/home/sandip/.m2/repository/com/beust/jcommander/1.72/jcommander-1.72.jar:/home/sandip/.m2/repository/np/com/paawan/fonts/arial-unicode-ms/arial-unicode-ms-font/1.0.0/arial-unicode-ms-font-1.0.0.jar:/home/sandip/.m2/repository/np/com/paawan/fonts/preeti/preeti-font/1.0.0/preeti-font-1.0.0.jar:/home/sandip/.m2/repository/np/com/paawan/fonts/stencil/stencil-font/1.0.0/stencil-font-1.0.0.jar:/home/sandip/.m2/repository/np/com/paawan/fonts/stencilbt/stencilbt-font/1.0.0/stencilbt-font-1.0.0.jar:/home/sandip/.m2/repository/np/com/paawan/fonts/script-mt-bold/script-mt-bold-font/1.0.0/script-mt-bold-font-1.0.0.jar:/home/sandip/.m2/repository/np/com/paawan/fonts/times-new-roman/times-new-roman-font/1.0.0/times-new-roman-font-1.0.0.jar:/home/sandip/.m2/repository/np/com/paawan/fonts/revue-bt/revue-bt-font/1.0.0/revue-bt-font-1.0.0.jar:/home/sandip/projects/akshamala-erp/akshamala-erp-ejb/target/classes:/home/sandip/projects/akshamala-erp/akshamala-erp-ejb/src/main/resources:/home/sandip/projects/akshamala-erp/akshamala-erp-ejb/src/main/java
+sourcePath: /home/sandip/projects/akshamala-erp/akshamala-erp-ejb/src/test/java:/home/sandip/projects/akshamala-erp/admin/src/test/java:/home/sandip/projects/akshamala-erp/akshamala-erp-ejb/src/main/resources:/home/sandip/projects/akshamala-erp/admin/src/main/resources:/home/sandip/projects/akshamala-erp/admin/src/main/webapp:/home/sandip/projects/akshamala-erp/akshamala-erp-ear/src/main/resources:/home/sandip/projects/akshamala-erp/akshamala-erp-ejb/src/main/java:/home/sandip/.m2/repository/np/com/bahadur/converter/date/nepali/nepali-english-date-converter/1.0.0/nepali-english-date-converter-1.0.0-sources.jar:/home/sandip/projects/akshamala-erp/admin/src/main/java:/home/sandip/projects/akshamala-erp/akshamala-erp-Entity/src/main/java
+----- Original exception ---------------------------------------------
+java.lang.IllegalStateException: java.lang.NullPointerException: Cannot invoke "com.sun.tools.javac.code.Type.getThrownTypes()" because "tree.meth.type" is null
+	at com.sun.tools.javac.api.JavacTaskImpl.analyze(JavacTaskImpl.java:383)
+	at org.netbeans.modules.java.source.parsing.JavacParser.moveToPhase(JavacParser.java:770)
+	at org.netbeans.modules.java.source.parsing.CompilationInfoImpl.toPhase(CompilationInfoImpl.java:426)
+	at org.netbeans.api.java.source.CompilationController.toPhase(CompilationController.java:88)
+	at org.netbeans.api.java.source.WorkingCopy.toPhase(WorkingCopy.java:192)
+	at org.netbeans.modules.refactoring.java.spi.RefactoringVisitor.setWorkingCopy(RefactoringVisitor.java:111)
+	at org.netbeans.modules.refactoring.java.spi.JavaRefactoringPlugin$TransformTask.run(JavaRefactoringPlugin.java:437)
+	at org.netbeans.modules.refactoring.java.spi.JavaRefactoringPlugin$TransformTask.run(JavaRefactoringPlugin.java:420)
+	at org.netbeans.modules.refactoring.java.spi.JavaRefactoringPlugin.lambda$processFiles$1(JavaRefactoringPlugin.java:325)
+	at org.netbeans.api.java.source.JavaSource$1.run(JavaSource.java:675)
+	at org.netbeans.api.java.source.JavaSource$1.run(JavaSource.java:665)
+	at org.netbeans.api.java.source.JavaSource$MultiTask.run(JavaSource.java:504)
+	at org.netbeans.modules.parsing.impl.TaskProcessor.callUserTask(TaskProcessor.java:586)
+	at org.netbeans.modules.parsing.api.ParserManager$MultiUserTaskAction.run(ParserManager.java:169)
+	at org.netbeans.modules.parsing.api.ParserManager$MultiUserTaskAction.run(ParserManager.java:140)
+	at org.netbeans.modules.parsing.impl.TaskProcessor$2.call(TaskProcessor.java:181)
+	at org.netbeans.modules.parsing.impl.TaskProcessor$2.call(TaskProcessor.java:178)
+	at org.netbeans.modules.masterfs.filebasedfs.utils.FileChangedManager.priorityIO(FileChangedManager.java:153)
+	at org.netbeans.modules.masterfs.providers.ProvidedExtensions.priorityIO(ProvidedExtensions.java:335)
+	at org.netbeans.modules.parsing.nb.DataObjectEnvFactory.runPriorityIO(DataObjectEnvFactory.java:118)
+	at org.netbeans.modules.parsing.impl.Utilities.runPriorityIO(Utilities.java:67)
+	at org.netbeans.modules.parsing.impl.TaskProcessor.runUserTask(TaskProcessor.java:178)
+	at org.netbeans.modules.parsing.api.ParserManager.parse(ParserManager.java:85)
+	at org.netbeans.api.java.source.JavaSource.runUserActionTaskImpl(JavaSource.java:454)
+	at org.netbeans.api.java.source.JavaSource.runUserActionTask(JavaSource.java:425)
+	at org.netbeans.api.java.source.JavaSource.runModificationTask(JavaSource.java:686)
+	at org.netbeans.modules.refactoring.java.spi.JavaRefactoringPlugin.processFiles(JavaRefactoringPlugin.java:323)
+	at org.netbeans.modules.refactoring.java.spi.JavaRefactoringPlugin.processFiles(JavaRefactoringPlugin.java:264)
+	at org.netbeans.modules.refactoring.java.spi.JavaRefactoringPlugin.processFiles(JavaRefactoringPlugin.java:246)
+	at org.netbeans.modules.refactoring.java.spi.JavaRefactoringPlugin.createAndAddElements(JavaRefactoringPlugin.java:338)
+	at org.netbeans.modules.refactoring.java.plugins.RenameRefactoringPlugin.prepare(RenameRefactoringPlugin.java:626)
+	at org.netbeans.modules.refactoring.api.AbstractRefactoring.pluginsPrepare2(AbstractRefactoring.java:417)
+	at org.netbeans.modules.refactoring.api.AbstractRefactoring.pluginsPrepare(AbstractRefactoring.java:401)
+	at org.netbeans.modules.refactoring.api.AbstractRefactoring.prepare(AbstractRefactoring.java:212)
+	at org.netbeans.modules.refactoring.spi.impl.ParametersPanel$Prepare.run(ParametersPanel.java:1063)
+	at org.openide.util.RequestProcessor$Task.run(RequestProcessor.java:1418)
+	at org.netbeans.modules.openide.util.GlobalLookup.execute(GlobalLookup.java:45)
+	at org.openide.util.lookup.Lookups.executeWith(Lookups.java:287)
+	at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:2033)
+Caused by: java.lang.NullPointerException: Cannot invoke "com.sun.tools.javac.code.Type.getThrownTypes()" because "tree.meth.type" is null
+	at com.sun.tools.javac.comp.Flow$FlowAnalyzer.visitApply(Flow.java:1576)
+	at com.sun.tools.javac.tree.JCTree$JCMethodInvocation.accept(JCTree.java:1799)
+	at com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at com.sun.tools.javac.comp.Flow$BaseAnalyzer.scan(Flow.java:447)
+	at com.sun.tools.javac.tree.TreeScanner.visitParens(TreeScanner.java:274)
+	at com.sun.tools.javac.tree.JCTree$JCParens.accept(JCTree.java:2016)
+	at com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at com.sun.tools.javac.comp.Flow$BaseAnalyzer.scan(Flow.java:447)
+	at com.sun.tools.javac.comp.Flow$FlowAnalyzer.visitIf(Flow.java:1503)
+	at com.sun.tools.javac.tree.JCTree$JCIf.accept(JCTree.java:1555)
+	at com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at com.sun.tools.javac.comp.Flow$BaseAnalyzer.scan(Flow.java:447)
+	at com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:57)
+	at com.sun.tools.javac.comp.Flow$FlowAnalyzer.visitBlock(Flow.java:1325)
+	at com.sun.tools.javac.tree.JCTree$JCBlock.accept(JCTree.java:1082)
+	at com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at com.sun.tools.javac.comp.Flow$BaseAnalyzer.scan(Flow.java:447)
+	at com.sun.tools.javac.comp.Flow$FlowAnalyzer.visitMethodDef(Flow.java:1291)
+	at com.sun.tools.javac.tree.JCTree$JCMethodDecl.accept(JCTree.java:912)
+	at com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at com.sun.tools.javac.comp.Flow$BaseAnalyzer.scan(Flow.java:447)
+	at com.sun.tools.javac.comp.Flow$FlowAnalyzer.visitClassDef(Flow.java:1254)
+	at com.sun.tools.javac.tree.JCTree$JCClassDecl.accept(JCTree.java:810)
+	at com.sun.tools.javac.tree.TreeScanner.scan(TreeScanner.java:49)
+	at com.sun.tools.javac.comp.Flow$BaseAnalyzer.scan(Flow.java:447)
+	at com.sun.tools.javac.comp.Flow$FlowAnalyzer.analyzeTree(Flow.java:1669)
+	at com.sun.tools.javac.comp.Flow$FlowAnalyzer.analyzeTree(Flow.java:1659)
+	at com.sun.tools.javac.comp.Flow.analyzeTree(Flow.java:225)
+	at com.sun.tools.javac.main.JavaCompiler.flow(JavaCompiler.java:1377)
+	at com.sun.tools.javac.main.JavaCompiler.flow(JavaCompiler.java:1341)
+	at com.sun.tools.javac.api.JavacTaskImpl.analyze(JavacTaskImpl.java:404)
+	at com.sun.tools.javac.api.JavacTaskImpl.lambda$analyze$1(JavacTaskImpl.java:379)
+	at com.sun.tools.javac.api.JavacTaskImpl.invocationHelper(JavacTaskImpl.java:152)
+	at com.sun.tools.javac.api.JavacTaskImpl.analyze(JavacTaskImpl.java:379)
+	... 38 more

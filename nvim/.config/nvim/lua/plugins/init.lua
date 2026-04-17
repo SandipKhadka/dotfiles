@@ -46,18 +46,6 @@ local M = {
     {
         "nvim-telescope/telescope.nvim",
         tag = "0.1.8",
-        keys = { -- Load on keymap
-            {
-                "<leader>ff",
-                "<cmd>Telescope find_files<cr>",
-                desc = "Find Files",
-            },
-            {
-                "<leader>fg",
-                "<cmd>Telescope live_grep<cr>",
-                desc = "Live Grep",
-            },
-        },
         config = function()
             require "config.telescope"
         end,

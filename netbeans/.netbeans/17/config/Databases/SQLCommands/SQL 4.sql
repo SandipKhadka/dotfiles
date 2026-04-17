@@ -1,0 +1,1 @@
+select `THEORY_MARKS` from marks_entry_detail;

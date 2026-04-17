@@ -115,4 +115,6 @@ source <(fzf --zsh)
 
 M2_HOME='/opt/apache-maven-3.9.9'
 PATH="$M2_HOME/bin:$PATH"
+export PATH="$PATH:$HOME/flutter/bin"
 export PATH
+

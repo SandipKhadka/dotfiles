@@ -1,0 +1,68 @@
+Dec 18, 2025 7:51:57 PM org.netbeans.updater.UpdaterFrame <clinit>
+INFO: Entering updater.jar .................................................................... 
+Dec 18, 2025 7:52:01 PM org.netbeans.updater.ModuleUpdater unpack
+INFO: 780: Unpacking org-netbeans-modules-jvi-nb-windows.nbm
+Dec 18, 2025 7:52:02 PM org.netbeans.updater.ModuleUpdater unpack
+INFO: Copied file /home/sandip/.netbeans/17/update/download/org-netbeans-modules-jvi-nb-windows.nbm:netbeans/config/Modules/org-netbeans-modules-jvi-nb-windows.xml to /home/sandip/.netbeans/17/config/Modules/org-netbeans-modules-jvi-nb-windows.xml
+Dec 18, 2025 7:52:02 PM org.netbeans.updater.ModuleUpdater unpack
+INFO: Copied file /home/sandip/.netbeans/17/update/download/org-netbeans-modules-jvi-nb-windows.nbm:netbeans/modules/org-netbeans-modules-jvi-nb-windows.jar to /home/sandip/.netbeans/17/modules/org-netbeans-modules-jvi-nb-windows.jar
+Dec 18, 2025 7:52:02 PM org.netbeans.updater.ModuleUpdater unpack
+INFO: File /home/sandip/.netbeans/17/update/download/org-netbeans-modules-jvi-nb-windows.nbm deleted.
+Dec 18, 2025 7:52:02 PM org.netbeans.updater.XMLUtil write
+INFO: Use XML Transformer: com.sun.org.apache.xalan.internal.xsltc.trax.TransformerImpl@65331ec8
+Dec 18, 2025 7:52:02 PM org.netbeans.updater.UpdateTracking$Module write
+INFO: File /home/sandip/.netbeans/17/update_tracking/org-netbeans-modules-jvi-nb-windows.xml modified.
+Dec 18, 2025 7:52:02 PM org.netbeans.updater.ModuleUpdater unpack
+INFO: 780: Unpacking com-raelity-jvi.nbm
+Dec 18, 2025 7:52:02 PM org.netbeans.updater.ModuleUpdater unpack
+INFO: Copied file /home/sandip/.netbeans/17/update/download/com-raelity-jvi.nbm:netbeans/config/Modules/com-raelity-jvi.xml to /home/sandip/.netbeans/17/config/Modules/com-raelity-jvi.xml
+Dec 18, 2025 7:52:02 PM org.netbeans.updater.ModuleUpdater unpack
+INFO: Copied file /home/sandip/.netbeans/17/update/download/com-raelity-jvi.nbm:netbeans/modules/com-raelity-jvi.jar to /home/sandip/.netbeans/17/modules/com-raelity-jvi.jar
+Dec 18, 2025 7:52:02 PM org.netbeans.updater.ModuleUpdater unpack
+INFO: Copied file /home/sandip/.netbeans/17/update/download/com-raelity-jvi.nbm:netbeans/modules/ext/jvi-swing.jar to /home/sandip/.netbeans/17/modules/ext/jvi-swing.jar
+Dec 18, 2025 7:52:02 PM org.netbeans.updater.ModuleUpdater unpack
+INFO: File /home/sandip/.netbeans/17/update/download/com-raelity-jvi.nbm deleted.
+Dec 18, 2025 7:52:02 PM org.netbeans.updater.XMLUtil write
+INFO: Use XML Transformer: com.sun.org.apache.xalan.internal.xsltc.trax.TransformerImpl@1bc60ce2
+Dec 18, 2025 7:52:02 PM org.netbeans.updater.UpdateTracking$Module write
+INFO: File /home/sandip/.netbeans/17/update_tracking/com-raelity-jvi.xml modified.
+Dec 18, 2025 7:52:02 PM org.netbeans.updater.ModuleUpdater unpack
+INFO: 780: Unpacking org-netbeans-modules-jvi-nb-lib.nbm
+Dec 18, 2025 7:52:02 PM org.netbeans.updater.ModuleUpdater unpack
+INFO: Copied file /home/sandip/.netbeans/17/update/download/org-netbeans-modules-jvi-nb-lib.nbm:netbeans/config/Modules/org-netbeans-modules-jvi-nb-lib.xml to /home/sandip/.netbeans/17/config/Modules/org-netbeans-modules-jvi-nb-lib.xml
+Dec 18, 2025 7:52:02 PM org.netbeans.updater.ModuleUpdater unpack
+INFO: Copied file /home/sandip/.netbeans/17/update/download/org-netbeans-modules-jvi-nb-lib.nbm:netbeans/modules/org-netbeans-modules-jvi-nb-lib.jar to /home/sandip/.netbeans/17/modules/org-netbeans-modules-jvi-nb-lib.jar
+Dec 18, 2025 7:52:02 PM org.netbeans.updater.ModuleUpdater unpack
+INFO: File /home/sandip/.netbeans/17/update/download/org-netbeans-modules-jvi-nb-lib.nbm deleted.
+Dec 18, 2025 7:52:02 PM org.netbeans.updater.XMLUtil write
+INFO: Use XML Transformer: com.sun.org.apache.xalan.internal.xsltc.trax.TransformerImpl@1c6fa5ab
+Dec 18, 2025 7:52:02 PM org.netbeans.updater.UpdateTracking$Module write
+INFO: File /home/sandip/.netbeans/17/update_tracking/org-netbeans-modules-jvi-nb-lib.xml modified.
+Dec 18, 2025 7:52:02 PM org.netbeans.updater.ModuleUpdater unpack
+INFO: 780: Unpacking org-netbeans-contrib-yenta-api.nbm
+Dec 18, 2025 7:52:02 PM org.netbeans.updater.ModuleUpdater unpack
+INFO: Copied file /home/sandip/.netbeans/17/update/download/org-netbeans-contrib-yenta-api.nbm:netbeans/config/Modules/org-netbeans-contrib-yenta-api.xml to /home/sandip/.netbeans/17/config/Modules/org-netbeans-contrib-yenta-api.xml
+Dec 18, 2025 7:52:02 PM org.netbeans.updater.ModuleUpdater unpack
+INFO: Copied file /home/sandip/.netbeans/17/update/download/org-netbeans-contrib-yenta-api.nbm:netbeans/modules/ext/org.netbeans.contrib.yenta.api/org-netbeans-contrib-yenta/lib.jar to /home/sandip/.netbeans/17/modules/ext/org.netbeans.contrib.yenta.api/org-netbeans-contrib-yenta/lib.jar
+Dec 18, 2025 7:52:02 PM org.netbeans.updater.ModuleUpdater unpack
+INFO: Copied file /home/sandip/.netbeans/17/update/download/org-netbeans-contrib-yenta-api.nbm:netbeans/modules/org-netbeans-contrib-yenta-api.jar to /home/sandip/.netbeans/17/modules/org-netbeans-contrib-yenta-api.jar
+Dec 18, 2025 7:52:02 PM org.netbeans.updater.ModuleUpdater unpack
+INFO: File /home/sandip/.netbeans/17/update/download/org-netbeans-contrib-yenta-api.nbm deleted.
+Dec 18, 2025 7:52:02 PM org.netbeans.updater.XMLUtil write
+INFO: Use XML Transformer: com.sun.org.apache.xalan.internal.xsltc.trax.TransformerImpl@620e3f26
+Dec 18, 2025 7:52:02 PM org.netbeans.updater.UpdateTracking$Module write
+INFO: File /home/sandip/.netbeans/17/update_tracking/org-netbeans-contrib-yenta-api.xml modified.
+Dec 18, 2025 7:52:02 PM org.netbeans.updater.ModuleUpdater unpack
+INFO: 780: Unpacking org-netbeans-modules-jvi.nbm
+Dec 18, 2025 7:52:02 PM org.netbeans.updater.ModuleUpdater unpack
+INFO: Copied file /home/sandip/.netbeans/17/update/download/org-netbeans-modules-jvi.nbm:netbeans/config/Modules/org-netbeans-modules-jvi.xml to /home/sandip/.netbeans/17/config/Modules/org-netbeans-modules-jvi.xml
+Dec 18, 2025 7:52:02 PM org.netbeans.updater.ModuleUpdater unpack
+INFO: Copied file /home/sandip/.netbeans/17/update/download/org-netbeans-modules-jvi.nbm:netbeans/modules/org-netbeans-modules-jvi.jar to /home/sandip/.netbeans/17/modules/org-netbeans-modules-jvi.jar
+Dec 18, 2025 7:52:02 PM org.netbeans.updater.ModuleUpdater unpack
+INFO: File /home/sandip/.netbeans/17/update/download/org-netbeans-modules-jvi.nbm deleted.
+Dec 18, 2025 7:52:02 PM org.netbeans.updater.XMLUtil write
+INFO: Use XML Transformer: com.sun.org.apache.xalan.internal.xsltc.trax.TransformerImpl@1df7da5e
+Dec 18, 2025 7:52:02 PM org.netbeans.updater.UpdateTracking$Module write
+INFO: File /home/sandip/.netbeans/17/update_tracking/org-netbeans-modules-jvi.xml modified.
+Dec 18, 2025 7:52:03 PM org.netbeans.updater.ModuleUpdater deleteAdditionalInfo
+INFO: File /home/sandip/.netbeans/17/update/download/additional_information.xml deleted.

@@ -1,0 +1,1 @@
+delete from device_attendance_raw;

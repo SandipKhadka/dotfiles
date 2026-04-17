@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mode version="2.4">
+    <module name="org.netbeans.core.ui/1" spec="1.2" />
+    <name unique="leftSlidingSide"  />
+  <kind type="sliding" />
+  <slidingSide side="left" />
+  <slide-in-size tc-id="projectTab_tc" size="294" />
+  <slide-in-size tc-id="services" size="430" />
+  <slide-in-size tc-id="projectTabLogical_tc" size="320" />
+  <state type="joined"  />
+  <bounds x="28" y="3" width="320" height="778" />
+  <frame state="0"/>
+    <empty-behavior permanent="true"/>
+</mode>

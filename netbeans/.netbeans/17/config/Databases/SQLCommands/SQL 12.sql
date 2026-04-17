@@ -1,0 +1,1 @@
+select `REPORT_FORMAT_IMAGE_PATH` from mark_sheet_report_format;
