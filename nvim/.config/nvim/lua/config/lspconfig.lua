@@ -30,9 +30,6 @@ local handlers = {
 -- Common on_attach function for keymaps and commands
 local on_attach = function(client, bufnr)
     -- Enable inlay hints if supported (Neovim 0.10+)
-    if client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
-        vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
-    end
 
     -- Highlight symbol under cursor
     if client.server_capabilities.documentHighlightProvider then

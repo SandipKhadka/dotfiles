@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE attributes PUBLIC "-//NetBeans//DTD DefaultAttributes 1.0//EN" "http://www.netbeans.org/dtds/attributes-1_0.dtd">
 <attributes version="1.0">
-    <fileobject name="anonymousMode_1">
-        <attr name="WinSys-TCRef-Order" stringvalue=""/>
-    </fileobject>
-    <fileobject name="anonymousMode_3">
-        <attr name="WinSys-TCRef-Order" stringvalue=""/>
-    </fileobject>
     <fileobject name="bottomSlidingSide">
-        <attr name="WinSys-TCRef-Order" stringvalue="output/TaskListTopComponent/localsView/search-results"/>
+        <attr name="WinSys-TCRef-Order" stringvalue="output/TaskListTopComponent/search-results/TerminalContainerTopComponent/localsView"/>
     </fileobject>
     <fileobject name="code_evaluator">
         <attr name="WinSys-TCRef-Order" stringvalue="evaluatorPane"/>
@@ -17,7 +11,7 @@
         <attr name="WinSys-TCRef-Order" stringvalue="CommonPalette"/>
     </fileobject>
     <fileobject name="editor">
-        <attr name="WinSys-TCRef-Order" stringvalue="Welcome/SQL 13#002Esql_1/MultiView-java#002Eso10CA9CC6xt#002Ehistory#007C_6/MultiView-xml#002EtexEE7DCAE1xt#002Ehistory#007C_1/MultiView-java#002Eso888FBF0t#002Ehistory#007C_44/MultiView-java#002Eso888FB96t#002Ehistory#007C_17/MultiView-java#002Eso888FBCEt#002Ehistory#007C_31/MultiView-java#002Eso888FB8Ft#002Ehistory#007C_10/MultiView-java#002Eso888FBAEt#002Ehistory#007C_20/MultiView-java#002Eso888FB94t#002Ehistory#007C_15/MultiView-java#002Eso888FBEEt#002Ehistory#007C_42/MultiView-java#002Eso888FBD2t#002Ehistory#007C_35/MultiView-java#002Eso10CA9CC8xt#002Ehistory#007C_8/MultiView-java#002Eso10CA9CC3xt#002Ehistory#007C_3/MultiView-java#002Eso2D0988CFtext#002Ehistory#007C/MultiView-html#002Eso29C6EAE1text#002Ehistory#007C/MultiView-java#002Eso10CA9CC9xt#002Ehistory#007C_9/MultiView-java#002Eso10CA9CC4xt#002Ehistory#007C_4/MultiView-html#002EsoD3B7C253xt#002Ehistory#007C_1/MultiView-java#002Eso888FB97t#002Ehistory#007C_18/MultiView-java#002Eso888FB92t#002Ehistory#007C_13/MultiView-java#002Eso888FB95t#002Ehistory#007C_16/MultiView-java#002Eso888FBD1t#002Ehistory#007C_34/MultiView-editorA19A71C1xt#002Ehistory#007C_1/MultiView-java#002Eso888FBEFt#002Ehistory#007C_43/MultiView-java#002Eso888FBCFt#002Ehistory#007C_32/MultiView-java#002Eso888FB90t#002Ehistory#007C_11/MultiView-java#002Eso10CA9CC7xt#002Ehistory#007C_7/MultiView-html#002EsoD3B7C25Bxt#002Ehistory#007C_9/MultiView-java#002Eso10CA9CC2xt#002Ehistory#007C_2/MultiView-java#002Eso888FBEDt#002Ehistory#007C_41/MultiView-java#002Eso888FBAFt#002Ehistory#007C_21/SQL 12#002Esql/MultiView-html#002EsoD3B7C254xt#002Ehistory#007C_2/MultiView-html#002EsoD3B7C259xt#002Ehistory#007C_7/MultiView-java#002Eso888FB93t#002Ehistory#007C_14/JShellEditor/MultiView-editorE9CA9DCFtext#002Ehistory#007C/MultiView-java#002Eso888FB91t#002Ehistory#007C_12/MultiView-java#002Eso10CA9CC5xt#002Ehistory#007C_5/CoverageReportTopComponent/dbgInstances/MultiView-java#002Eso888FB98t#002Ehistory#007C_19/MultiView-java#002Eso888FBB0t#002Ehistory#007C_22/MultiView-java#002Eso888FBB2t#002Ehistory#007C_24/MultiView-html#002EsoA340883Dt#002Ehistory#007C_10/MultiView-java#002Eso888FBF1t#002Ehistory#007C_45/SQL 13#002Esql/MultiView-html#002EsoD3B7C257xt#002Ehistory#007C_5/MultiView-html#002EsoD3B7C255xt#002Ehistory#007C_3/MultiView-html#002EsoD3B7C258xt#002Ehistory#007C_6/MultiView-html#002EsoD3B7C25Axt#002Ehistory#007C_8/MultiView-java#002Eso10CA9CC1xt#002Ehistory#007C_1"/>
+        <attr name="WinSys-TCRef-Order" stringvalue="Welcome/MultiView-css#002Esou232CA76Ftext#002Ehistory#007C/MultiView-java#002Eso10CA9CC1xt#002Ehistory#007C_1/SQL 19#002Esql_2/MultiView-html#002EsoD3B7C255xt#002Ehistory#007C_3/SQL 13#002Esql_1/MultiView-java#002Eso10CA9CC6xt#002Ehistory#007C_6/MultiView-xml#002EtexEE7DCAE1xt#002Ehistory#007C_1/MultiView-java#002Eso888FBF0t#002Ehistory#007C_44/MultiView-java#002Eso888FB96t#002Ehistory#007C_17/MultiView-java#002Eso888FBCEt#002Ehistory#007C_31/MultiView-java#002Eso888FB8Ft#002Ehistory#007C_10/MultiView-java#002Eso888FBAEt#002Ehistory#007C_20/MultiView-java#002Eso888FB94t#002Ehistory#007C_15/MultiView-java#002Eso888FBEEt#002Ehistory#007C_42/MultiView-java#002Eso888FBD2t#002Ehistory#007C_35/MultiView-java#002Eso10CA9CC8xt#002Ehistory#007C_8/MultiView-java#002Eso10CA9CC3xt#002Ehistory#007C_3/MultiView-java#002Eso2D0988CFtext#002Ehistory#007C/MultiView-html#002Eso29C6EAE1text#002Ehistory#007C/MultiView-java#002Eso10CA9CC9xt#002Ehistory#007C_9/MultiView-java#002Eso10CA9CC4xt#002Ehistory#007C_4/MultiView-html#002EsoD3B7C253xt#002Ehistory#007C_1/MultiView-java#002Eso888FB97t#002Ehistory#007C_18/MultiView-java#002Eso888FB92t#002Ehistory#007C_13/MultiView-java#002Eso888FB95t#002Ehistory#007C_16/MultiView-java#002Eso888FBD1t#002Ehistory#007C_34/MultiView-editorA19A71C1xt#002Ehistory#007C_1/MultiView-java#002Eso888FBEFt#002Ehistory#007C_43/MultiView-java#002Eso888FBCFt#002Ehistory#007C_32/MultiView-java#002Eso888FB90t#002Ehistory#007C_11/MultiView-java#002Eso10CA9CC7xt#002Ehistory#007C_7/MultiView-html#002EsoD3B7C25Bxt#002Ehistory#007C_9/MultiView-java#002Eso10CA9CC2xt#002Ehistory#007C_2/MultiView-java#002Eso888FBEDt#002Ehistory#007C_41/MultiView-java#002Eso888FBAFt#002Ehistory#007C_21/SQL 12#002Esql/MultiView-html#002EsoD3B7C254xt#002Ehistory#007C_2/MultiView-html#002EsoD3B7C259xt#002Ehistory#007C_7/MultiView-java#002Eso888FB93t#002Ehistory#007C_14/JShellEditor/MultiView-editorE9CA9DCFtext#002Ehistory#007C/MultiView-java#002Eso888FB91t#002Ehistory#007C_12/MultiView-java#002Eso10CA9CC5xt#002Ehistory#007C_5/CoverageReportTopComponent/dbgInstances/MultiView-java#002Eso888FB98t#002Ehistory#007C_19/MultiView-java#002Eso888FBB0t#002Ehistory#007C_22/MultiView-java#002Eso888FBB2t#002Ehistory#007C_24/MultiView-html#002EsoA340883Dt#002Ehistory#007C_10/MultiView-java#002Eso888FBF1t#002Ehistory#007C_45/SQL 13#002Esql/MultiView-html#002EsoD3B7C257xt#002Ehistory#007C_5/MultiView-java#002Eso888FBCDt#002Ehistory#007C_30/MultiView-java#002Eso888FBD6t#002Ehistory#007C_39/MultiView-java#002Eso888FBF3t#002Ehistory#007C_47/MultiView-java#002Eso888FBB5t#002Ehistory#007C_27/SQL 20#002Esql/MultiView-html#002EsoD3B7C256xt#002Ehistory#007C_4"/>
     </fileobject>
     <fileobject name="explorer">
         <attr name="WinSys-TCRef-Order" stringvalue="favorites/DashboardTopComponent/debuggingView"/>
@@ -29,18 +23,9 @@
         <attr name="WinSys-TCRef-Order" stringvalue="DomTC/TruffleASTDebugView"/>
     </fileobject>
     <fileobject name="output">
-        <attr name="WinSys-TCRef-Order" stringvalue="watchesView/NotificationCenterTopComponent/resultsView/callstackView/breakpointsView/classes/sources/sessionsView/threadsView/bookmarks/eventsView/profiler_pp/versioning_output/gsf-testrunner-results/refactoring-preview/find-usages/CallHierarchyTopComponent/AnalyzerTopComponent/JavadocTopComponent/TerminalContainerTopComponent/svnversioning/hgversioningTC/GitVersioning/GitRepositories/AnalysisResultTopComponent/CheckRegexTopComponent"/>
+        <attr name="WinSys-TCRef-Order" stringvalue="watchesView/NotificationCenterTopComponent/resultsView/callstackView/breakpointsView/classes/sources/sessionsView/threadsView/bookmarks/eventsView/profiler_pp/versioning_output/gsf-testrunner-results/refactoring-preview/find-usages/CallHierarchyTopComponent/AnalyzerTopComponent/JavadocTopComponent/svnversioning/hgversioningTC/GitVersioning/GitRepositories/AnalysisResultTopComponent/CheckRegexTopComponent"/>
     </fileobject>
     <fileobject name="properties">
         <attr name="WinSys-TCRef-Order" stringvalue="KnockoutTC/AnalyzeStackTopComponent/CssStylesTC/JavaHierarchyTopComponent/properties"/>
-    </fileobject>
-    <fileobject name="rightSlidingSide">
-        <attr name="WinSys-TCRef-Order" stringvalue=""/>
-    </fileobject>
-    <fileobject name="topSlidingSide">
-        <attr name="WinSys-TCRef-Order" stringvalue=""/>
-    </fileobject>
-    <fileobject name="webpreview">
-        <attr name="WinSys-TCRef-Order" stringvalue=""/>
     </fileobject>
 </attributes>

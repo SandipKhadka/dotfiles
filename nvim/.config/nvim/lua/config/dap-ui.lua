@@ -1,38 +1,46 @@
-require("dapui").setup {
+-- ~/.config/nvim/lua/plugins/dapui-config.lua
+-- or add directly to your init.lua
+
+require("dapui").setup({
     layouts = {
         {
             elements = {
-                { id = "scopes", size = 0.25 },
-                { id = "breakpoints", size = 0.25 },
-                { id = "stacks", size = 0.25 },
-                { id = "watches", size = 0.25 },
+                "scopes",      -- Variables in current scope
+                "breakpoints", -- All breakpoints
+                "stacks",      -- Call stack
+                "watches",     -- Watch expressions
             },
             size = 40,
             position = "left",
         },
         {
             elements = {
-                { id = "repl", size = 0.5 },
-                { id = "console", size = 0.5 },
-                -- Add "controls" if you use it
-                -- { id = "controls", size = 0.1 },
+                "repl",        -- Debug console
             },
             size = 10,
             position = "bottom",
         },
     },
-    controls = {
-        enabled = false, -- or true if you want a UI control panel
-        element = "repl", -- which UI element to show controls in
-        icons = {
-            pause = "⏸",
-            play = "▶",
-            step_into = "⏎",
-            step_over = "⏭",
-            step_out = "⏮",
-            step_back = "b",
-            run_last = "▶▶",
-            terminate = "⏹",
-        },
+    
+    -- Auto close UI when debugging stops
+    auto_close = true,
+    
+    -- Hide empty panels
+    hide_inactive = true,
+    
+    -- Simple icons
+    icons = {
+        expanded = "▼",
+        collapsed = "▶",
+        current_frame = "→",
     },
-}
+    
+    -- Key mappings inside debug windows
+    mappings = {
+        expand = "<CR>",
+        open = "o",
+        remove = "d",
+        edit = "e",
+        repl = "r",
+    },
+})

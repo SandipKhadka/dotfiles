@@ -7,7 +7,19 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "agent": {
+    "dock": "right",
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "git_panel": {
+    "dock": "left"
+  },
   "project_panel": {
+    "dock": "left",
     "sticky_scroll": false
   },
   "toolbar": {
@@ -32,5 +44,5 @@
     "use_system_clipboard": "always"
   },
   "format_on_save": "on",
-  "outline_panel": { "dock": null }
+  "outline_panel": { "dock": "left" }
 }

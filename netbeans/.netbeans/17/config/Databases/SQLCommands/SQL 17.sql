@@ -1,0 +1,1 @@
+delete from staff_attendance

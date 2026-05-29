@@ -4,4 +4,5 @@
     <tc-id id="search-results" />
     <state opened="true" />
     <previousMode name="output"  index="0"  />
+    <docking-status default-mode="slided" />
 </tc-ref>

@@ -3,6 +3,7 @@
 <attributes version="1.0">
     <fileobject name="instance">
         <attr name="adminPort" stringvalue="4848"/>
+        <attr name="debugPort" stringvalue="9009"/>
         <attr name="derbyStartOn" stringvalue="true"/>
         <attr name="displayName" stringvalue="GlassFish Server"/>
         <attr name="domainname" stringvalue="domain"/>

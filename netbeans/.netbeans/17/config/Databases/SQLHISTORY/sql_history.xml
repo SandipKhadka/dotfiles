@@ -1,146 +1,174 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <history>
-<sql date="1772191865421" url="jdbc:mysql://localhost:3306/db_default">update `admin`
-set `STATUS`=1 
-where `ID`=2</sql>
-<sql date="1772177133038" url="jdbc:mysql://localhost:3306/db_default">select `COMMAND_STATUS` from attendance_device_command</sql>
-<sql date="1774331392441" url="jdbc:mysql://localhost:3306/db_default">select id from college</sql>
-<sql date="1772185845087" url="jdbc:mysql://localhost:3306/db_default">delete from student_shift
-where `ID`=323</sql>
-<sql date="1772190737660" url="jdbc:mysql://localhost:3306/db_default">select `START_TIME` from student_shift
-where `START_TIME` > 10</sql>
-<sql date="1773296965927" url="jdbc:mysql://localhost:3306/db_default">select `REPORT_FORMAT_IMAGE_PATH` from mark_sheet_report_format</sql>
+<sql date="1779105303638" url="jdbc:mysql://localhost:3306/db_default">update attendance_device
+set `DEVICE_TYPE`="Student"</sql>
+<sql date="1779460323284" url="jdbc:mysql://localhost:3306/db_default">select * from attendance_weekend_holiday_days</sql>
 <sql date="1774583892341" url="jdbc:mysql://localhost:3306/db_default">delete from student_attandance</sql>
-<sql date="1774353187703" url="jdbc:mysql://localhost:3306/db_default">select id, name from student</sql>
-<sql date="1774863378366" url="jdbc:mysql://localhost:3306/db_default">select * from student</sql>
+<sql date="1779101266896" url="jdbc:mysql://localhost:3306/db_default">select * from student</sql>
 <sql date="1776400780370" url="jdbc:mysql://localhost:3306/db_default">select * from notice</sql>
-<sql date="1772180506991" url="jdbc:mysql://localhost:3306/db_default">delete from staff_attendance</sql>
-<sql date="1772112389626" url="jdbc:mysql://localhost:3306/db_default">SELECT `START_TIME`,`NAME` FROM student_shift
-order by `CREATED_DATE`</sql>
-<sql date="1772191648726" url="jdbc:mysql://localhost:3306/db_default">update `admin`
-set `IS_SUPER_ADMIN` = true
-where `ID`=1</sql>
-<sql date="1772191669033" url="jdbc:mysql://localhost:3306/db_default">update `admin`
-set `IS_SUPER_ADMIN` = true
-where `ID`=2</sql>
-<sql date="1772191315216" url="jdbc:mysql://localhost:3306/db_default">delete from student_shift
-where `START_TIME` is not null</sql>
-<sql date="1773636523205" url="jdbc:mysql://localhost:3306/db_default">drop table attendance_device_attendance_raw</sql>
-<sql date="1772162978419" url="jdbc:mysql://localhost:3306/db_default">select `IS_SUPER_ADMIN` from admin</sql>
+<sql date="1779690150815" url="jdbc:mysql://localhost:3306/db_default">UPDATE monitor_admin_meta_table 
+SET field_value = 'noreply@akshamalaerp.com' 
+WHERE field_name = 'MAIL_AUTHENTICATE_USER' AND (field_value IS NULL OR field_value = '')</sql>
+<sql date="1778559170691" url="jdbc:mysql://localhost:3306/db_default">delete from attendance_special_days_holiday</sql>
+<sql date="1778134637629" url="jdbc:mysql://localhost:3306/db_default">select * from attendance_device_enrolled_admin_map</sql>
+<sql date="1778560998486" url="jdbc:mysql://localhost:3306/db_default">delete from staff_attendance</sql>
+<sql date="1779456297738" url="jdbc:mysql://localhost:3306/db_default">drop table attendance_weekend_days</sql>
+<sql date="1778645232662" url="jdbc:mysql://localhost:3306/db_default">update metatable_ib 
+set field_value = "Yes"
+where field_name="MODIFY_ORGANIZATION_SETTING"</sql>
+<sql date="1779177114797" url="jdbc:mysql://localhost:3306/db_default">delete from student_attendance_device_attendance_raw</sql>
+<sql date="1780026883791" url="jdbc:mysql://localhost:3306/db_default">select * from admin_profile</sql>
+<sql date="1777304647519" url="jdbc:mysql://localhost:3306/db_default">update `admin`
+set `PASSWORD`="$2a$10$N9qo8uLOickgx2ZMRZoMy.Mr3OqKQFIAwQhNQ0mRkR.XqZgJkWYAW"</sql>
 <sql date="1775716772954" url="jdbc:mysql://localhost:3306/db_default">select * FROM student_online_admission</sql>
-<sql date="1774353207762" url="jdbc:mysql://localhost:3306/db_default">select id, user_id from student</sql>
-<sql date="1772186085514" url="jdbc:mysql://localhost:3306/db_default">select * from student_shift
-where `START_TIME` is not null</sql>
-<sql date="1772191812391" url="jdbc:mysql://localhost:3306/db_default">select `STATUS` from `admin`</sql>
-<sql date="1772774816953" url="jdbc:mysql://localhost:3306/db_default">select * from command_status</sql>
+<sql date="1777301712586" url="jdbc:mysql://localhost:3306/db_default">select `ID`,`USERNAME`,`IS_SUPER_ADMIN` from `admin`</sql>
+<sql date="1777301626677" url="jdbc:mysql://localhost:3306/db_default">select `ID`,`USERNAME` from `admin`</sql>
+<sql date="1777283480797" url="jdbc:mysql://localhost:3306/db_default">select * from monitor_admin_meta_table</sql>
+<sql date="1780024272707" url="jdbc:mysql://localhost:3306/db_default">select `NAME`,`IS_SUPER_ADMIN`,id from admin</sql>
+<sql date="1779690133918" url="jdbc:mysql://localhost:3306/db_default">SELECT field_name, field_value 
+FROM monitor_admin_meta_table 
+WHERE field_name = 'MAIL_AUTHENTICATE_USER'</sql>
 <sql date="1775719784061" url="jdbc:mysql://localhost:3306/db_default">delete from published_result_detail_subject_map</sql>
-<sql date="1773132069984" url="jdbc:mysql://localhost:3306/db_default">select * from inventory_received_note</sql>
-<sql date="1772162992219" url="jdbc:mysql://localhost:3306/db_default">select `IS_SUPER_ADMIN`,`NAME` from admin</sql>
+<sql date="1778134657543" url="jdbc:mysql://localhost:3306/db_default">delete from attendance_device_enrolled_admin_map</sql>
 <sql date="1775719804253" url="jdbc:mysql://localhost:3306/db_default">delete from published_result_detail</sql>
-<sql date="1772185772343" url="jdbc:mysql://localhost:3306/db_default">delete from student_shift
-where `NAME`=try</sql>
-<sql date="1772185784974" url="jdbc:mysql://localhost:3306/db_default">delete from student_shift
-where `NAME`="try"</sql>
-<sql date="1772176930491" url="jdbc:mysql://localhost:3306/db_default">delete from attendance_device_command</sql>
+<sql date="1777305125409" url="jdbc:mysql://localhost:3306/db_default">update `admin`
+set `PASSWORD`="$2a$10$e6HZiVO327aMe2F8F5ENBubjjVxkHYGnBQM8gKnp8TfXAbdkGd6fq"</sql>
+<sql date="1779688364680" url="jdbc:mysql://localhost:3306/db_default">UPDATE MONITOR_ADMIN_META_TABLE 
+SET field_value = 'localhost', 
+    LAST_UPDATED_DATE = CURRENT_TIMESTAMP
+WHERE field_name = 'SMTP_HOST'</sql>
+<sql date="1779689021691" url="jdbc:mysql://localhost:3306/db_default">SELECT * FROM MONITOR_ADMIN_META_TABLE 
+WHERE field_name IN ('SMTP_HOST', 'SMTP_PORT', 'MAIL_AUTHENTICATE_USER', 'MAIL_AUTHENTICATE_USER_PASSWORD')</sql>
+<sql date="1780024300978" url="jdbc:mysql://localhost:3306/db_default">select `NAME`,`IS_SUPER_ADMIN` from `admin`</sql>
 <sql date="1776401558088" url="jdbc:mysql://localhost:3306/db_default">select `CREATED_BY_ADMIN` from notice</sql>
 <sql date="1775719765596" url="jdbc:mysql://localhost:3306/db_default">delete from published_result_detail_subject_map_assignment_info_map</sql>
-<sql date="1772191487076" url="jdbc:mysql://localhost:3306/db_default">delete from academic_year
-where `IS_RUNNING` = false</sql>
-<sql date="1772611689075" url="jdbc:mysql://localhost:3306/db_default">select * from tax_type</sql>
-<sql date="1772611509185" url="jdbc:mysql://localhost:3306/db_default">select * from inventory_purchase_order</sql>
-<sql date="1772197690662" url="jdbc:mysql://localhost:3306/db_default">select `START_TIME` from student_shift
-where `START_TIME` IS NOT NULL</sql>
-<sql date="1772526660026" url="jdbc:mysql://localhost:3306/db_default">delete from tax_type</sql>
-<sql date="1772534864671" url="jdbc:mysql://localhost:3306/db_default">select * from admin_role
-where admin_role_name="inventory purchase"</sql>
-<sql date="1772179962406" url="jdbc:mysql://localhost:3306/db_default">update attendance_device_attendance_raw
-set `PROCESSED` = false</sql>
-<sql date="1772177121346" url="jdbc:mysql://localhost:3306/db_default">select * from attendance_device_command</sql>
-<sql date="1772163009544" url="jdbc:mysql://localhost:3306/db_default">select `IS_SUPER_ADMIN`,`email_address` from admin</sql>
+<sql date="1779179851240" url="jdbc:mysql://localhost:3306/db_default">drop table attendance_special_days_holiday</sql>
+<sql date="1780026840966" url="jdbc:mysql://localhost:3306/db_default">update `admin`
+set `IS_SUPER_ADMIN`=true,
+where id = 4</sql>
+<sql date="1778493572681" url="jdbc:mysql://localhost:3306/db_default">select * from attendance_weekend_days</sql>
+<sql date="1779688364690" url="jdbc:mysql://localhost:3306/db_default">UPDATE MONITOR_ADMIN_META_TABLE 
+SET field_value = '', 
+    LAST_UPDATED_DATE = CURRENT_TIMESTAMP
+WHERE field_name = 'MAIL_AUTHENTICATE_USER'</sql>
+<sql date="1778212348683" url="jdbc:mysql://localhost:3306/db_default">select * from report_format</sql>
+<sql date="1779461023790" url="jdbc:mysql://localhost:3306/db_default">select * from attendance_weekend_holiday</sql>
+<sql date="1778645793990" url="jdbc:mysql://localhost:3306/db_default">delete from billing_setting</sql>
+<sql date="1777267873927" url="jdbc:mysql://localhost:3306/db_default">update college
+set `CODE`= "test"</sql>
 <sql date="1776399118873" url="jdbc:mysql://localhost:3306/db_default">select `ID`, `NAME` from branch</sql>
-<sql date="1772180536106" url="jdbc:mysql://localhost:3306/db_default">update attendance_device_attendance_raw
-set `PROCESSED`= false</sql>
+<sql date="1780029464907" url="jdbc:mysql://localhost:3306/db_default">update `admin`
+set `IS_SUPER_ADMIN`=false
+where id=1</sql>
+<sql date="1778555867357" url="jdbc:mysql://localhost:3306/db_default">delete from attendance_weekend_days</sql>
+<sql date="1778121722817" url="jdbc:mysql://localhost:3306/db_default">select * from attendance_device_enrolled_admin_map
+where `ATTENDANCE_DEVICE`=1
+and `ADMIN`=2</sql>
 <sql date="1775716582859" url="jdbc:mysql://localhost:3306/db_default">delete from student_online_admission</sql>
-<sql date="1772771745646" url="jdbc:mysql://localhost:3306/db_default">drop table attendance_device_command</sql>
 <sql date="1775719813147" url="jdbc:mysql://localhost:3306/db_default">delete from published_result</sql>
-<sql date="1772191895679" url="jdbc:mysql://localhost:3306/db_default">select `STATUS`,`BRANCH` from `admin`</sql>
+<sql date="1780024287692" url="jdbc:mysql://localhost:3306/db_default">select `NAME`,`IS_SUPER_ADMIN` from admin</sql>
+<sql date="1779262609732" url="jdbc:mysql://localhost:3306/db_default">select * from mark_sheet_report_format</sql>
 <sql date="1776401580586" url="jdbc:mysql://localhost:3306/db_default">select `CREATED_BY_ADMIN`,`STATUS` from notice</sql>
-<sql date="1775535496953" url="jdbc:mysql://localhost:3306/db_default">select * from mark_sheet_report_format</sql>
-<sql date="1772611259588" url="jdbc:mysql://localhost:3306/db_default">drop table inventory_purchase_order</sql>
-<sql date="1772611250599" url="jdbc:mysql://localhost:3306/db_default">drop table inventory_purchase_order_detail</sql>
 <sql date="1776398919414" url="jdbc:mysql://localhost:3306/db_default">select * from notice_type</sql>
-<sql date="1773655427622" url="jdbc:mysql://localhost:3306/db_default">select * from attendance_device_map</sql>
-<sql date="1773122358867" url="jdbc:mysql://localhost:3306/db_default">update vendor 
-set `LEDGER_MASTER_BRANCH_MAP`=1</sql>
-<sql date="1772112472924" url="jdbc:mysql://localhost:3306/db_default">SELECT `START_TIME`, `NAME`
-FROM student_shift
-WHERE `START_TIME` IS NOT NULL
-ORDER BY `CREATED_DATE`</sql>
-<sql date="1774353224504" url="jdbc:mysql://localhost:3306/db_default">select id, `FIRST_NAME` from student</sql>
-<sql date="1772536437307" url="jdbc:mysql://localhost:3306/db_default">select * from admin_role
-where admin_role_name="issued inventory" or admin_role_name="vendor"</sql>
-<sql date="1772535798455" url="jdbc:mysql://localhost:3306/db_default">select `IS_SUPER_ADMIN` from `admin`</sql>
-<sql date="1774439146848" url="jdbc:mysql://localhost:3306/db_default">drop table student_online_admission</sql>
-<sql date="1772180732690" url="jdbc:mysql://localhost:3306/db_default">select * from staff_attendance</sql>
+<sql date="1777304460580" url="jdbc:mysql://localhost:3306/db_default">select `PASSWORD` from `admin`</sql>
+<sql date="1780026854390" url="jdbc:mysql://localhost:3306/db_default">update `admin`
+set `IS_SUPER_ADMIN`=true
+where id = 4</sql>
+<sql date="1777302505610" url="jdbc:mysql://localhost:3306/db_default">update `admin`
+set `IS_SUPER_ADMIN`= true
+where id =2</sql>
+<sql date="1779460832914" url="jdbc:mysql://localhost:3306/db_default">drop table attendance_weekend_holiday</sql>
+<sql date="1778560842586" url="jdbc:mysql://localhost:3306/db_default">select * from staff_attendance</sql>
+<sql date="1780027000687" url="jdbc:mysql://localhost:3306/db_default">update admin_profile
+set `CREATED_BY_ADMIN`=4
+where id = 4</sql>
+<sql date="1779460823036" url="jdbc:mysql://localhost:3306/db_default">drop table attendance_weekend_holiday_days</sql>
 <sql date="1776401602073" url="jdbc:mysql://localhost:3306/db_default">select * from status</sql>
-<sql date="1772534885799" url="jdbc:mysql://localhost:3306/db_default">select * from admin_role
-where admin_role_name="inventory reports"</sql>
-<sql date="1773139901506" url="jdbc:mysql://localhost:3306/db_default">select `QUANTITY` from inventory_received_note_detail</sql>
-<sql date="1772619059333" url="jdbc:mysql://localhost:3306/db_default">select `NET_PAYABLE` from inventory_purchase_order</sql>
-<sql date="1772611670273" url="jdbc:mysql://localhost:3306/db_default">UPDATE inventory_purchase_order_detail
-set `TAX_TYPE`=1</sql>
-<sql date="1772536420956" url="jdbc:mysql://localhost:3306/db_default">update admin_role
-SET order_id=2
-where admin_role_name="vendor"</sql>
-<sql date="1772191463785" url="jdbc:mysql://localhost:3306/db_default">select * from academic_year</sql>
-<sql date="1772611701428" url="jdbc:mysql://localhost:3306/db_default">UPDATE inventory_purchase_order_detail
-set `TAX_TYPE`=4</sql>
-<sql date="1772191920444" url="jdbc:mysql://localhost:3306/db_default">update `admin`
-set `BRANCH` = 1
-where `ID`=2</sql>
-<sql date="1772162884679" url="jdbc:mysql://localhost:3306/db_default">select count(*) from student_shift</sql>
-<sql date="1772112370028" url="jdbc:mysql://localhost:3306/db_default">SELECT * FROM student_shift
-order by `CREATED_DATE`</sql>
+<sql date="1779106895336" url="jdbc:mysql://localhost:3306/db_default">SELECT 
+    COUNT(*) as total_students,
+    COUNT(attendance_code) as students_with_code,
+    MAX(attendance_code) as max_code
+FROM student s
+INNER JOIN users u ON u.id = s.user_id
+INNER JOIN program_semester ps ON ps.id = s.program_semester
+INNER JOIN academic_year_offered_program ayop ON ayop.id = ps.academic_year_offered_program
+INNER JOIN program p ON p.id = ayop.program
+WHERE p.branch_id = [YOUR_BRANCH_ID]
+AND u.status NOT IN ()</sql>
+<sql date="1780027006883" url="jdbc:mysql://localhost:3306/db_default">select `CREATED_BY_ADMIN` from admin_profile</sql>
+<sql date="1779094468092" url="jdbc:mysql://localhost:3306/db_default">select `ATTENDANCE_CODE` from student</sql>
+<sql date="1777305192516" url="jdbc:mysql://localhost:3306/db_default">update `admin`
+set `IS_SUPER_ADMIN`=true
+where id=2</sql>
+<sql date="1780033255309" url="jdbc:mysql://localhost:3306/db_default">select * from college</sql>
+<sql date="1780026961375" url="jdbc:mysql://localhost:3306/db_default">update admin_profile
+set `NAME`="Demo Package"
+where id = 4</sql>
+<sql date="1779688364694" url="jdbc:mysql://localhost:3306/db_default">UPDATE MONITOR_ADMIN_META_TABLE 
+SET field_value = '', 
+    LAST_UPDATED_DATE = CURRENT_TIMESTAMP
+WHERE field_name = 'MAIL_AUTHENTICATE_USER_PASSWORD'</sql>
+<sql date="1779688364685" url="jdbc:mysql://localhost:3306/db_default">UPDATE MONITOR_ADMIN_META_TABLE 
+SET field_value = '1025', 
+    LAST_UPDATED_DATE = CURRENT_TIMESTAMP
+WHERE field_name = 'SMTP_PORT'</sql>
 <sql date="1776401641165" url="jdbc:mysql://localhost:3306/db_default">select status_id,`NAME` from status</sql>
 <sql date="1776400866120" url="jdbc:mysql://localhost:3306/db_default">delete from notice</sql>
+<sql date="1778134215404" url="jdbc:mysql://localhost:3306/db_default">ALTER TABLE ATTENDANCE_DEVICE_SYNC_BATCH
+DROP COLUMN SYNC_DATE</sql>
+<sql date="1778121563976" url="jdbc:mysql://localhost:3306/db_default">SELECT 
+    adeam.*,
+    ad.EMPLOYEE_CODE,
+    ad.FIRST_NAME,
+    dev.NAME as DEVICE_NAME,
+    dev.SERIAL_NUMBER
+FROM ATTENDANCE_DEVICE_ENROLLED_ADMIN_MAP adeam
+INNER JOIN ADMIN ad ON ad.ID = adeam.ADMIN
+INNER JOIN ATTENDANCE_DEVICE dev ON dev.ID = adeam.ATTENDANCE_DEVICE
+WHERE ad.EMPLOYEE_CODE = 2    AND dev.SERIAL_NUMBER = 1</sql>
+<sql date="1777282043179" url="jdbc:mysql://localhost:3306/db_default">select `PHOTO_URL` from student_online_admission</sql>
 <sql date="1776401626368" url="jdbc:mysql://localhost:3306/db_default">select id,`NAME` from status</sql>
-<sql date="1772535872327" url="jdbc:mysql://localhost:3306/db_default">select * from admin_role
-where admin_role_name="inventory reports" or admin_role_name="inventory purchase"</sql>
-<sql date="1772185813074" url="jdbc:mysql://localhost:3306/db_default">select * from student_shift
-where `START_TIME` in not null</sql>
-<sql date="1772526621287" url="jdbc:mysql://localhost:3306/db_default">drop table tax_type</sql>
-<sql date="1772176826581" url="jdbc:mysql://localhost:3306/db_default">delete from attendance_device_attendance_raw</sql>
-<sql date="1773307974295" url="jdbc:mysql://localhost:3306/db_default">select * from report_format_account</sql>
-<sql date="1772191975939" url="jdbc:mysql://localhost:3306/db_default">select `NAME`,`ID` from branch</sql>
-<sql date="1772611624151" url="jdbc:mysql://localhost:3306/db_default">UPDATE inventory_purchase_order_detail
-set `INVENTORY_PURCHASE_ORDER`=1</sql>
-<sql date="1772163114045" url="jdbc:mysql://localhost:3306/db_default">select `ID` `USERNAME`,`IS_SUPER_ADMIN` from `admin`</sql>
-<sql date="1773636534328" url="jdbc:mysql://localhost:3306/db_default">drop table attendance_device_sync_batch</sql>
-<sql date="1772191782554" url="jdbc:mysql://localhost:3306/db_default">update `admin`
+<sql date="1778483222204" url="jdbc:mysql://localhost:3306/db_default">delete from attendance_device_attendance_raw</sql>
+<sql date="1779105586893" url="jdbc:mysql://localhost:3306/db_default">ALTER TABLE student_attendance_device_attendance_raw DROP COLUMN STUDENT_ID</sql>
+<sql date="1778133821263" url="jdbc:mysql://localhost:3306/db_default">delete from attendance_device_sync_batch</sql>
+<sql date="1777302522207" url="jdbc:mysql://localhost:3306/db_default">update `admin`
+set `IS_SUPER_ADMIN`= false
+where id =2</sql>
+<sql date="1777304377850" url="jdbc:mysql://localhost:3306/db_default">update `admin`
+set `IS_SUPER_ADMIN`= false
+where `ID`=2</sql>
+<sql date="1779173361139" url="jdbc:mysql://localhost:3306/db_default">select `ATTENDANCE_CODE` from student_attendance_device_attendance_raw</sql>
+<sql date="1778493655916" url="jdbc:mysql://localhost:3306/db_default">update attendance_weekend_days
+SET `attendanceWeekendHoliday_ID`=1</sql>
+<sql date="1777304319204" url="jdbc:mysql://localhost:3306/db_default">update `admin`
 set `IS_SUPER_ADMIN`= true
 where `ID`=2</sql>
-<sql date="1772189713673" url="jdbc:mysql://localhost:3306/db_default">update `admin`
-set `IS_SUPER_ADMIN` = true
-where id = 2</sql>
-<sql date="1772191710113" url="jdbc:mysql://localhost:3306/db_default">update `admin`
-set `IS_SUPER_ADMIN` = false
-where `ID`=2</sql>
-<sql date="1772535924099" url="jdbc:mysql://localhost:3306/db_default">select * from admin_role
-where admin_role_name="inventory ledger" or admin_role_name="vendor"</sql>
-<sql date="1772178423836" url="jdbc:mysql://localhost:3306/db_default">select * from attendance_device_attendance_raw</sql>
-<sql date="1773122438701" url="jdbc:mysql://localhost:3306/db_default">select * from ledger_master_branch_map</sql>
-<sql date="1772534184699" url="jdbc:mysql://localhost:3306/db_default">select * from admin_role</sql>
-<sql date="1772190752951" url="jdbc:mysql://localhost:3306/db_default">select `START_TIME` from student_shift
-where `START_TIME` > 111111</sql>
-<sql date="1772163133989" url="jdbc:mysql://localhost:3306/db_default">select `ID`, `USERNAME`,`IS_SUPER_ADMIN` from `admin`</sql>
+<sql date="1779462321263" url="jdbc:mysql://localhost:3306/db_default">delete from attendance_special_holiday</sql>
+<sql date="1777301656728" url="jdbc:mysql://localhost:3306/db_default">select `ID`,`USERNAME`,``IS_SUPER_ADMIN`` from `admin`</sql>
+<sql date="1779180159411" url="jdbc:mysql://localhost:3306/db_default">delete from student_attendance_school</sql>
+<sql date="1779094488061" url="jdbc:mysql://localhost:3306/db_default">select `ATTENDANCE_CODE`,`PROGRAM_SEMESTER` from student</sql>
+<sql date="1779179859001" url="jdbc:mysql://localhost:3306/db_default">drop table attendance_special_holiday</sql>
+<sql date="1779173992188" url="jdbc:mysql://localhost:3306/db_default">select `STUDENT` from student_attendance_school</sql>
+<sql date="1778819031808" url="jdbc:mysql://localhost:3306/db_default">select * from student_attendance_device_attendance_raw</sql>
+<sql date="1778065450126" url="jdbc:mysql://localhost:3306/db_default">select `IS_COLLEGE_SUPER_ADMIN` from admin</sql>
+<sql date="1777304722959" url="jdbc:mysql://localhost:3306/db_default">select password from `admin`</sql>
+<sql date="1778555874665" url="jdbc:mysql://localhost:3306/db_default">delete from attendance_weekend_holiday</sql>
+<sql date="1778490683609" url="jdbc:mysql://localhost:3306/db_default">select * from attendance_special_days_holiday</sql>
+<sql date="1778645236564" url="jdbc:mysql://localhost:3306/db_default">select * from metatable_ib</sql>
+<sql date="1778645831285" url="jdbc:mysql://localhost:3306/db_default">select * from billing_setting</sql>
+<sql date="1780026760300" url="jdbc:mysql://localhost:3306/db_default">select * from `admin`</sql>
 <sql date="1774859536787" url="jdbc:mysql://localhost:3306/db_default">select `DOB` from student_online_admission</sql>
-<sql date="1772534943725" url="jdbc:mysql://localhost:3306/db_default">select * from `admin`</sql>
-<sql date="1772534507293" url="jdbc:mysql://localhost:3306/db_default">select * from admin_role
-where admin_role_name="vendor"</sql>
-<sql date="1773132088386" url="jdbc:mysql://localhost:3306/db_default">select * from inventory_received_note_detail</sql>
-<sql date="1772163068580" url="jdbc:mysql://localhost:3306/db_default">select `USERNAME`,`IS_SUPER_ADMIN` from `admin`</sql>
-<sql date="1774863412220" url="jdbc:mysql://localhost:3306/db_default">select `ID`,`FIRST_NAME`,`MIDDLE_NAME` from student</sql>
-<sql date="1772162921647" url="jdbc:mysql://localhost:3306/db_default">select * from admin</sql>
-<sql date="1773927428533" url="jdbc:mysql://localhost:3306/db_default">select * from university_result_attached_file</sql>
-<sql date="1772611516211" url="jdbc:mysql://localhost:3306/db_default">select * from inventory_purchase_order_detail</sql>
+<sql date="1777884588109" url="jdbc:mysql://localhost:3306/db_default">update `BRANCH`
+set `CODE`="test"</sql>
+<sql date="1779462663327" url="jdbc:mysql://localhost:3306/db_default">select * from student_attendance_school</sql>
+<sql date="1778131253308" url="jdbc:mysql://localhost:3306/db_default">select * from subject</sql>
+<sql date="1779101363687" url="jdbc:mysql://localhost:3306/db_default">update student
+SET `ATTENDANCE_CODE`=1000
+where id= 4</sql>
+<sql date="1779101303852" url="jdbc:mysql://localhost:3306/db_default">select `ID`,`FIRST_NAME`,`MIDDLE_NAME` from student</sql>
+<sql date="1777884299734" url="jdbc:mysql://localhost:3306/db_default">update `admin`
+set `IS_SUPER_ADMIN`=false
+where `ID`=2</sql>
+<sql date="1780029418118" url="jdbc:mysql://localhost:3306/db_default">select * from admin</sql>
+<sql date="1779456285229" url="jdbc:mysql://localhost:3306/db_default">drop table attendance_weekend_day_detail</sql>
 </history>

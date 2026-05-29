@@ -41,6 +41,57 @@ cmp.setup {
             end
         end, { "i", "s" }),
     },
+
+    formatting = {
+        fields = { "kind", "abbr", "menu" },
+        format = function(entry, item)
+            local kind_icons = {
+                Text = "󰉿",
+                Method = "󰆧",
+                Function = "󰊕",
+                Constructor = "",
+                Field = "󰜢",
+                Variable = "󰀫",
+                Class = "󰠱",
+                Interface = "",
+                Module = "",
+                Property = "󰜢",
+                Unit = "󰑭",
+                Value = "󰎠",
+                Enum = "",
+                Keyword = "󰌋",
+                Snippet = "",
+                Color = "󰏘",
+                File = "󰈙",
+                Reference = "󰈇",
+                Folder = "󰉋",
+                EnumMember = "",
+                Constant = "󰏿",
+                Struct = "󰙅",
+                Event = "",
+                Operator = "󰆕",
+                TypeParameter = "󰊄",
+            }
+            local source_labels = {
+                nvim_lsp = "[LSP]",
+                luasnip = "[Snip]",
+                buffer = "[Buf]",
+                path = "[Path]",
+                codeium = "[AI]",
+            }
+            item.kind = " " .. (kind_icons[item.kind] or "?") .. " "
+            item.menu = source_labels[entry.source.name] or ""
+            -- truncate long completions so menu stays readable
+            if #item.abbr > 40 then
+                item.abbr = item.abbr:sub(1, 37) .. "..."
+            end
+            return item
+        end,
+    },
+    window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+    },
     sources = cmp.config.sources({
         { name = "codeium" },
         { name = "nvim_lsp" },

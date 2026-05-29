@@ -1,6 +1,6 @@
 require("rose-pine").setup {
-    variant = "auto",
-    dark_variant = "main",
+    variant = "moon",
+    dark_variant = "moon",
     dim_inactive_windows = false,
     extend_background_behind_borders = true,
 
@@ -13,7 +13,7 @@ require("rose-pine").setup {
     styles = {
         bold = true,
         italic = true,
-        transparency = false,
+        transparency = true,
     },
 
     groups = {
@@ -46,7 +46,35 @@ require("rose-pine").setup {
 
     palette = {},
 
-    highlight_groups = {},
-
+    highlight_groups = {
+        -- Brighter comments (muted → subtle, easier to read)
+        Comment = { fg = "subtle", italic = true },
+        -- Stronger keywords (pine is the darkest green; very readable)
+        Keyword = { fg = "pine", bold = true },
+        Statement = { fg = "pine", bold = true },
+        Conditional = { fg = "pine", bold = true },
+        -- Identifiers and functions more distinct
+        Identifier = { fg = "foam" },
+        Function = { fg = "rose", bold = true },
+        -- Strings pop more clearly
+        String = { fg = "gold" },
+        -- Types clearly distinct from values
+        Type = { fg = "iris", bold = true },
+        -- Current line number extra visible
+        CursorLineNr = { fg = "rose", bold = true },
+        LineNr = { fg = "subtle" },
+        -- Cursor stands out more
+        Cursor = { fg = "base", bg = "rose" },
+        -- Search match more visible
+        Search = { fg = "base", bg = "gold", bold = true },
+        IncSearch = { fg = "base", bg = "rose", bold = true },
+        -- Match parens very clear
+        MatchParen = { fg = "rose", bold = true, underline = true },
+        -- Diagnostics clearer
+        DiagnosticVirtualTextError = { fg = "love", bold = true },
+        DiagnosticVirtualTextWarn = { fg = "gold", bold = true },
+        DiagnosticVirtualTextInfo = { fg = "foam", bold = true },
+        DiagnosticVirtualTextHint = { fg = "iris", bold = true },
+    },
     before_highlight = function(group, highlight, palette) end,
 }
