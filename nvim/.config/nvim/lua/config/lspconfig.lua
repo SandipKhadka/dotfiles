@@ -53,7 +53,7 @@ end
 -- Common on_init function
 local on_init = function(client, _)
     -- Disable semantic tokens if not needed (can cause performance issues)
-    if client.supports_method "textDocument/semanticTokens" then
+    if client:supports_method "textDocument/semanticTokens" then
         client.server_capabilities.semanticTokensProvider = nil
     end
 end

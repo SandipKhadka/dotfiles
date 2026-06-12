@@ -1,41 +1,42 @@
-local M = {
+return {
+    -- Colorschemes: only active one loads at startup
+    {
+        "rose-pine/neovim",
+        name = "rose-pine",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            require "config.theme.rose-pine"
+        end,
+    },
     {
         "catppuccin/nvim",
         name = "catppuccin",
-        priority = 1000,
-        lazy = false, -- Load immediately since it's a colorscheme
+        lazy = true, -- load only when you :colorscheme catppuccin
         config = function()
             require "config.theme.catppuccin"
         end,
     },
 
-    {
-        "rose-pine/neovim",
-        name = "rose-pine",
-        priority = 1000,
-        lazy = false,
-        config = function()
-            require "config.theme.rose-pine"
-        end,
-    },
-
+    -- Editing
     {
         "windwp/nvim-autopairs",
         event = "InsertEnter",
         config = true,
     },
-
     {
         "stevearc/dressing.nvim",
-        event = "VeryLazy", -- Load only when needed
+        event = "VeryLazy",
         opts = {},
     },
 
+    -- File tree (lazy-loaded on command and key)
     {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v3.x",
         dependencies = {
             "nvim-lua/plenary.nvim",
+            "nvim-tree/nvim-web-devicons",
             "muniftanjim/nui.nvim",
         },
         config = function()
@@ -43,110 +44,134 @@ local M = {
         end,
     },
 
+    -- Fuzzy finder (lazy-loaded)
     {
         "nvim-telescope/telescope.nvim",
         tag = "0.1.8",
+        cmd = "Telescope",
+        keys = {
+            {
+                "<leader>ff",
+                "<cmd>Telescope find_files<<cr>",
+                desc = "Find files",
+            },
+            {
+                "<leader>fg",
+                "<cmd>Telescope live_grep<<cr>",
+                desc = "Live grep",
+            },
+            { "<leader>fb", "<cmd>Telescope buffers<<cr>", desc = "Buffers" },
+            {
+                "<leader>fh",
+                "<cmd>Telescope help_tags<<cr>",
+                desc = "Help tags",
+            },
+            {
+                "<leader>fr",
+                "<cmd>Telescope oldfiles<<cr>",
+                desc = "Recent files",
+            },
+        },
+        dependencies = { "nvim-lua/plenary.nvim" },
         config = function()
             require "config.telescope"
         end,
     },
 
+    -- LSP core (lightweight deps only)
     {
         "neovim/nvim-lspconfig",
-        event = { "BufReadPre", "BufNewFile" }, -- Load when opening files
+        event = { "BufReadPre", "BufNewFile" },
         dependencies = {
             "williamboman/mason.nvim",
             "williamboman/mason-lspconfig.nvim",
+            "hrsh7th/cmp-nvim-lsp", -- only needed for capabilities
+        },
+        config = function()
+            require "config.lspconfig"
+        end,
+    },
+
+    -- Completion (splits heavy deps out of LSP startup path)
+    {
+        "hrsh7th/nvim-cmp",
+        event = "InsertEnter",
+        dependencies = {
             "hrsh7th/cmp-nvim-lsp",
             "hrsh7th/cmp-buffer",
             "hrsh7th/cmp-path",
             "hrsh7th/cmp-cmdline",
-            "hrsh7th/nvim-cmp",
             "l3mon4d3/luasnip",
             "saadparwaiz1/cmp_luasnip",
-            "j-hui/fidget.nvim",
             "rafamadriz/friendly-snippets",
         },
         config = function()
-            require "config.lspconfig"
             require "config.cmp"
             require "config.sniplet"
         end,
     },
 
+    -- LSP status (only starts when LSP attaches)
+    {
+        "j-hui/fidget.nvim",
+        event = "LspAttach",
+        opts = {},
+    },
+
+    -- Formatting
     {
         "stevearc/conform.nvim",
-        event = { "BufWritePre" }, -- Load only before saving
+        event = { "BufWritePre" },
+        cmd = "ConformInfo",
         config = function()
             require "config.confirm"
         end,
     },
 
-    {
-        "nvim-treesitter/nvim-treesitter",
-        event = { "BufReadPost", "BufNewFile" }, -- Load when opening files
-        build = ":TSUpdate", -- Ensure treesitter is updated
-        config = function()
-            require "config.tree-sitter"
-        end,
-    },
-
+    -- Git
     {
         "tpope/vim-fugitive",
+        cmd = { "Git", "G" },
+        keys = {
+            { "<leader>gs", "<cmd>Git<<cr>", desc = "Git status" },
+        },
         config = function()
             require "config.fugitive"
         end,
     },
-
     {
         "lewis6991/gitsigns.nvim",
-        event = "BufReadPre", -- Load early for git signs
+        event = { "BufReadPre", "BufNewFile" },
         config = function()
             require "config.git-signs"
         end,
     },
-
     {
         "mbbill/undotree",
-        cmd = "UndotreeToggle", -- Load only when toggling
-        config = function()
-            vim.keymap.set("n", "<leader>u", ":UndotreeToggle<CR>")
-        end,
+        cmd = "UndotreeToggle",
+        keys = {
+            {
+                "<leader>u",
+                "<cmd>UndotreeToggle<<cr>",
+                desc = "Toggle Undotree",
+            },
+        },
     },
-
     {
         "tpope/vim-commentary",
-        keys = { "gc", "gcc" }, -- Load on commentary keys
+        keys = {
+            { "gc", mode = { "n", "v" } },
+            { "gcc", mode = "n" },
+        },
     },
 
+    -- AI
     {
         "Exafunction/windsurf.vim",
     },
 
-    {
-        "WhoIsSethDaniel/mason-tool-installer.nvim",
-        dependencies = { "williamboman/mason.nvim" },
-        event = "VeryLazy", -- Load after UI is ready
-        config = function()
-            require("mason-tool-installer").setup {
-                ensure_installed = {
-                    "stylua",
-                    "lua_ls",
-                    "rust_analyzer",
-                    "pyright",
-                    "clangd",
-                    "prettier",
-                    "bashls",
-                    "debugpy",
-                    "html",
-                    "cssls",
-                    "black",
-                    "ts_ls",
-                },
-            }
-        end,
-    },
 
+    -- Diagnostics (lazy-loaded)
     {
         "folke/trouble.nvim",
         config = function()
@@ -154,6 +179,7 @@ local M = {
         end,
     },
 
+    -- Autotag
     {
         "windwp/nvim-ts-autotag",
         ft = {
@@ -163,15 +189,16 @@ local M = {
             "javascriptreact",
             "typescript",
             "typescriptreact",
-        }, -- Load only for specific filetypes
+        },
         config = function()
             require "config.tag"
         end,
     },
 
+    -- Java
     {
         "mfussenegger/nvim-jdtls",
-        ft = { "java" }, -- Load only for Java files
+        ft = { "java" },
         dependencies = {
             "williamboman/mason.nvim",
             "williamboman/mason-lspconfig.nvim",
@@ -181,19 +208,55 @@ local M = {
         end,
     },
 
+    -- DAP (command-driven, not filetype-driven)
     {
-        "rcarriga/nvim-dap-ui",
-        ft = { "python", "javascript", "typescript", "java" }, -- Load only for debuggable filetypes
-        dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
+        "mfussenegger/nvim-dap",
+        cmd = { "DapContinue", "DapToggleBreakpoint", "DapTerminate" },
+        keys = {
+            {
+                "<F5>",
+                function()
+                    require("dap").continue()
+                end,
+                desc = "DAP Continue",
+            },
+            {
+                "<F9>",
+                function()
+                    require("dap").toggle_breakpoint()
+                end,
+                desc = "DAP Breakpoint",
+            },
+        },
         config = function()
             require "config.dap"
+        end,
+    },
+    {
+        "rcarriga/nvim-dap-ui",
+        cmd = { "DapContinue", "DapToggleBreakpoint" },
+        dependencies = {
+            "mfussenegger/nvim-dap",
+            "nvim-neotest/nvim-nio",
+        },
+        config = function()
             require "config.dap-ui"
         end,
     },
 
+    -- Colorizer (filetype-only instead of loading on every buffer)
     {
         "NvChad/nvim-colorizer.lua",
-        event = "BufReadPre", -- Load early for color highlighting
+        ft = {
+            "css",
+            "scss",
+            "html",
+            "javascript",
+            "typescript",
+            "javascriptreact",
+            "typescriptreact",
+            "lua",
+        },
         config = function()
             require("colorizer").setup {
                 filetypes = {
@@ -209,12 +272,10 @@ local M = {
                 user_default_options = {
                     RGB = true,
                     RRGGBB = true,
-                    names = false, -- Disable color names (faster)
-                    tailwind = false, -- Disable tailwind (faster if not using)
+                    names = false,
+                    tailwind = false,
                 },
             }
         end,
     },
 }
-
-return M

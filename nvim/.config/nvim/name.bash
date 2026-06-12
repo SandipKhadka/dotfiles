@@ -1,5 +1,0 @@
-mYfunc() {
-    ls
-}
-
-mYfunc

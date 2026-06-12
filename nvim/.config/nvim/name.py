@@ -1,5 +1,2 @@
-def myFunc():
-    for i in range(1,100):
-       print(i)
-
-myFunc()
+for i in range(1,200):
+    print(i)

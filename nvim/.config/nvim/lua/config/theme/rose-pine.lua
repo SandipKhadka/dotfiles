@@ -76,5 +76,4 @@ require("rose-pine").setup {
         DiagnosticVirtualTextInfo = { fg = "foam", bold = true },
         DiagnosticVirtualTextHint = { fg = "iris", bold = true },
     },
-    before_highlight = function(group, highlight, palette) end,
 }

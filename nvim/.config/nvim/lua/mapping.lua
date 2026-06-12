@@ -1,48 +1,63 @@
-vim.g.mapleader = " "
 local map = vim.keymap.set
 
-map("n", "<leader>d", '"_d')
-map("v", "<leader>d", '"_d')
-map("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
+-- Search/replace word under cursor
+map("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<<Left><Left><Left>")
 
-map("n", "<leader>ds", vim.diagnostic.setloclist)
+-- Diagnostics
+map(
+    "n",
+    "<leader>ds",
+    vim.diagnostic.setloclist,
+    { desc = "Diagnostic loclist" }
+)
 
-map("n", "<leader>j", "<CMD>cnext<CR>zz")
-map("n", "<leader>k", "<CMD>cprev<CR>zz")
+-- Quickfix
+map("n", "<leader>j", "<cmd>cnext<<cr>zz")
+map("n", "<leader>k", "<cmd>cprev<<cr>zz")
 
+-- Window navigation
 map("n", "<C-h>", "<C-w>h")
 map("n", "<C-l>", "<C-w>l")
 map("n", "<C-j>", "<C-w>j")
 map("n", "<C-k>", "<C-w>k")
-map("n", "<C-m>", "<C-w>x")
 
-map("n", "<C-w>", function ()
-    if not vim.bo.readonly and  vim.bo.modifiable then
-        vim.cmd("w")
+-- CRITICAL FIX: <C-m> IS Enter (carriage return). Your old map broke Enter.
+-- Changed to <leader>x for window swap.
+map("n", "<leader>x", "<C-w>x", { desc = "Swap with next window" })
+
+-- Save (if modified) and close buffer
+map("n", "<C-w>", function()
+    if not vim.bo.readonly and vim.bo.modifiable and vim.bo.modified then
+        vim.cmd "w"
     end
+    vim.cmd "bd"
+end, { desc = "Save & close buffer" })
 
-    vim.cmd("bd")
-end)
+-- Close other windows
+map("n", "<C-o>", "<C-w>o", { desc = "Close other windows" })
 
-map("n", "<C-o>", "<C-w>o>")
+-- Resize
+map("n", "<C-Up>", ":resize +2<<cr>", { silent = true })
+map("n", "<C-Down>", ":resize -2<<cr>", { silent = true })
+map("n", "<C-Left>", ":vertical resize -2<<cr>", { silent = true })
+map("n", "<C-Right>", ":vertical resize +2<<cr>", { silent = true })
 
-map("n", "<C-Up>", ":resize +2<CR>", { silent = true })
-map("n", "<C-Down>", ":resize -2<CR>", { silent = true })
-map("n", "<C-Left>", ":vertical resize -2<CR>", { silent = true })
-map("n", "<C-Right>", ":vertical resize +2<CR>", { silent = true })
+-- Buffer navigation
+map("n", "<tab>", "<cmd>bn<<cr>", { silent = true })
+map("n", "<S-tab>", "<cmd>bp<<cr>", { silent = true })
 
-map("n", "<tab>", "<CMD>bn<CR>", { silent = true })
-map("n", "<S-tab>", "<CMD>bp<CR>", { silent = true })
-
+-- Formatting
 map("n", "<leader>fm", function()
     require("conform").format { lsp_fallback = true }
-end)
+end, { desc = "Format buffer" })
 
+-- Centered movement
 map("n", "<C-d>", "<C-d>zz")
 map("n", "<C-u>", "<C-u>zz")
-map("n", "n", "nzz")
-map("n", "N", "Nzz")
+map("n", "n", "nzzzv")
+map("n", "N", "Nzzzv")
 
+-- Insert mode navigation
 map("i", "<C-b>", "<ESC>^i")
 map("i", "<C-e>", "<End>")
 map("i", "<C-h>", "<Left>")
@@ -50,35 +65,55 @@ map("i", "<C-l>", "<Right>")
 map("i", "<C-j>", "<Down>")
 map("i", "<C-k>", "<Up>")
 
+-- Join / move lines
 map("n", "J", "mzJ`z")
-map("v", "J", ":move '>+1<CR>gv=gv")
-map("v", "K", ":move '<-2<CR>gv=gv")
+map("v", "J", ":move '>+1<<CR>gv=gv")
+map("v", "K", ":move '<-2<<CR>gv=gv")
 
-map("n", "<leader>n", "<cmd>set nu!<CR>")
-map("n", "<leader>rl", "<cmd>set rnu!<CR>")
+-- Toggles
+map("n", "<leader>n", "<cmd>set nu!<cr>")
+map("n", "<leader>rl", "<cmd>set rnu!<cr>")
 
-map("n", "<Esc>", "<cmd>noh<CR>")
+-- Clear search highlight
+map("n", "<Esc>", "<cmd>noh<<cr>")
 
+-- Increment/decrement
 map("n", "+", "<C-a>")
 map("n", "-", "<C-x>")
 
-map("n", "<A-h>", ":split<CR>")
-map("n", "<A-v>", ":vsplit<CR>")
+-- Splits
+map("n", "<A-h>", ":split<<cr>")
+map("n", "<A-v>", ":vsplit<<cr>")
 
-map("n", "<leader>y", '"+y')
-map("v", "<leader>y", '"+y')
+-- Clipboard
+map({ "n", "v" }, "<leader>y", '"+y')
 map("n", "<leader>Y", '"+Y')
-map("n", "<leader>p", '"+p')
+map({ "n", "v" }, "<leader>p", '"+p')
+map("n", "<leader>P", '"+P')
 map("v", "<leader>p", [["_d"+P]], { noremap = true, silent = true })
 
-map("n", "<leader>P", '"+P')
 
-map("n", "Q", "<cmd>q!<CR>")
+-- Quick quit / escape
+map("n", "Q", "<cmd>q!<cr>")
 map("i", "<A-q>", "<Esc>")
+
+-- Select all
 map("n", "<C-a>", "ggVG")
 
-map("n", "<leader>o", "<CMD>normal o<CR>")
-map("n", "<leader>O", "<CMD>normal O<CR>")
+-- Insert lines via leader (noremap avoids recursion)
+map("n", "<leader>o", "o", { noremap = true })
+map("n", "<leader>O", "O", { noremap = true })
 
-map("n", "n", "nzzzv")
-map("n", "N", "Nzzzv")
+-- Make normal delete commands use black hole register
+map({ "n", "v" }, "d", '"_d')
+map({ "n", "v" }, "dd", '"_dd')
+map({ "n", "v" }, "D", '"_D')
+map({ "n", "v" }, "x", '"_x')
+map({ "n", "v" }, "X", '"_X')
+
+-- Leader + delete = copy to register (normal delete behavior)
+map({ "n", "v" }, "<leader>d", 'd')
+map({ "n", "v" }, "<leader>dd", 'dd')
+map({ "n", "v" }, "<leader>x", 'x')
+map({ "n", "v" }, "<leader>X", 'X')
+map({ "n", "v" }, "<leader>D", 'D')
