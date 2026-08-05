@@ -1,1 +1,0 @@
-select  from device_attendance_raw

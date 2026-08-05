@@ -117,3 +117,8 @@ M2_HOME='/opt/apache-maven-3.9.9'
 PATH="$M2_HOME/bin:$PATH"
 export PATH
 
+export ANDROID_HOME=$HOME/Development/android
+export PATH=$ANDROID_HOME/cmdline-tools/latest/bin:$PATH
+export PATH=$ANDROID_HOME/emulator:$PATH
+export PATH=$ANDROID_HOME/platform-tools:$PATH
+export PATH=$HOME/Development/flutter/bin:$PATH

@@ -1,7 +1,19 @@
-# Theme config
-theme = Rose Pine
 
-# Font settings
+
+# If you prefer a built-in theme instead of custom colors:
+theme = "Rose Pine"
+
+# ── Font (already good, just larger) ──
 font-family = JetBrains Mono
 font-size = 15
-font-feature = -calt,-liga,-dlig
+font-feature = -calt, -liga, -dlig
+
+# ── Visibility helpers ──
+mouse-hide-while-typing = false
+bold-is-bright = true
+minimum-contrast = 1.5
+background-opacity = 1.0
+
+# ── Selection (high contrast so you can see what you copied) ──
+selection-background = #ffaa00
+selection-foreground = #000000

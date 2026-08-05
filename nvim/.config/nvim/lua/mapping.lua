@@ -43,8 +43,8 @@ map("n", "<C-Left>", ":vertical resize -2<<cr>", { silent = true })
 map("n", "<C-Right>", ":vertical resize +2<<cr>", { silent = true })
 
 -- Buffer navigation
-map("n", "<tab>", "<cmd>bn<<cr>", { silent = true })
-map("n", "<S-tab>", "<cmd>bp<<cr>", { silent = true })
+map("n", "<tab>", "<cmd>bn<cr>", { silent = true })
+map("n", "<S-tab>", "<cmd>bp<cr>", { silent = true })
 
 -- Formatting
 map("n", "<leader>fm", function()

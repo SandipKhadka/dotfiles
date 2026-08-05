@@ -155,18 +155,6 @@ local status_ok, cmp_ok = pcall(cmp.setup, {
             select = true,
         },
 
-        -- Tab navigation with better fallbacks
-        ["<Tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-                cmp.select_next_item()
-            elseif luasnip_ok and luasnip.expand_or_jumpable() then
-                luasnip.expand_or_jump()
-            elseif has_words_before() then
-                cmp.complete()
-            else
-                fallback()
-            end
-        end, { "i", "s" }),
 
         ["<S-Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then

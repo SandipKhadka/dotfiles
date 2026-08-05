@@ -47,7 +47,6 @@ return {
     -- Fuzzy finder (lazy-loaded)
     {
         "nvim-telescope/telescope.nvim",
-        tag = "0.1.8",
         cmd = "Telescope",
         keys = {
             {
@@ -160,7 +159,7 @@ return {
     {
         "tpope/vim-commentary",
         keys = {
-            { "gc", mode = { "n", "v" } },
+            { "gc",  mode = { "n", "v" } },
             { "gcc", mode = "n" },
         },
     },
@@ -278,4 +277,22 @@ return {
             }
         end,
     },
+    {
+        'nvim-flutter/flutter-tools.nvim',
+        lazy = false,
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+            'stevearc/dressing.nvim', -- optional for vim.ui.select
+        },
+        config = true,
+    },
+    {
+        'nvim-treesitter/nvim-treesitter',
+        lazy = false,
+        build = ':TSUpdate',
+        init = function()
+            require"config.treesitter"
+        end,
+
+    }
 }
